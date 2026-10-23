@@ -1,44 +1,116 @@
-# Orvunia
+<div align="center">
+  <img src="assets/brand/logo.svg" width="72" alt="Orvunia logo" />
+  <h1>Orvunia</h1>
+  <p>An open-source AI assistant for interviews and meetings.</p>
+  <p><a href="https://orvunia.com/en/">Website</a> · <a href="https://orvunia.com/en/docs/">Guides</a> · <a href="https://orvunia.com/en/download/">Downloads</a> · <a href="https://github.com/c7bc/orvunia/issues">Issues</a></p>
+</div>
 
-Instalação pessoal, sem conta obrigatória, PostgreSQL ou Redis. O histórico e as
-conexões ficam no perfil local; a instalação não envia histórico ao Orvunia Cloud.
+[![Public core](https://github.com/c7bc/orvunia/actions/workflows/verify.yml/badge.svg)](https://github.com/c7bc/orvunia/actions/workflows/verify.yml)
+[![MIT license](https://img.shields.io/badge/license-MIT-126c50)](LICENSE)
 
-Requer Bun 1.4.3. Execute `bun install --frozen-lockfile`, `bun run build`
-e `bun start`. Acesse a origem loopback indicada no console. Configure suas
-conexões de texto, visão e transcrição na interface. Os testes locais usam
-fixtures sintéticas: `bun run check` e `bun test`.
+Capture microphone and computer audio, ask questions with context, and keep
+your history on your own computer. Choose the providers that handle your
+transcription, text, and images. The personal core requires no Orvunia account.
 
-`bun run test` executa somente testes unitários e de integração. Os ensaios
-locais em `next/tests/e2e/` e seus helpers públicos também fazem parte dos
-fontes, com ativação explícita pelas variáveis declaradas em cada arquivo.
-Eles exigem runtimes verificados e fixtures próprias; alguns ensaios permitem
-download de pesos somente quando a flag correspondente foi habilitada.
-Fixtures de serviços hospedados e acesso autorizado a provedores ficam no projeto privado.
+[Guias em português](https://orvunia.com/pt-BR/docs/) · [Guías en español](https://orvunia.com/es/docs/)
 
-Para preparar runtimes locais em Windows x64, execute `bun run models:setup`.
-Os binários têm versão e SHA256 verificados. As sete revisões de pesos avaliadas
-foram retiradas de novos downloads/importações por qualidade insuficiente ou
-qualificação incompleta. O catálogo ativo está vazio; configure APIs independentes
-para texto, visão e transcrição. Instalações existentes permanecem utilizáveis
-e removíveis, com aviso de retirada. Nenhum peso, histórico ou binding é apagado.
-A estimativa de capacidade não garante qualidade ou desempenho em toda máquina.
+## See the interface
 
-O download automático revisado de runtimes atende somente Windows x64. Em
-outros sistemas, use conexões por API ou configure manualmente um runtime
-compatível: `ORVUNIA_LLAMA_RUNTIME_PATH`, `ORVUNIA_LLAMA_RUNTIME_SHA256` e
-`ORVUNIA_LLAMA_RUNTIME_VERSION`, ou os três equivalentes
-`ORVUNIA_WHISPER_RUNTIME_*` para transcrição. O caminho deve ser absoluto,
-o hash SHA256 deve coincidir com o executável e a versão deve ser fixada.
+[![Orvunia interface with sample data](https://orvunia.com/demo/interface.png)](https://orvunia.com/demo/interface.webm)
 
-No Linux/Ubuntu, a imagem pessoal mantém o bind em loopback. Use
-`docker run --rm --network host -v orvunia-personal:/data orvunia-personal`
-para persistir o perfil em um volume nomeado. No Windows, prefira `bun start`
-ou o cliente Electron; não exponha a API pessoal em uma interface pública.
+Recorded with sample data. Audio and AI services are not connected. The transcript
+and responses are scripted examples from the actual product renderers in an
+isolated browser. [Watch the 16-second walkthrough](https://orvunia.com/demo/interface.webm)
+or inspect its [provenance](https://orvunia.com/demo/provenance.json).
 
-O cliente Electron usa um pacote de runtime Bun verificado. O código nativo pode
-ser compilado por este projeto, mas um instalador assinado é um artefato separado.
-Não aponte um runtime antigo para dados promovidos a um formato mais recente.
+## What you can do
 
-O site tem repositório privado independente e não integra os fontes do core.
-O pacote @orvunia/core fornece entrypoints explícitos para extensões privadas;
-não contém autenticação, assinatura, faturamento ou operação do produto cloud.
+| During a session | After a session |
+| --- | --- |
+| Transcribe microphone and system audio | Search local conversations and notes |
+| Ask about speech, images, documents, or approved code | Reuse context in follow-up questions |
+| Choose separate transcription and answer providers | Keep your own provider connections |
+| Use desktop shortcuts and capture protection where supported | Export and review your work |
+
+Use the [interactive website demo](https://orvunia.com/en/) to explore the
+conversation and technical modes. Its examples are illustrative; it does not
+record audio or call an AI provider. Capture protection depends on the operating
+system and sharing tool. It does not guarantee invisibility.
+
+## Run from source
+
+Requires **Bun 1.4.3**. PostgreSQL and Redis are not needed for the personal core.
+
+```sh
+git clone https://github.com/c7bc/orvunia.git
+cd orvunia
+bun install --frozen-lockfile --ignore-scripts
+bun run build
+bun start
+```
+
+Open the loopback address printed in the console. In **AI providers**, configure
+an answer connection and a transcription connection. Your provider bills API
+usage directly. Local history is not sent to Orvunia Cloud by this installation.
+
+Windows desktop installers are separate release artifacts. The
+[download page](https://orvunia.com/en/download/) lists published options and
+their signing status when available. A source archive is not an installer.
+Google sign-in and Google Calendar are coming soon; local reminders remain available.
+
+## Personal core or Cloud?
+
+| Personal core — this repository | Orvunia Cloud — separate service |
+| --- | --- |
+| Free, MIT-licensed source | Hosted account and managed AI usage |
+| Your providers and local profile | Subscription allowances and usage limits |
+| Runs without an Orvunia account | Private server implementation |
+
+Read the [Cloud guide](https://orvunia.com/en/docs/cloud/) for availability and
+usage terms. The website has its own repository. Cloud authentication, billing,
+hosted quotas, and operating configuration are excluded from this public core.
+
+## Development
+
+```sh
+bun run check
+bun run test
+```
+
+Tests use synthetic fixtures. Opt-in end-to-end checks live in `next/tests/e2e/`;
+review the flags in each file before running checks that download model weights.
+Keep credentials, real conversations, and production profiles out of fixtures.
+For a contribution, describe the problem, make a focused change, and include
+the checks that reproduce it. Follow [AGENTS.md](AGENTS.md).
+
+<details>
+<summary>Local model runtimes and Docker</summary>
+
+The reviewed automatic runtime setup targets Windows x64: `bun run models:setup`.
+Runtime downloads have pinned versions and SHA256 verification. The active
+model-weight catalog is currently empty: previously evaluated weights are
+retired from new downloads or imports. Existing installations can still be used
+or removed; their weights, history, and bindings are preserved.
+
+Other systems can use provider APIs or manually configured compatible runtimes.
+Set the absolute path, SHA256, and pinned version through
+`ORVUNIA_LLAMA_RUNTIME_PATH`, `ORVUNIA_LLAMA_RUNTIME_SHA256`, and
+`ORVUNIA_LLAMA_RUNTIME_VERSION`, or the corresponding `ORVUNIA_WHISPER_RUNTIME_*`
+variables for transcription. Capacity estimates do not guarantee model quality.
+
+On Linux, build the personal Docker image and preserve its loopback bind:
+
+```sh
+docker build -t orvunia-personal .
+docker run --rm --network host -v orvunia-personal:/data orvunia-personal
+```
+
+On Windows, use `bun start` or a published desktop build. Do not expose the
+personal API publicly. Do not point an older runtime at an upgraded profile.
+
+</details>
+
+## License
+
+[MIT](LICENSE) covers project code. Dependency and asset licenses remain in
+[THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and the included asset notices.
