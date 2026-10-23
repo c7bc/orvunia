@@ -86,6 +86,7 @@ export function createApplicationRendering(
   const overlay = createOverlayState({
     read: () => ({
       ...state,
+      uiLocale: environment.locale(),
       ...presentation,
       modeBase: presentation.modeBase,
       audio: context.audio,

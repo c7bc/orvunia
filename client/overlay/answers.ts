@@ -1,3 +1,4 @@
+import { reportAction } from "../reporting/action.js";
 import type { OverlayState } from "./state.js";
 import { renderHistoryNavigation } from "../panel/paging.js";
 import { responseSpeech, pendingSpeech, liveSpeechQuestionShown } from "./speech.js";
@@ -35,7 +36,7 @@ export function renderOverlayAnswers(context: OverlayState) {
       .map(
         (r) => {
           const voice = responseSpeech(context, r, shown);
-          return `${voice.markup}${r.question && !voice.questionShown ? `<div class="user-message">${esc(r.question)}</div>` : ""}<article class="response-card"><div class="response-meta">${icon("spark", 13)}Orvunia <small>· ${esc(actionTitle(r.action, r.mode))}</small><span class="grow"></span>${ib("copy", `copy:${r.id}`, "Copiar resposta")}</div><div class="markdown" data-markdown="${esc(r.id)}"></div>${r.mode === "technical" ? codingResponseActions(r) : ""}</article>`;
+          return `${voice.markup}${r.question && !voice.questionShown ? `<div class="user-message">${esc(r.question)}</div>` : ""}<article class="response-card"><div class="response-meta">${icon("spark", 13)}Orvunia <small>· ${esc(actionTitle(r.action, r.mode))}</small><span class="grow"></span>${ib("copy", `copy:${r.id}`, "Copiar resposta")}${reportAction(r.id, context.uiLocale)}</div><div class="markdown" data-markdown="${esc(r.id)}"></div>${r.mode === "technical" ? codingResponseActions(r) : ""}</article>`;
         },
       )
       .join("") +

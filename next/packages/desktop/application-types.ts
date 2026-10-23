@@ -25,6 +25,7 @@ export type NativeOptions = {
     env: Record<string, string | undefined>;
     platform: string;
     arch: string;
+    windowsStore?: boolean;
     execPath: string;
     versions: Record<string, string | undefined>;
     on(event: "uncaughtException", listener: () => void): unknown;

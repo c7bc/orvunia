@@ -9,6 +9,7 @@ import type { CodingState } from "../coding/domain.js";
 import type { AudioPhase } from "../audio-status/domain.js";
 import type { PartialTranscript } from "../application-render/activity.js";
 export type OverlayState = {
+  uiLocale?: string;
   current: PanelSession | null;
   busy: boolean;
   activeAnswerRequest: { sessionId: string; sourceTranscriptIds?: string[] } | null;

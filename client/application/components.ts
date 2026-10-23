@@ -11,10 +11,12 @@ import { installOverlayLayout } from "../overlay/index.js";
 import { installModePromptEditor } from "../prompt/index.js";
 import { installSessionNotes } from "../notes/index.js";
 import { installCodingStyle } from "../coding/render.js";
+import { installContentReporting } from "../reporting/controller.js";
 export function createApplicationComponents(ports: {
   state: ApplicationState;
   document: Document;
   toast(message: string): void;
+  reporting?: Omit<Parameters<typeof installContentReporting>[0], "document" | "response" | "toast">;
 }) {
   const { state, document } = ports;
   installCodingStyle(document);
@@ -43,6 +45,9 @@ export function createApplicationComponents(ports: {
     onLimit: () => ports.toast("O prompt atingiu o limite de caracteres."),
   });
   const notes = installSessionNotes(document);
+  const reporting = ports.reporting ? installContentReporting({ ...ports.reporting, document,
+    toast: ports.toast, response: id => state.current?.responses.find(item => item.id === id)?.text
+      ?? state.sessions.flatMap(session => session.responses).find(item => item.id === id)?.text }) : null;
   return {
     prompt,
     notes,
@@ -52,6 +57,7 @@ export function createApplicationComponents(ports: {
         else controller.dispose();
       prompt.dispose();
       notes.dispose();
+      reporting?.dispose();
     },
   };
 }

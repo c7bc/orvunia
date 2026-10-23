@@ -39,6 +39,7 @@ export type RawNative = Record<
   auxiliary?: (value: unknown) => Promise<unknown>;
   onAuxiliary?: (callback: (value: unknown) => void) => () => void;
   copy?: (value: string) => Promise<unknown>;
+  openSupportReport?: (value: { body: string }) => Promise<unknown>;
   modelImport?: (value: { requestId: string; catalogId: string; revision: string }) => Promise<unknown>;
   repository?: (value: unknown) => Promise<unknown>;
   systemAudio?: (value: unknown) => Promise<unknown>;
@@ -147,6 +148,7 @@ export function createApplicationNative(
     maximize: () => raw.maximize(),
     reminders: (value: unknown) => raw.reminders(value),
     openExternal: (url: string) => raw.openExternal(url),
+    ...(raw.openSupportReport ? { openSupportReport: (value: { body: string }) => raw.openSupportReport!(value) } : {}),
     openUpdate: (url: string) => raw.openUpdate(url),
     gaze: (value: { enabled: boolean } | Point) => raw.gaze(value),
     onEvent(

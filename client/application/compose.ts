@@ -128,6 +128,9 @@ export function createDesktopApplication(
     state,
     document,
     toast: modal.toast,
+    reporting: { locale: environment.locale, modal: modal.modal, close: modal.close,
+      copy: environment.markdown.copy,
+      ...(native?.openSupportReport ? { open: native.openSupportReport } : {}) },
   });
   const resources = createApplicationResources(context, edition);
   const sessions = createApplicationSessions(context),

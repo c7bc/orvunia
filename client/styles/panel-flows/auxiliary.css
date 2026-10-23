@@ -13,3 +13,5 @@ body.auxiliary-window { margin:0; padding:12px; height:auto!important; min-heigh
 .auxiliary-window .modal { width:100%!important; max-width:none!important; max-height:none!important; margin:0!important; padding:16px!important; border:0; box-shadow:none; }
 .auxiliary-window .flow-select-popup { position:relative!important; inset:auto!important; width:100%!important; min-width:0!important; max-height:260px!important; transform:none!important; margin-top:8px; }
 .auxiliary-window [data-auxiliary-layer="select"] { position:relative; z-index:100; }
+[data-report-form] .report-choice { display:flex; align-items:center; gap:8px; }
+[data-report-form] .report-choice input { width:16px; height:16px; flex:none; margin:0; }

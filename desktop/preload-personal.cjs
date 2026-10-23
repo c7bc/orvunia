@@ -28,6 +28,7 @@ const methods = [
   "systemAudio",
   "reminders",
   "openExternal",
+  "openSupportReport",
   "openUpdate",
   "chatVisibility",
   "gaze",

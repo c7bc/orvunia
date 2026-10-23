@@ -47,11 +47,12 @@ export function bootstrapNativeApplication(
   const candidateIdentity = launch?.kind === "candidate"
     ? prepareCandidateProfile(profile)
     : null;
-  app.setAppUserModelId(
-    launch?.kind === "candidate"
-      ? "local.cadence.candidate"
-      : "local.cadence.studio",
-  );
+  if (process.windowsStore !== true)
+    app.setAppUserModelId(
+      launch?.kind === "candidate"
+        ? "local.cadence.candidate"
+        : "local.cadence.studio",
+    );
   app.setPath("userData", profile);
   if (!app.requestSingleInstanceLock()) {
     app.quit();

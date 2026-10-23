@@ -8,7 +8,8 @@ import type { NativeOptions } from "../../packages/desktop/application-types.ts"
 import type { NativePlatform } from "../../packages/desktop/platform-types.ts";
 import { createWindowMotion } from "../../packages/desktop/window-motion.ts";
 
-test("native bootstrap acquires its configured profile lock before preparing an integrated identity and refuses a second instance without opening storage", async () => {
+for (const windowsStore of [undefined, true])
+test(`native bootstrap preserves profile/lock and ${windowsStore ? "inherits package AUMID" : "retains standalone AUMID"}`, async () => {
   const root = await mkdtemp(join(tmpdir(), "cadence-native-bootstrap-"));
   const appData = join(root, "appdata"),
     profile = join(appData, "Cadence");
@@ -56,6 +57,7 @@ test("native bootstrap acquires its configured profile lock before preparing an 
     resourcesPath: join(root, "resources"),
     createMotion: createWindowMotion,
     process: {
+      ...(windowsStore === true ? { windowsStore } : {}),
       argv: [],
       env: {},
       platform: "win32",
@@ -75,7 +77,7 @@ test("native bootstrap acquires its configured profile lock before preparing an 
   try {
     expect(bootstrapNativeApplication(options)).toBeNull();
     expect(visibleName).toBe("Orvunia");
-    expect(applicationIdentifier).toBe("local.cadence.studio");
+    expect(applicationIdentifier).toBe(windowsStore === true ? "" : "local.cadence.studio");
     expect(calls).toEqual(["profile:" + profile, "lock", "quit"]);
     await expect(access(profile)).rejects.toThrow();
     calls.length = 0;
@@ -96,7 +98,7 @@ test("native bootstrap acquires its configured profile lock before preparing an 
     calls.length = 0;
     const reopened = bootstrapNativeApplication(options)!;
     expect(visibleName).toBe("Orvunia");
-    expect(applicationIdentifier).toBe("local.cadence.studio");
+    expect(applicationIdentifier).toBe(windowsStore === true ? "" : "local.cadence.studio");
     expect(calls).toEqual(["profile:" + profile, "lock"]);
     expect(reopened.profile).toBe(profile);
     expect(reopened.settings.uiLocale).toBe("es");

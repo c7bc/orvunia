@@ -16,6 +16,7 @@ import { openNativeUpdate } from "./application-update.ts";
 import { nativeRepository } from "./repository-native.ts";
 import { writeNativeClipboard } from "./native-clipboard.ts";
 import { registerAuxiliarySurface } from "./auxiliary.ts";
+import { registerSupportReport } from "./support-native.ts";
 export function registerNativeHandlers(
   context: NativeContext,
   controllers: NativeControllers,
@@ -24,6 +25,7 @@ export function registerNativeHandlers(
   drain: ReturnType<typeof createRendererDrain>,
 ) {
   registerAuxiliarySurface(context);
+  registerSupportReport(context, controllers);
   const repository = nativeRepository(context, controllers);
   const validate = (request: PlatformInvocation) =>
     validateNativeInvocation(request, context.origin, controllers.contents());
