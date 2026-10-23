@@ -14,7 +14,7 @@ Orvunia helps you turn that context into streamed answers, focused follow-ups,
 and notes you can return to. Run the open-source core with your own AI providers,
 or choose the separately hosted Orvunia Cloud service.
 
-[![Orvunia interview workspace](https://orvunia.com/demo/interface.png)](https://orvunia.com/demo/interface.webm)
+[![Orvunia conversation and technical interview workspace](https://orvunia.com/demo/readme.png)](https://orvunia.com/en/#demo)
 
 [Watch the walkthrough](https://orvunia.com/demo/interface.webm) · [Try the interactive demo](https://orvunia.com/en/)
 

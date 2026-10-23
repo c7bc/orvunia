@@ -61,7 +61,7 @@
     {
       "path": "assets/editor/PROVENANCE.json",
       "bytes": 4136,
-      "sha256": "5a7c1a5647e5997b42a069c2c9ca98b54cba30757b4d5992fa6942c35ffe937c"
+      "sha256": "b56e8af2f2bec5428665a1732b7b4f66d7da3b50f021aa2806bf9007c628f6fc"
     },
     {
       "path": "assets/gaze/face_landmarker.task",
@@ -81,7 +81,7 @@
     {
       "path": "assets/gaze/PROVENANCE.json",
       "bytes": 5508,
-      "sha256": "d2c330a50e0cc726ddf7ff4b9da122001c938a18063ff3739b0b8e3c99b83dd8"
+      "sha256": "23822e84c27dc001f3d5feb4a4671aad95e0f32ef30117024c8900187395d1d5"
     },
     {
       "path": "assets/gaze/README.txt",
@@ -7780,8 +7780,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7489,
-      "sha256": "fe57a06845f6a985715854be47cb2a2fc4afbf11a91c3f49fbdab733152e9f9d"
+      "bytes": 7502,
+      "sha256": "bcc52f38e1e5c713e2e67f31cf5480edcfd5b36f2b0c38de5031551330b7babf"
     },
     {
       "path": "scripts/build.mjs",
