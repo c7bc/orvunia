@@ -1,45 +1,81 @@
 <div align="center">
-  <img src="assets/brand/logo.svg" width="72" alt="Orvunia logo" />
+  <img src="assets/brand/logo.svg" width="80" alt="Orvunia logo" />
   <h1>Orvunia</h1>
-  <p>An open-source AI assistant for interviews and meetings.</p>
-  <p><a href="https://orvunia.com/en/">Website</a> · <a href="https://orvunia.com/en/docs/">Guides</a> · <a href="https://orvunia.com/en/download/">Downloads</a> · <a href="https://github.com/c7bc/orvunia/issues">Issues</a></p>
+  <p><strong>The open-source AI interview assistant with an undetectable desktop mode.</strong></p>
+  <p>Hear the question. Connect the context. Find your next answer.</p>
+  <p><a href="https://orvunia.com/en/">Website</a> · <a href="https://orvunia.com/en/docs/">Documentation</a> · <a href="https://orvunia.com/en/download/">Downloads</a> · <a href="https://github.com/c7bc/orvunia/issues">Issues</a></p>
 </div>
 
 [![Public core](https://github.com/c7bc/orvunia/actions/workflows/verify.yml/badge.svg)](https://github.com/c7bc/orvunia/actions/workflows/verify.yml)
 [![MIT license](https://img.shields.io/badge/license-MIT-126c50)](LICENSE)
 
-Capture microphone and computer audio, ask questions with context, and keep
-your history on your own computer. Choose the providers that handle your
-transcription, text, and images. The personal core requires no Orvunia account.
+Bring live speech, screenshots, documents, and code into one interview workspace.
+Orvunia helps you turn that context into streamed answers, focused follow-ups,
+and notes you can return to. Run the open-source core with your own AI providers,
+or choose the separately hosted Orvunia Cloud service.
 
-[Guias em português](https://orvunia.com/pt-BR/docs/) · [Guías en español](https://orvunia.com/es/docs/)
+[![Orvunia interview workspace](https://orvunia.com/demo/interface.png)](https://orvunia.com/demo/interface.webm)
 
-## See the interface
+[Watch the walkthrough](https://orvunia.com/demo/interface.webm) · [Try the interactive demo](https://orvunia.com/en/)
 
-[![Orvunia interface with sample data](https://orvunia.com/demo/interface.png)](https://orvunia.com/demo/interface.webm)
+## One app. Two modes.
 
-Recorded with sample data. Audio and AI services are not connected. The transcript
-and responses are scripted examples from the actual product renderers in an
-isolated browser. [Watch the 16-second walkthrough](https://orvunia.com/demo/interface.webm)
-or inspect its [provenance](https://orvunia.com/demo/provenance.json).
-
-## What you can do
-
-| During a session | After a session |
+| Conversation mode | Technical mode |
 | --- | --- |
-| Transcribe microphone and system audio | Search local conversations and notes |
-| Ask about speech, images, documents, or approved code | Reuse context in follow-up questions |
-| Choose separate transcription and answer providers | Keep your own provider connections |
-| Use desktop shortcuts and capture protection where supported | Export and review your work |
+| Work through recruiter and behavioral questions | Reason through code, debugging, and system design |
+| Shape experiences into STAR answers | Explain a screenshot or a selected piece of code |
+| Ask follow-ups and recap the discussion | Suggest tests, improvements, and implementation approaches |
+| Add your profile, documents, and instructions | Bring approved repository files into the conversation |
 
-Use the [interactive website demo](https://orvunia.com/en/) to explore the
-conversation and technical modes. Its examples are illustrative; it does not
-record audio or call an AI provider. Capture protection depends on the operating
-system and sharing tool. It does not guarantee invisibility.
+Switch between the built-in modes or create your own. Give a mode its own
+instructions, reference documents, and note sections so the assistant follows
+the kind of conversation you are preparing for.
 
-## Run from source
+## Keep the conversation moving
 
-Requires **Bun 1.4.3**. PostgreSQL and Redis are not needed for the personal core.
+| Feature | What it gives you |
+| --- | --- |
+| **Speech to context** | Transcribe microphone and computer audio; use the selected speech in a question. |
+| **Streamed answers** | Read the answer as it arrives and continue with focused follow-ups. |
+| **Visual questions** | Attach screenshots and ask about the code, interface, or problem on screen. |
+| **Your reference material** | Add profile details, documents, and mode instructions to shape the response. |
+| **Desktop overlay** | Keep a movable assistant window and global shortcuts close to the conversation. |
+| **History that stays useful** | Search sessions, edit notes, revisit transcripts, and export your work. |
+| **Your language** | Use the interface in English, Portuguese, or Spanish; choose transcription and answer languages separately. |
+
+### Undetectable desktop mode
+
+The desktop app requests native window exclusion from supported captures.
+Use it with the overlay and keyboard shortcuts to keep your workspace focused.
+
+### Ask about your repository
+
+Connect a repository, review the files, and approve the context you want to use.
+The repository agent can list, search, and read that approved snapshot to ground
+its answer in your code. Ask where behavior lives, how a flow works, or what a
+change would involve, with file and line references you can inspect.
+
+Repository access is read-only: code suggestions remain yours to review and apply.
+
+## Your AI, your setup
+
+| Run the open-source core | Use Orvunia Cloud |
+| --- | --- |
+| MIT-licensed source in this repository | Separately hosted service |
+| Start without an Orvunia account | Sign in to your hosted workspace |
+| Bring your own provider connections | Managed AI usage and account features |
+| Keep the personal profile and history locally | Choose a plan with published usage allowances |
+| Run the local web app or desktop runtime | Use the hosted Cloud interface |
+
+The personal core needs neither PostgreSQL nor Redis. Your API provider bills
+your usage directly. Cloud authentication, billing, hosted quotas, and deployment
+configuration live in a separate private product.
+
+[Explore the Cloud guide](https://orvunia.com/en/docs/cloud/) · [See desktop download availability](https://orvunia.com/en/download/)
+
+## Get started
+
+Install **Bun 1.4.3**, then run:
 
 ```sh
 git clone https://github.com/c7bc/orvunia.git
@@ -49,68 +85,74 @@ bun run build
 bun start
 ```
 
-Open the loopback address printed in the console. In **AI providers**, configure
-an answer connection and a transcription connection. Your provider bills API
-usage directly. Local history is not sent to Orvunia Cloud by this installation.
+Open the loopback address printed in the console.
 
-Windows desktop installers are separate release artifacts. The
-[download page](https://orvunia.com/en/download/) lists published options and
-their signing status when available. A source archive is not an installer.
-Google sign-in and Google Calendar are coming soon; local reminders remain available.
+1. In **AI providers**, configure an answer connection and a transcription connection.
+2. Choose a mode and add the profile or reference material you want to use.
+3. Start a session, capture audio or add context, and ask your first question.
 
-## Personal core or Cloud?
+### Choose a provider or a local endpoint
 
-| Personal core — this repository | Orvunia Cloud — separate service |
+| Capability | Available connection types |
 | --- | --- |
-| Free, MIT-licensed source | Hosted account and managed AI usage |
-| Your providers and local profile | Subscription allowances and usage limits |
-| Runs without an Orvunia account | Private server implementation |
+| Answers | OpenAI, Anthropic, Gemini, Groq, OpenRouter, Ollama, and compatible APIs |
+| Transcription | OpenAI, Groq, Deepgram, AssemblyAI, and compatible APIs |
 
-Read the [Cloud guide](https://orvunia.com/en/docs/cloud/) for availability and
-usage terms. The website has its own repository. Cloud authentication, billing,
-hosted quotas, and operating configuration are excluded from this public core.
-
-## Development
-
-```sh
-bun run check
-bun run test
-```
-
-Tests use synthetic fixtures. Opt-in end-to-end checks live in `next/tests/e2e/`;
-review the flags in each file before running checks that download model weights.
-Keep credentials, real conversations, and production profiles out of fixtures.
-For a contribution, describe the problem, make a focused change, and include
-the checks that reproduce it. Follow [AGENTS.md](AGENTS.md).
+Choose transcription and answer connections independently. For local generation,
+connect an existing Ollama or compatible server and select a model suited to
+your hardware. The built-in catalog currently offers no new model-weight downloads;
+existing local installations and manually configured runtimes remain available.
 
 <details>
-<summary>Local model runtimes and Docker</summary>
+<summary>Optional local runtimes and Linux Docker</summary>
 
-The reviewed automatic runtime setup targets Windows x64: `bun run models:setup`.
-Runtime downloads have pinned versions and SHA256 verification. The active
-model-weight catalog is currently empty: previously evaluated weights are
-retired from new downloads or imports. Existing installations can still be used
-or removed; their weights, history, and bindings are preserved.
+`bun run models:setup` prepares the pinned llama.cpp and whisper.cpp runtime
+executables for Windows x64, with SHA256 verification. It does not add model weights.
+For manual runtimes, configure the path, version, and hash using the
+`ORVUNIA_LLAMA_RUNTIME_*` or `ORVUNIA_WHISPER_RUNTIME_*` settings.
 
-Other systems can use provider APIs or manually configured compatible runtimes.
-Set the absolute path, SHA256, and pinned version through
-`ORVUNIA_LLAMA_RUNTIME_PATH`, `ORVUNIA_LLAMA_RUNTIME_SHA256`, and
-`ORVUNIA_LLAMA_RUNTIME_VERSION`, or the corresponding `ORVUNIA_WHISPER_RUNTIME_*`
-variables for transcription. Capacity estimates do not guarantee model quality.
-
-On Linux, build the personal Docker image and preserve its loopback bind:
+On Linux, the personal web app can run with a persistent profile volume:
 
 ```sh
 docker build -t orvunia-personal .
 docker run --rm --network host -v orvunia-personal:/data orvunia-personal
 ```
 
-On Windows, use `bun start` or a published desktop build. Do not expose the
-personal API publicly. Do not point an older runtime at an upgraded profile.
+The personal API binds to loopback. Native overlay, capture protection, and
+global shortcuts belong to the Electron desktop runtime.
 
 </details>
 
+## Built to be understood and extended
+
+Orvunia is an independently built product with a modular TypeScript core:
+Bun and Elysia run the backend, TypeScript powers the interface, SQLite stores personal data,
+and Electron provides the desktop integration. Provider adapters keep AI
+connections separate from session and conversation behavior.
+
+| Path | Role |
+| --- | --- |
+| `client/` | Interface, modes, notes, audio controls, and streaming views |
+| `next/apps/personal/` | Personal server and local application composition |
+| `next/packages/` | Domain logic, providers, context, history, and desktop modules |
+| `next/db/sqlite/` | Local database migrations |
+| `desktop/` | Electron bootstrap and generated native bundles |
+| `scripts/` | Build, runtime packaging, and integrity tooling |
+
+## Documentation and contribution
+
+[English guides](https://orvunia.com/en/docs/) · [Guias em português](https://orvunia.com/pt-BR/docs/) · [Guías en español](https://orvunia.com/es/docs/)
+
+Found a bug or have an idea? [Open an issue](https://github.com/c7bc/orvunia/issues)
+with the behavior you expected and steps to reproduce it. For a contribution,
+keep the change focused, explain the result, and follow [AGENTS.md](AGENTS.md).
+
+```sh
+bun run check
+bun run test
+```
+
 ## License
 
-[MIT](LICENSE) covers project code. Dependency and asset licenses remain in
-[THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and the included asset notices.
+The public core is [MIT licensed](LICENSE). Dependency and asset licenses are
+listed in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and included notices.
