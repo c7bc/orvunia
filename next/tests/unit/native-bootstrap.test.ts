@@ -83,6 +83,8 @@ test(`native bootstrap preserves profile/lock and ${windowsStore ? "inherits pac
     calls.length = 0;
     owned = true;
     const context = bootstrapNativeApplication(options)!;
+    expect(context.process).toBe(options.process);
+    expect(context.process.windowsStore).toBe(windowsStore);
     expect(calls).toEqual(["profile:" + profile, "lock"]);
     expect(context.launch?.kind).toBe("integrated");
     expect(context.profile).toBe(profile);

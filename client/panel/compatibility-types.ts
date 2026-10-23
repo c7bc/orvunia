@@ -1,3 +1,4 @@
+import type { DesktopDistribution } from "../platform/distribution.js";
 export type CompatibilitySettings = {
   launchAtLogin?: boolean;
   autoAnswer?: boolean;
@@ -15,6 +16,8 @@ export type CompatibilitySettings = {
   shortcuts: Record<string, string | undefined>;
 };
 export type CompatibilityContext = {
+  distribution?: DesktopDistribution;
+  uiLocale?: string;
   settingsTab: string;
   settings: CompatibilitySettings;
   failedShortcuts: string[];

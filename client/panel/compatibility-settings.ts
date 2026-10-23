@@ -1,4 +1,5 @@
 import type { CompatibilityContext } from "./compatibility-types.js";
+import { platformMessages } from "../platform/messages.js";
 import {
   compatibilityRow,
   compatibilitySelect,
@@ -26,9 +27,12 @@ export function renderCompatibilitySettings(context: CompatibilityContext) {
     values: readonly (string | readonly [string, string])[],
     value: string,
   ) => compatibilitySelect(escape, key, values, value);
+  const platform = platformMessages(context.uiLocale), managed = context.distribution?.channel === "msix";
+  const startupControl = managed ? `<span data-i18n-skip>${button(platform.manage, "manage-startup")}</span>` : toggle("launchAtLogin", settings.launchAtLogin);
+  const startupDescription = managed ? `<span data-i18n-skip>${escape(platform.startup)}</span>` : "O aplicativo abre quando você entra no Windows.";
   switch (settingsTab) {
     case "general":
-      return `<h2>Geral</h2><p class="subtitle">Seu assistente, do seu jeito.</p>${row("Abrir ao iniciar o Windows", "O aplicativo abre quando você entra no Windows.", toggle("launchAtLogin", settings.launchAtLogin))}${row("Sugestões automáticas", "Sugestões com base nas novas falas do entrevistador.", toggle("autoAnswer", settings.autoAnswer))}${row("Incluir tela ao perguntar", "Atualiza a captura da fonte escolhida antes de cada resposta.", toggle("autoScreen", settings.autoScreen))}<div class="divider"></div><h2>Conexão</h2>${row("OpenAI", health.keyConfigured ? `Credencial carregada no servidor · ${health.keySource}` : "A chave não foi encontrada no ambiente configurado.", '<span class="badge">' + (health.keyConfigured ? "Conectada" : "Pendente") + "</span>")}${row("Geração de respostas", escape(health.models?.response || "—"), "")}${row("Transcrição", escape(health.models?.transcription || "—"), "")}`;
+      return `<h2>Geral</h2><p class="subtitle">Seu assistente, do seu jeito.</p>${row("Abrir ao iniciar o Windows", startupDescription, startupControl)}${row("Sugestões automáticas", "Sugestões com base nas novas falas do entrevistador.", toggle("autoAnswer", settings.autoAnswer))}${row("Incluir tela ao perguntar", "Atualiza a captura da fonte escolhida antes de cada resposta.", toggle("autoScreen", settings.autoScreen))}<div class="divider"></div><h2>Conexão</h2>${row("OpenAI", health.keyConfigured ? `Credencial carregada no servidor · ${health.keySource}` : "A chave não foi encontrada no ambiente configurado.", '<span class="badge">' + (health.keyConfigured ? "Conectada" : "Pendente") + "</span>")}${row("Geração de respostas", escape(health.models?.response || "—"), "")}${row("Transcrição", escape(health.models?.transcription || "—"), "")}`;
     case "audio":
       return `<h2>Áudio</h2><p class="subtitle">Canais separados para você e para o entrevistador.</p>${row("Microfone", "Sua voz aparece como “Eu”.", '<select id="microphone" aria-label="Microfone"><option value="default">Padrão do sistema</option></select>')}${row("Áudio do computador", "A fala da reunião aparece como “Entrevistador”.", toggle("systemAudio", settings.systemAudio))}${row("Transcrição em tempo real", "Mostra as palavras enquanto a pessoa fala. Desative para usar trechos gravados.", toggle("realtime", settings.realtime))}${row("Intervalo do modo compatível", "Trechos menores chegam antes; trechos maiores preservam mais contexto.", `<select data-desktop-select="chunkSeconds"><option value="3" ${settings.chunkSeconds === 3 ? "selected" : ""}>3 segundos</option><option value="5" ${settings.chunkSeconds === 5 ? "selected" : ""}>5 segundos</option><option value="8" ${settings.chunkSeconds === 8 ? "selected" : ""}>8 segundos</option></select>`)}<div class="notice">A escuta começa quando você clica em “Ouvir” na janela da sessão. Escolha uma tela para habilitar o áudio do computador.</div>${button("Atualizar microfones", "devices", "", "mic")}`;
     case "language":

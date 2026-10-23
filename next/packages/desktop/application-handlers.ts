@@ -17,6 +17,7 @@ import { nativeRepository } from "./repository-native.ts";
 import { writeNativeClipboard } from "./native-clipboard.ts";
 import { registerAuxiliarySurface } from "./auxiliary.ts";
 import { registerSupportReport } from "./support-native.ts";
+import { registerWindowsManagement } from "./management-native.ts";
 export function registerNativeHandlers(
   context: NativeContext,
   controllers: NativeControllers,
@@ -26,6 +27,7 @@ export function registerNativeHandlers(
 ) {
   registerAuxiliarySurface(context);
   registerSupportReport(context, controllers);
+  registerWindowsManagement(context, controllers);
   const repository = nativeRepository(context, controllers);
   const validate = (request: PlatformInvocation) =>
     validateNativeInvocation(request, context.origin, controllers.contents());

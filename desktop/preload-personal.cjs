@@ -30,6 +30,7 @@ const methods = [
   "openExternal",
   "openSupportReport",
   "openUpdate",
+  "openWindowsManagement",
   "chatVisibility",
   "gaze",
   "auxiliary",

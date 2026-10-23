@@ -1,6 +1,8 @@
 import { z } from "zod";
 import type { NativeContext } from "./application-types.ts";
 import type { PlatformInvocation } from "./platform-types.ts";
+import { nativeDistribution } from "./distribution.ts";
+import { nativeLocale } from "./application-state.ts";
 const update = z.object({
   status: z.literal("available"),
   release: z.object({ url: z.url() }),
@@ -16,6 +18,9 @@ export async function openNativeUpdate(
   validate();
   interactive();
   context.abort.signal.throwIfAborted();
+  if (nativeDistribution(context.process).updates === "windows-store")
+    throw Error(nativeLocale(context, "Atualize este pacote pela Microsoft Store.",
+      "Update this package through Microsoft Store.", "Actualiza este paquete desde Microsoft Store."));
   const query = new URLSearchParams({
     version: context.electron.app.getVersion(),
     platform: context.process.platform,

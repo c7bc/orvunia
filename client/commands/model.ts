@@ -5,6 +5,7 @@ import type {
   AnswerRequest,
 } from "../answers/domain.js";
 import type { CompatibilitySettings } from "../panel/compatibility-types.js";
+import type { DesktopDistribution } from "../platform/distribution.js";
 export interface CommandResponse extends PanelResponse {
   captureIds?: string[];
 }
@@ -20,6 +21,7 @@ export interface CommandSettings extends CompatibilitySettings {
   [key: string]: unknown;
 }
 export interface CommandDesktop {
+  distribution?: DesktopDistribution;
   settings: CommandSettings;
   failedShortcuts: string[];
   overlayVisible?: boolean;

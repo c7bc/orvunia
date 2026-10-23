@@ -7,6 +7,7 @@ import type {
   ModeBase,
 } from "./data.js";
 import type { AudioPhase } from "../audio-status/domain.js";
+import type { DesktopDistribution } from "../platform/distribution.js";
 type DesktopSettings = Partial<
   Record<
     | "protected"
@@ -33,6 +34,7 @@ export type PanelState = {
   page: string;
   settingsTab: string;
   desktop: {
+    distribution?: DesktopDistribution;
     native: boolean;
     version?: string;
     failedShortcuts: string[];

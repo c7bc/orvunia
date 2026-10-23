@@ -480,8 +480,8 @@
     },
     {
       "path": "client/application/desktop-state.ts",
-      "bytes": 3157,
-      "sha256": "5e60f257a03933c9af7d344883730022bae4993fc4f15164994e038e9a0a51bd"
+      "bytes": 3324,
+      "sha256": "0de95992a7b0ebc77e47149cd3470384d993ef5134ebad1561569b4a315ef6b2"
     },
     {
       "path": "client/application/effects.ts",
@@ -555,8 +555,8 @@
     },
     {
       "path": "client/application/native.ts",
-      "bytes": 6457,
-      "sha256": "73c1eef8eed695d92fdc6f1c013bca46669605bf0a690b3f5070b8199cf53835"
+      "bytes": 6676,
+      "sha256": "6eb6eca2356208821149f6871e294ebd5dab646fe7e0c083f062b558caa0c633"
     },
     {
       "path": "client/application/navigation.ts",
@@ -565,8 +565,8 @@
     },
     {
       "path": "client/application/presentation.ts",
-      "bytes": 3893,
-      "sha256": "85eea074b238d03e3a8d33497b5e04da6dd65954beb4fe2d60ea782cb15d2292"
+      "bytes": 4016,
+      "sha256": "108c64acd0887621692944bb667b3f56f87995453ddd39d054f927c47e423a5f"
     },
     {
       "path": "client/application/projection.ts",
@@ -1010,8 +1010,8 @@
     },
     {
       "path": "client/commands/model.ts",
-      "bytes": 2844,
-      "sha256": "c08ca3615dcd8429895b5111998f99e460576d4628280e339d7d64768a7d99ef"
+      "bytes": 2954,
+      "sha256": "f7aaf12d19dd761bca9171811893cf7edb8d998f84db10cc4a0a6304bb290660"
     },
     {
       "path": "client/commands/modes.ts",
@@ -1020,8 +1020,8 @@
     },
     {
       "path": "client/commands/native.ts",
-      "bytes": 654,
-      "sha256": "6af101a857bc8dfc1ac24af0bd6dbe461363535c902802bedfdc255265e7e0ea"
+      "bytes": 729,
+      "sha256": "9934b7dbb8efa742d5a132f3a742424c1e6b1aa4be9ac3b3fad0c771bb16d947"
     },
     {
       "path": "client/commands/navigation.ts",
@@ -1045,8 +1045,8 @@
     },
     {
       "path": "client/commands/system.ts",
-      "bytes": 3344,
-      "sha256": "c493118182a481a137872370f86498959216cf2a256aa4c550230b520f2c41de"
+      "bytes": 4034,
+      "sha256": "88526c7e890e85d3132b5d98d0d9b5d3d50f334525dd2e2faeda6f731c6840e7"
     },
     {
       "path": "client/components/activity-frames.ts",
@@ -2000,8 +2000,8 @@
     },
     {
       "path": "client/microphone/browser.ts",
-      "bytes": 1259,
-      "sha256": "cb092a1d3fb915a2eaef157160d60f21c4d1888947e3f0164b66a6380bc69572"
+      "bytes": 1273,
+      "sha256": "c3c5749077b0e2e6e5c33a0b3901c0ec98a85df63387ee7dfa20d6c5b1b25091"
     },
     {
       "path": "client/microphone/connect.ts",
@@ -2490,13 +2490,13 @@
     },
     {
       "path": "client/panel/compatibility-settings.ts",
-      "bytes": 7008,
-      "sha256": "6238dba987585bd810696209d0f697034283413ea1938e988cb37cfb0f6cf5a3"
+      "bytes": 7422,
+      "sha256": "d66715c80de35b2aed37463b90d0b8e751dd2097a4c3ffe5a44cdfab11207e42"
     },
     {
       "path": "client/panel/compatibility-types.ts",
-      "bytes": 1576,
-      "sha256": "4f38e5d620c28fdb80283f292cda15d9bddcfa03252c1b9b4c8bd4a0e0c1afb7"
+      "bytes": 1707,
+      "sha256": "78f5d4b8726a9822220c742ded9b4897686262e6abcc2a8ad5eec4884600624d"
     },
     {
       "path": "client/panel/controls.ts",
@@ -2520,8 +2520,8 @@
     },
     {
       "path": "client/panel/general.ts",
-      "bytes": 5535,
-      "sha256": "3e1d9ff68ffc363c98a2225ba63138bb6bb622cbe04d58173b49c997a6ada58c"
+      "bytes": 5937,
+      "sha256": "d53933574c30ab7196b5ae083139009fb110d77f8c4b2840cb4b4c058f8aa7fa"
     },
     {
       "path": "client/panel/help.ts",
@@ -2600,8 +2600,8 @@
     },
     {
       "path": "client/panel/state.ts",
-      "bytes": 3489,
-      "sha256": "5588f72dc7e9a12ecf434c0bb41179db15bad14cbcf007efa393bcb99b56f483"
+      "bytes": 3601,
+      "sha256": "360e8af91bc407c2519eae45c6872ef8628ecebf7801b973c7f8b3c257120682"
     },
     {
       "path": "client/panel/transcript.ts",
@@ -2617,6 +2617,16 @@
       "path": "client/personal/edition.ts",
       "bytes": 915,
       "sha256": "36112c28fa6ab43f2cb5c14e3698c9437f976fa9f14b099386182d99515baa77"
+    },
+    {
+      "path": "client/platform/distribution.ts",
+      "bytes": 106,
+      "sha256": "139922829d6e9d9236fb2ed28a4a77a050abfcb48f308a1a090b165edc0f60a4"
+    },
+    {
+      "path": "client/platform/messages.ts",
+      "bytes": 1553,
+      "sha256": "73b5c6864fca2c896013edca6f0983b4aa778ce676ed5d33343ab917360bb1f5"
     },
     {
       "path": "client/prompt/bind.ts",
@@ -3510,13 +3520,13 @@
     },
     {
       "path": "desktop/preload-personal.cjs",
-      "bytes": 1162,
-      "sha256": "0037b1f27e69256a8d79a35701f24980a99a57e59cee2d17400721a8416dd8cd"
+      "bytes": 1189,
+      "sha256": "20b9d28ba77f2246ce6f23504a979b7d8620f21c65d5a4abc6135657c35fee1e"
     },
     {
       "path": "desktop/preload.cjs",
-      "bytes": 1162,
-      "sha256": "0037b1f27e69256a8d79a35701f24980a99a57e59cee2d17400721a8416dd8cd"
+      "bytes": 1189,
+      "sha256": "20b9d28ba77f2246ce6f23504a979b7d8620f21c65d5a4abc6135657c35fee1e"
     },
     {
       "path": "Dockerfile",
@@ -4345,13 +4355,13 @@
     },
     {
       "path": "next/packages/desktop/application-controllers.ts",
-      "bytes": 5190,
-      "sha256": "34e5012aba552551bd1a3964a5cfa1e31a2845868cd5e37020fd13a50e4392cb"
+      "bytes": 5635,
+      "sha256": "23f53174f6ee72f8f8625c4633a2dabc76dc62ec20ec9e96ef01b60a6b47c399"
     },
     {
       "path": "next/packages/desktop/application-handlers.ts",
-      "bytes": 7557,
-      "sha256": "14577bc7af5fc5dda16af71c3bc57695ce95e1757c0b36fd208e65ce98b49eed"
+      "bytes": 7676,
+      "sha256": "17133c9d66d0c80c08b0bf6cf7746ff85fc43b763eec789c9bf3a8822cdd5858"
     },
     {
       "path": "next/packages/desktop/application-layout.ts",
@@ -4380,8 +4390,8 @@
     },
     {
       "path": "next/packages/desktop/application-update.ts",
-      "bytes": 1901,
-      "sha256": "6f13dbee7e1a6e43cb2e3f3999d229fc09ea200ffc2a2c537eff8cca8d4b16ad"
+      "bytes": 2272,
+      "sha256": "67c48171b99a5a8e997c3835efc5e5b96b31808e2099cc179be5e4d60441548c"
     },
     {
       "path": "next/packages/desktop/application-views.ts",
@@ -4467,6 +4477,11 @@
       "path": "next/packages/desktop/candidate.ts",
       "bytes": 3680,
       "sha256": "5be10e3569bf840be0008949d8c25e2daab0cefe7ab63e6ef4dd5485572c1b9d"
+    },
+    {
+      "path": "next/packages/desktop/distribution.ts",
+      "bytes": 1300,
+      "sha256": "92d0a0d5caa055b4310426f91fbb78e48ed1ed0dda3f4ef024cbdf3b35bed0de"
     },
     {
       "path": "next/packages/desktop/document-dialog.ts",
@@ -4569,6 +4584,11 @@
       "sha256": "914fbebd770a3374fdc657c068162c270b3fc53f982722c8c3c9fab7b7d207e0"
     },
     {
+      "path": "next/packages/desktop/management-native.ts",
+      "bytes": 1239,
+      "sha256": "de362916fdd158bf6805c2e15657dc4b75f887ef3252d91f1f9217f37b74ed1a"
+    },
+    {
       "path": "next/packages/desktop/model-import.ts",
       "bytes": 1805,
       "sha256": "1b922fd0762e83dcf59c2b2c4b01e5fb01be2c2c8403a2b10685f0e32d3fcf63"
@@ -4600,8 +4620,8 @@
     },
     {
       "path": "next/packages/desktop/native-preferences.ts",
-      "bytes": 2194,
-      "sha256": "ed45bb94c72d1297b8961abc8b58ebfd33a1e0bad1cbff4aebc72ac66ab56615"
+      "bytes": 2257,
+      "sha256": "9dbf1456ea3cea7d0869c0c9aa5ed27b86d070f1ea4c834265a6bcd79b56f455"
     },
     {
       "path": "next/packages/desktop/native-reminders.ts",
@@ -7464,6 +7484,11 @@
       "sha256": "2f4a51a7d9e02d41b434fcd43f05eb97fb1486a16cb912919968bdb4fd7b839d"
     },
     {
+      "path": "next/tests/unit/microphone-clock.test.ts",
+      "bytes": 1660,
+      "sha256": "aa51628d274e9d3c7507e9894692f1c515357af85b35e10b04f35432e1f48a21"
+    },
+    {
       "path": "next/tests/unit/mode-prompt-disclosure.test.ts",
       "bytes": 3816,
       "sha256": "d0b1329a1da3caedc49a5c863b439aef6d938cf14787c3f161e7516b62db3e76"
@@ -7494,14 +7519,29 @@
       "sha256": "4d9a12b4a9fd7e5b29937aa5a677f0e5891a78b25670aae808f93b30fb62c3b2"
     },
     {
+      "path": "next/tests/unit/msix-management.test.ts",
+      "bytes": 5264,
+      "sha256": "709798fae3a115e83c62e94b0b1bb2f0aa04fbefad797b5e2059e3cae21ed0c2"
+    },
+    {
+      "path": "next/tests/unit/msix-preferences.test.ts",
+      "bytes": 2072,
+      "sha256": "10920f7dd5fdc97730e39837842276d147dcfbd2ccc6eca1d81ef23788d73b24"
+    },
+    {
+      "path": "next/tests/unit/msix-ui.test.ts",
+      "bytes": 3829,
+      "sha256": "9f15fa2932c9116cc3728aaa20830fecbf501d00bda99eff8efe608ad16a10d0"
+    },
+    {
       "path": "next/tests/unit/native-audio-shutdown.test.ts",
       "bytes": 4872,
       "sha256": "a35cea69842188689dfd9b2726faf5b9cf93c25ee276014f61c1e1165233ea9c"
     },
     {
       "path": "next/tests/unit/native-bootstrap.test.ts",
-      "bytes": 4212,
-      "sha256": "6a3d77ba6af40f67aadebf3e94b4cc0de5bbae73c4d27e8910f96e6c46c76c36"
+      "bytes": 4324,
+      "sha256": "81d8c571d10b677d3b30215de14b7894ef64dd1924db6ae632ca9dd753be0071"
     },
     {
       "path": "next/tests/unit/native-capabilities.test.ts",

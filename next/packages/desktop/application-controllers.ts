@@ -10,6 +10,7 @@ import { createNativeExport } from "./native-export.ts";
 import { createNativeReminders } from "./native-reminders.ts";
 import { createNativeSystemAudio } from "./system-audio/native.ts";
 import { writeFileSync } from "node:fs";
+import { nativeDistribution } from "./distribution.ts";
 import {
   nativeEvent,
   nativeWindows,
@@ -67,6 +68,7 @@ export function createNativeControllers(
       overlayVisible: Boolean(context.overlay?.isVisible()),
       failedShortcuts: context.failedShortcuts,
       platform: context.process.platform,
+      distribution: nativeDistribution(context.process),
       arch: context.process.arch,
       version: app.getVersion(),
       deployment: context.deployment,
@@ -104,6 +106,11 @@ export function createNativeControllers(
     apply: layout.apply,
     tray: views.tray,
     interactive,
+    assertLoginChange: () => {
+      if (nativeDistribution(context.process).startup === "windows-settings")
+        throw Error(nativeLocale(context, "A inicialização deste pacote é gerenciada pelo Windows.",
+          "Startup for this package is managed by Windows.", "Windows administra el inicio de este paquete."));
+    },
     loginSupported: () => app.isPackaged,
     login: (openAtLogin) =>
       app.setLoginItemSettings({

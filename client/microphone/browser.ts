@@ -3,10 +3,10 @@ export function diagnosticPlatform(options: DiagnosticOptions) {
   const supplied = options.clock ?? {},
     timer =
       supplied.setTimeout ??
-      ((callback, delay) => globalThis.setTimeout(callback, delay)),
+      ((callback, delay) => globalThis.window.setTimeout(callback, delay)),
     clear =
       supplied.clearTimeout ??
-      ((identifier) => globalThis.clearTimeout(identifier)),
+      ((identifier) => globalThis.window.clearTimeout(identifier)),
     now = supplied.now ?? (() => globalThis.performance?.now() ?? Date.now());
   const clock: DiagnosticClock = {
     setTimeout: timer,

@@ -1,6 +1,7 @@
 import type { ApplicationDesktop } from "./model.js";
 import type { CommandSettings } from "../commands/model.js";
 import { record, text } from "../legacy-web/validation.js";
+import { readDistribution } from "../platform/distribution.js";
 
 function settings(value: unknown): CommandSettings {
   const input = record(value),
@@ -61,6 +62,7 @@ export function applicationDesktop(value: unknown): ApplicationDesktop {
     throw Error("Estado nativo de acompanhamento inválido.");
   return {
     ...item,
+    ...(item.distribution === undefined ? {} : { distribution: readDistribution(item.distribution) }),
     settings: settings(item.settings),
     failedShortcuts: item.failedShortcuts,
     ...(active === undefined ? {} : { active }),

@@ -61,6 +61,8 @@ export function createApplicationPresentation(ports: PresentationPorts) {
     const content = renderCompatibilitySettings({
       settingsTab: state.settingsTab,
       settings: state.desktop.settings,
+      ...(state.desktop.distribution ? { distribution: state.desktop.distribution } : {}),
+      uiLocale: ports.locale(),
       failedShortcuts: state.desktop.failedShortcuts,
       preferences: state.prefs,
       health: state.health,

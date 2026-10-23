@@ -1,12 +1,14 @@
 import type { PanelState } from "./state.js";
 import { heading, setting } from "./controls.js";
+import { platformMessages } from "../platform/messages.js";
 
 export function renderGeneralSettings(s: PanelState) {
   const { desktop, esc, button, toggle } = s,
     d = desktop.settings;
+  const managed = desktop.distribution?.channel === "msix", platform = platformMessages(s.uiLocale);
   return `${heading("Geral", "Personalize como o Orvunia funciona para você")}
 <div class="preferences-group main-preferences">
-${setting(s, "Versão do Orvunia", `Você está usando o Orvunia ${esc(desktop.version || "4.5.0")}`, '<button class="btn version-update-button" data-action="check-updates">Verificar atualizações</button>', "download")}
+${setting(s, "Versão do Orvunia", `Você está usando o Orvunia ${esc(desktop.version || "4.5.0")}`, managed ? `<span data-i18n-skip>${button(platform.updates, "check-updates")}</span>` : '<button class="btn version-update-button" data-action="check-updates">Verificar atualizações</button>', "download")}
 ${setting(s, "Proteção de captura", d.protected ? "A janela é excluída das capturas compatíveis do Windows." : "A janela está visível nas capturas de tela.", toggle("protected", d.protected), "eye")}
 ${setting(s, "Assistente entre reuniões", "Converse com o Orvunia fora das suas reuniões.", toggle("ambientChat", d.ambientChat), "headphones")}
 ${setting(s, "Tema", "Use o tema claro, escuro ou o mesmo do sistema.", `<select data-desktop-select="theme" aria-label="Tema"><option value="system" ${d.theme === "system" ? "selected" : ""}>Sistema</option><option value="light" ${d.theme === "light" ? "selected" : ""}>Claro</option><option value="dark" ${d.theme === "dark" ? "selected" : ""}>Escuro</option></select>`, d.theme === "light" ? "sun" : "palette")}
@@ -34,7 +36,7 @@ ${setting(s, "Usar contexto da tela", "Inclua uma nova captura antes de pedir um
 ${setting(s, "Respostas automáticas", "Sugestões com base nas novas falas do entrevistador.", toggle("autoAnswer", d.autoAnswer), "spark")}
 ${setting(s, "Evitar roubar foco", "Mantenha o teclado no aplicativo em que está trabalhando.", toggle("noFocus", d.noFocus), "cursor")}
 ${setting(s, "Passar cliques", "Interaja com o que está atrás da janela flutuante.", toggle("clickthrough", d.clickthrough), "cursor")}
-${setting(s, "Abrir ao iniciar o Windows", "Tenha o assistente pronto ao entrar no computador.", toggle("launchAtLogin", d.launchAtLogin), "play")}
+${setting(s, "Abrir ao iniciar o Windows", managed ? `<span data-i18n-skip>${esc(platform.startup)}</span>` : "Tenha o assistente pronto ao entrar no computador.", managed ? `<span data-i18n-skip>${button(platform.manage, "manage-startup")}</span>` : toggle("launchAtLogin", d.launchAtLogin), "play")}
 ${setting(s, "Opacidade da superfície", `${d.opacity}% — o texto permanece opaco e nítido.`, `<input type="range" min="45" max="100" value="${d.opacity}" data-opacity aria-label="Opacidade">`, "sun")}
 ${setting(s, "Posição da janela", "Mova para perto da câmera ou para o cursor.", `${button("Câmera", "camera")}${button("Cursor", "cursor")}`, "move")}
 </div>${s.renderGazeSettings?.() || ""}</details>`;

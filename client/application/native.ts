@@ -40,6 +40,7 @@ export type RawNative = Record<
   onAuxiliary?: (callback: (value: unknown) => void) => () => void;
   copy?: (value: string) => Promise<unknown>;
   openSupportReport?: (value: { body: string }) => Promise<unknown>;
+  openWindowsManagement?: (action: "startup" | "updates") => Promise<unknown>;
   modelImport?: (value: { requestId: string; catalogId: string; revision: string }) => Promise<unknown>;
   repository?: (value: unknown) => Promise<unknown>;
   systemAudio?: (value: unknown) => Promise<unknown>;
@@ -149,6 +150,7 @@ export function createApplicationNative(
     reminders: (value: unknown) => raw.reminders(value),
     openExternal: (url: string) => raw.openExternal(url),
     ...(raw.openSupportReport ? { openSupportReport: (value: { body: string }) => raw.openSupportReport!(value) } : {}),
+    ...(raw.openWindowsManagement ? { openWindowsManagement: (action: "startup" | "updates") => raw.openWindowsManagement!(action) } : {}),
     openUpdate: (url: string) => raw.openUpdate(url),
     gaze: (value: { enabled: boolean } | Point) => raw.gaze(value),
     onEvent(

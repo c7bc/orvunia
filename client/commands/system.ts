@@ -1,4 +1,5 @@
 import type { CommandContext } from "./ports.js";
+import { platformMessages } from "../platform/messages.js";
 export async function runSystemCommands(
   context: CommandContext,
   key: string,
@@ -29,7 +30,17 @@ export async function runSystemCommands(
       ports.render();
       return true;
     case "check-updates":
+      if (browser.desktop.distribution?.updates === "windows-store") {
+        if (!ports.native?.openWindowsManagement) throw Error(platformMessages(String(browser.desktop.settings.uiLocale || "pt-BR")).unavailable);
+        await ports.native.openWindowsManagement("updates");
+        return true;
+      }
       await ports.checkUpdates();
+      return true;
+    case "manage-startup":
+      if (browser.desktop.distribution?.startup !== "windows-settings" || !ports.native?.openWindowsManagement)
+        throw Error(platformMessages(String(browser.desktop.settings.uiLocale || "pt-BR")).unavailable);
+      await ports.native.openWindowsManagement("startup");
       return true;
     case "onboarding":
       await ports.welcome.openOnboarding();

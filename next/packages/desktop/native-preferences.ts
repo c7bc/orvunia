@@ -10,6 +10,7 @@ export function createNativePreferences<State>(ports: {
   apply(): void;
   tray(): void;
   interactive(): void;
+  assertLoginChange?(): void;
   loginSupported(): boolean;
   login(enabled: boolean): void;
   ambient(enabled: boolean): void;
@@ -21,7 +22,7 @@ export function createNativePreferences<State>(ports: {
       const previous = ports.settings(),
         next = nativePreferenceUpdate(previous, value);
       const loginChanged = next.launchAtLogin !== previous.launchAtLogin;
-      if (loginChanged) ports.interactive();
+      if (loginChanged) { ports.interactive(); ports.assertLoginChange?.(); }
       const loginSupported = loginChanged && ports.loginSupported();
       if (loginSupported) ports.login(next.launchAtLogin);
       try {

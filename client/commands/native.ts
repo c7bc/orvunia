@@ -14,5 +14,6 @@ export interface CommandNative {
   chatVisibility?(visible: boolean): Promise<CommandDesktop>;
   shortcutReset(name: string): Promise<CommandDesktop>;
   openUpdate(url: string): Promise<unknown>;
+  openWindowsManagement?(action: "startup" | "updates"): Promise<unknown>;
   source(id: string): Promise<unknown>;
 }
