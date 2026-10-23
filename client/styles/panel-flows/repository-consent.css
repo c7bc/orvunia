@@ -1,0 +1,22 @@
+.modal.repository-dialog {
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 24px;
+  overflow: auto;
+}
+.repository-dialog .modal-head { margin-bottom: 16px; }
+.repository-dialog .modal-head h2 { font-size: 18px; line-height: 1.35; }
+.repository-dialog [data-repository-view] { display: grid; gap: 18px; }
+.repository-dialog p { margin: 0; color: var(--foreground); font-size: 14px; line-height: 1.6; }
+.repository-dialog .context-note { color: var(--muted-foreground); font-size: 12px; }
+.repository-file-review summary { display: flex; justify-content: space-between; gap: 12px; cursor: pointer; font-size: 13px; }
+.repository-file-review small { color: var(--muted-foreground); white-space: nowrap; }
+.repository-dialog .repository-preview { margin-block: 12px 0; }
+.repository-dialog .repository-preview-summary { display: none; }
+.repository-dialog .repository-file-list { max-height: 160px; margin-block: 0; font-size: 12px; }
+.repository-dialog .form-footer,
+.repository-secondary-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin: 0; }
+.repository-secondary-actions .btn { padding: 6px 9px; font-size: 12px; }
+@media (max-width: 480px) {
+  .modal.repository-dialog { padding: 18px; }
+}

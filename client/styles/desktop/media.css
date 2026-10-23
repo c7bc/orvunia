@@ -1,0 +1,119 @@
+
+@media (max-width: 680px) {
+  .shell {
+    grid-template-columns: 60px 1fr;
+  }
+  .brand {
+    padding: 0 5px;
+  }
+  .brand span,
+  .nav span,
+  .sidebar .nav-label,
+  .sidebar .user-card {
+    display: none;
+  }
+  .sidebar .nav {
+    padding: 12px;
+    justify-content: center;
+  }
+  .content {
+    padding: 24px 20px;
+  }
+  .mode-grid,
+  .fields,
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+  .settings-layout {
+    display: block;
+  }
+  .settings-nav {
+    display: flex;
+    overflow: auto;
+    gap: 4px;
+    margin-bottom: 25px;
+  }
+  .settings-nav .nav {
+    width: auto;
+    white-space: nowrap;
+  }
+  .onboarding-strip {
+    flex-wrap: wrap;
+  }
+  .mode-icon {
+    margin-bottom: 15px;
+  }
+  .session-row .actions {
+    opacity: 1;
+  }
+  .session-row > .badge {
+    display: none;
+  }
+}
+
+body {
+  color: var(--foreground);
+}
+body.overlay,
+body.control {
+  color: #f0f1f4;
+}
+
+body.browser-preview {
+  background: #0e1118;
+}
+.browser-preview .overlay-shell {
+  max-width: 560px;
+  height: min(710px, calc(100vh - 24px));
+  margin: 12px auto;
+  padding: 0;
+}
+.browser-preview .assistant {
+  box-shadow: 0 10px 70px #0005;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #d4a5ee;
+}
+.hljs-string,
+.hljs-regexp {
+  color: #a8cfab;
+}
+.hljs-number,
+.hljs-symbol {
+  color: #e1bb94;
+}
+.hljs-title,
+.hljs-title.function_,
+.hljs-built_in {
+  color: #8ac2ed;
+}
+.hljs-comment {
+  color: #727e90;
+  font-style: italic;
+}
+.hljs-params,
+.hljs-variable {
+  color: #c6d3e5;
+}
+.modal .markdown {
+  color: inherit;
+}
+.followup-preview { max-height:240px; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; padding:16px; background:var(--muted); border:1px solid var(--border); border-radius:8px; font:inherit; }
+.modal:has(#followup-draft),.modal:has(.followup-preview) { max-width:560px; }
+.modal:has(.followup-preview) dl { display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 12px; }
+.modal:has(.followup-preview) dd { margin:0;overflow-wrap:anywhere; }
+/* Shared assistant interaction timing, independently implemented from the motion inventory. */
+.assistant :is(button,textarea,select), .control-pill button {
+  transition: background-color 150ms cubic-bezier(.4,0,.2,1),color 150ms cubic-bezier(.4,0,.2,1),border-color 150ms cubic-bezier(.4,0,.2,1),box-shadow 150ms cubic-bezier(.4,0,.2,1),transform 200ms ease-out;
+}
+.control-pill button:hover { transform:scale(1.03); }
+.control-pill button:active,.assistant button:active { transform:scale(.97); }
+.assistant .overlay-menu { transform-origin:bottom center; }
+.assistant :is(button,textarea,select):focus-visible { outline:0; box-shadow:0 0 0 3px #6cddb480; }
+@media(prefers-reduced-motion:reduce) {
+  .assistant *, .control-pill *, #dialogs * { animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important; }
+  .control-pill button:hover,.control-pill button:active,.assistant button:active { transform:none; }
+}

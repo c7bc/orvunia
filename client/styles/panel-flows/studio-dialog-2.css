@@ -1,0 +1,171 @@
+
+.studio-dialog .billing-local-card p {
+  color: #ffffffd9;
+}
+.studio-dialog .billing-local-card ul {
+  list-style: none;
+  padding: 16px 0;
+  border-block: 1px solid #ffffff30;
+  margin: 20px 0;
+}
+.studio-dialog .billing-local-card li {
+  font-size: 13px;
+  line-height: 22px;
+  margin: 6px 0;
+}
+.studio-dialog .billing-local-card li:before {
+  content: "✓";
+  margin-right: 10px;
+}
+.studio-dialog .billing-local-card .text-button {
+  color: #fff;
+}
+.studio-dialog .billing-local-card + .settings-footnote {
+  margin-top: 20px;
+  line-height: 1.7;
+}
+.search-dialog {
+  width: 480px;
+  border-radius: 16px;
+  padding: 8px;
+  max-height: 334px;
+}
+.search-dialog > .modal-head {
+  display: none;
+}
+.search-dialog .command-input {
+  min-height: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  background: var(--muted);
+  border-radius: 9px;
+  padding: 0 8px;
+  gap: 7px;
+}
+.search-dialog .command-input > input {
+  font-size: 13px;
+  line-height: 20px;
+  padding: 0;
+}
+.search-dialog .command-input > kbd {
+  display: none;
+}
+.search-dialog .command-results {
+  max-height: calc(334px - 56px);
+  margin-top: 4px;
+  overflow: auto;
+}
+.search-dialog .command-results > p {
+  padding: 8px;
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.search-dialog .command-results > button {
+  min-height: 32px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  gap: 12px;
+}
+@media (max-width: 850px) {
+  .studio-dialog {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+  .modes-dialog .dialog-content {
+    padding: 24px;
+  }
+  .mode-editor-title {
+    gap: 5px;
+  }
+  .modes-dialog .mode-editor-title .mode-name-input {
+    font-size: 25px;
+  }
+  .studio-dialog .preference-copy {
+    gap: 10px;
+  }
+  .studio-dialog .preference-control select {
+    min-width: 120px;
+    max-width: 160px;
+  }
+  .detail-toolbar .summary-actions {
+    gap: 8px;
+  }
+}
+@media (max-width: 660px) {
+  .studio-dialog-backdrop {
+    padding: 16px;
+  }
+  .studio-dialog {
+    width: 100%;
+    height: calc(100dvh - 32px);
+    grid-template-columns: 160px minmax(0, 1fr);
+  }
+  .studio-dialog .dialog-content {
+    padding: 18px;
+  }
+  .studio-dialog .dialog-nav {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  .studio-dialog .preference-row {
+    flex-wrap: wrap;
+  }
+  .studio-dialog .preference-control {
+    margin-left: 58px;
+  }
+  .modes-dialog .mode-editor-title {
+    flex-wrap: wrap;
+  }
+  .modes-dialog .mode-editor-title .mode-name-input {
+    min-width: 90px;
+  }
+  .mode-template-row {
+    gap: 12px;
+  }
+  .mode-template-row small {
+    font-size: 12px;
+  }
+  .release-meta {
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  .release-version-menu {
+    margin-left: 0;
+  }
+  .release-document > h1 {
+    font-size: 29px;
+    line-height: 37px;
+  }
+  .detail-toolbar {
+    flex-wrap: wrap;
+  }
+  .session-document {
+    width: calc(100% - 32px);
+  }
+  .meeting-bottom-bar .resume-meeting {
+    font-size: 10px;
+    padding: 0 8px;
+  }
+}
+/* Shared dialog refinements preserve keyboard and audio alignment. */
+.studio-dialog .version-update-button {
+  min-width: 142px;
+  font-size: 13px;
+}
+.mode-name-save {
+  opacity: 0;
+}
+.mode-editor-title:focus-within .mode-name-save,
+.mode-name-save:focus-visible {
+  opacity: 1;
+}
+.automatic-mode-overview > .mode-section {
+  margin-bottom: 20px;
+}
+.automatic-mode-overview > .mode-section > h2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}

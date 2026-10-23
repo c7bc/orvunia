@@ -1,0 +1,179 @@
+
+.mode-options > div {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  min-width: 150px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  z-index: 5;
+  box-shadow: 0 4px 12px #0003;
+}
+.mode-options button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  width: 100%;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.mode-options button:hover {
+  background: var(--muted);
+}
+.modes-dialog .mode-section {
+  margin: 0 0 24px;
+}
+.modes-dialog .mode-section > label,
+.modes-dialog .mode-section > .section-head h2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+.modes-dialog .mode-section .section-head {
+  margin: 0 0 12px;
+  min-height: 20px;
+}
+.modes-dialog .real-time-prompt > label {
+  display: block;
+  margin-bottom: 12px;
+}
+.modes-dialog .prompt-editor {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: visible;
+  margin: 0;
+  background: color-mix(in oklab, var(--muted) 25%, var(--background));
+  height: 254px;
+}
+.modes-dialog .prompt-editor > textarea {
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  border: 0;
+  box-shadow: none;
+  border-radius: 12px 12px 0 0;
+  background: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 12px;
+  resize: none;
+}
+.prompt-savebar {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  background: color-mix(in oklab, var(--background) 65%, transparent);
+  border-radius: 0 0 12px 12px;
+}
+.prompt-savebar > .btn {
+  height: 32px;
+  min-width: 54px;
+  font-size: 12px;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+.prompt-format-tools {
+  position: relative;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.prompt-format-tools > summary {
+  cursor: pointer;
+  opacity: 0;
+}
+.prompt-editor:focus-within .prompt-format-tools > summary,
+.prompt-editor:hover .prompt-format-tools > summary,
+.prompt-format-tools[open] > summary {
+  opacity: 1;
+}
+.prompt-format-tools > .editor-toolbar {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: max-content;
+  padding: 4px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 6px;
+  z-index: 2;
+}
+.modes-dialog .reference-empty {
+  min-height: 94px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin: 0;
+}
+.modes-dialog .reference-empty > p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--muted-foreground);
+}
+.modes-dialog .reference-empty > .btn {
+  height: 32px;
+  border-radius: 7px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.modes-dialog .mode-note-section > .section-head > .btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  height: 20px;
+}
+.modes-dialog .note-section-editor {
+  margin: 8px 0;
+  border-radius: 12px;
+}
+.modes-dialog .note-section-title {
+  padding: 10px 12px 0 16px;
+}
+.modes-dialog .note-section-title input {
+  font-size: 13px;
+  line-height: 18px;
+  padding: 0;
+  font-weight: 600;
+}
+.modes-dialog .note-section-title .icon-btn {
+  width: 20px;
+  height: 20px;
+}
+.modes-dialog .note-section-editor textarea {
+  padding: 2px 16px 12px;
+  font-size: 12px;
+  line-height: 17px;
+  min-height: 35px;
+}
+.modes-dialog .notes-template-empty {
+  padding: 16px;
+  min-height: 62px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 13px;
+}
+.modes-dialog .notes-template-empty > span {
+  font-size: 11px;
+}
+.mode-additional-options {
+  border-top: 1px solid var(--border);
+  margin-top: 30px;
+  padding-top: 18px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}

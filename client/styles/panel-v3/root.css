@@ -1,0 +1,172 @@
+/* Native titlebar metrics remain stable while the workspace has its own identity. */
+:root {
+
+    font-size: 16px;
+
+    font-family: Geist, "Segoe UI", sans-serif;
+
+    --surface-alpha: 1;
+
+}
+
+html,
+body,
+#app {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
+
+}
+
+body {
+
+    font-size: 14px;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+
+}
+
+html[data-view="overlay"],
+html[data-view="control"],
+html[data-view="overlay"] body,
+html[data-view="control"] body,
+html[data-view="overlay"] #app,
+html[data-view="control"] #app {
+
+    background: transparent !important;
+
+}
+
+body.dark-panel {
+
+    --muted-foreground: var(--identity-light-secondary);
+
+}
+
+.dashboard-window {
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: var(--sidebar);
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: var(--foreground);
+
+}
+
+.dashboard-titlebar {
+
+    height: 36px;
+
+    min-height: 36px;
+
+    padding: 0 16px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    -webkit-app-region: drag;
+
+    user-select: none;
+
+}
+
+.dashboard-titlebar button,
+.dashboard-titlebar input {
+
+    -webkit-app-region: no-drag;
+
+}
+
+.history-navigation {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.history-navigation .icon-btn {
+
+    width: 23px;
+
+    height: 23px;
+
+    margin-top: 3px;
+
+    color: var(--muted-foreground);
+
+}
+
+.global-search {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    top: 6px;
+
+    width: 45vw;
+
+    max-width: 470px;
+
+    height: 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: var(--muted);
+
+    color: var(--muted-foreground);
+
+    padding: 0 8px;
+
+    font-size: 11px;
+
+    box-shadow: 0 1px 1px #00000003;
+
+}
+
+.global-search span {
+
+    flex: 1;
+
+    text-align: left;
+
+}
+
+.global-search kbd {
+
+    background: transparent;
+
+    border: 0;
+
+    font-size: 10px;
+
+    padding: 0;
+
+}

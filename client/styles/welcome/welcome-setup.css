@@ -1,0 +1,175 @@
+
+.welcome-setup {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.welcome-setup > h1 {
+  font-size: 31px;
+  margin-bottom: 14px;
+}
+.welcome-setup > p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.welcome-mode-choices {
+  margin: 10px 0 3px;
+  border-top: 1px solid #eee;
+}
+.welcome-mode-choices .welcome-choice {
+  min-height: 61px;
+  padding: 10px 11px;
+}
+.welcome-mode-choices .welcome-choice-copy {
+  padding-bottom: 10px;
+}
+.welcome-mode-choices .welcome-choice strong {
+  font-size: 13px;
+}
+.welcome-mode-choices .welcome-choice-copy > span {
+  font-size: 11px;
+}
+.welcome-mode-choices .welcome-choice.selected {
+  background: var(--selected);
+}
+.welcome-mode-choices .welcome-choice.selected i {
+  color: var(--primary);
+}
+.welcome-setup label {
+  margin: 7px 0;
+}
+.welcome-setup .welcome-nav {
+  margin-top: 20px;
+}
+.welcome-setup .welcome-link {
+  margin-top: 13px;
+  font-size: 10px;
+}
+.welcome-provider-options {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 25px;
+}
+.welcome-provider-options > div {
+  position: relative;
+  padding: 0 0 17px 43px;
+  border-bottom: 1px solid #eee;
+}
+.welcome-provider-options > div > svg {
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  color: var(--primary);
+}
+.welcome-provider-options h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+.welcome-provider-options p {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.5;
+  margin: 0;
+}
+.welcome-provider-options > small {
+  color: #a0a0a7;
+  font-size: 10px;
+  text-align: center;
+  margin-top: -8px;
+}
+.welcome-info {
+  text-align: center;
+  border: 1px solid #e8e8ec;
+  border-radius: 10px;
+  padding: 32px 22px;
+  background: #fafbfe;
+  margin: 25px 0 10px;
+}
+.welcome-info > span {
+  font-size: 30px;
+  color: var(--primary);
+}
+.welcome-info h3 {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 12px 0;
+}
+.welcome-info p {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+}
+.welcome-tour {
+  text-align: center;
+}
+.welcome-tour > small {
+  color: #a0a0a5;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.welcome-tour > h1 {
+  font-size: 36px;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  margin: 0 0 19px;
+}
+.welcome-tour > p {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 350px;
+  margin: 0 auto 40px;
+}
+.welcome-demo-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #f0f0f2;
+  border-radius: 7px;
+  width: 100%;
+  height: 44px;
+  font-size: 13px;
+  color: #aaa;
+}
+.welcome-demo-trigger > span {
+  background: var(--action);
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+}
+.welcome-demo-feedback {
+  border: 1px solid #e7edf7;
+  background: #fbfcff;
+  border-radius: 8px;
+  padding: 15px 18px;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.6;
+}
+.welcome-tour > .welcome-link {
+  position: fixed;
+  bottom: 47px;
+  left: 245px;
+  margin: 0;
+}
+.welcome-tutorial {
+  border: 1px solid #e9e9ec;
+  border-radius: 9px;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.welcome-tutorial > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 11px;
+  color: #888;
+}

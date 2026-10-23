@@ -1,0 +1,187 @@
+.gaze-settings {
+  margin: 28px 0;
+  padding: 23px 0;
+  border-top: 1px solid var(--border, #dedfda);
+}
+.gaze-setting-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.gaze-eye-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--control-border, #7d8b80);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.gaze-setting-heading > div {
+  flex: 1;
+}
+.gaze-setting-heading h3 {
+  font-size: 13px;
+  font-weight: 550;
+  margin: 0 0 5px;
+}
+.gaze-setting-heading h3 small {
+  font-size: 10px;
+  margin-left: 5px;
+  background: #f3f0e9;
+  color: #73551f;
+  border: 1px solid #e8e0cf;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-weight: 400;
+}
+.gaze-setting-heading p {
+  font-size: 12px;
+  color: var(--muted-foreground, #626a65);
+  margin: 0;
+}
+.gaze-state {
+  font-size: 11px;
+  color: var(--muted-foreground, #626a65);
+  white-space: nowrap;
+}
+.gaze-state.active {
+  color: var(--primary, #126c50);
+}
+.gaze-settings > p {
+  font-size: 12px;
+  color: var(--muted-foreground, #626a65);
+  line-height: 1.65;
+}
+.gaze-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 17px 0;
+}
+.gaze-buttons .btn {
+  font-size: 12px;
+}
+.gaze-buttons .btn.primary {
+  background: var(--action, #126c50);
+  color: var(--action-foreground, #fff);
+}
+.gaze-buttons .btn.primary:hover {
+  background: var(--action-hover, #095c4a);
+}
+.gaze-settings .gaze-caption {
+  font-size: 12px;
+  color: var(--muted-foreground, #626a65);
+}
+.gaze-settings .gaze-error {
+  font-size: 11px;
+  padding: 10px 12px;
+  border: 1px solid #efdbd5;
+  border-radius: 7px;
+  color: #9a3f2b;
+  background: #fff7f3;
+}
+.gaze-local-video {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+.gaze-calibration {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+  width: 100vw;
+  height: 100dvh;
+  color: #222;
+  background: #fafafa;
+  font-family: Geist, Arial, sans-serif;
+  overflow: hidden;
+}
+.gaze-calibration::backdrop {
+  background: #fafafa;
+}
+.gaze-calibration header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 30px;
+  font-size: 16px;
+  position: absolute;
+  inset: 0 0 auto;
+}
+.gaze-calibration header > span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.gaze-calibration header small {
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  color: #626a65;
+}
+.gaze-calibration button {
+  font:
+    11px Geist,
+    Arial,
+    sans-serif;
+  padding: 8px 11px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+}
+.gaze-instructions {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 500px;
+  width: 70%;
+  pointer-events: none;
+}
+.gaze-instructions h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+}
+.gaze-instructions p {
+  font-size: 12px;
+  color: #626a65;
+}
+.gaze-instructions strong {
+  display: block;
+  font-size: 11px;
+  color: #626a65;
+  font-weight: 400;
+  margin-top: 14px;
+}
+.gaze-target {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 12px #e6e6e660;
+  transition:
+    left 0.25s ease,
+    top 0.25s ease;
+  pointer-events: none;
+}
+.gaze-target span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #222;
+  box-shadow: 0 0 0 4px #f0f0f0;
+}

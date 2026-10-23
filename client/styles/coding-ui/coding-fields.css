@@ -1,0 +1,194 @@
+.coding-fields {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+.coding-prefetch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+}
+.coding-prefetch input {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.coding-prefetch-note {
+  font-size: 11px !important;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+.coding-load-older {
+  display: block;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: inherit;
+  padding: 6px 10px;
+  font-size: 11px;
+  margin: 0 auto 12px;
+}
+[data-tell-more-state="ready"] {
+  color: var(--primary);
+}
+.coding-fields label {
+  font-size: 12px;
+  font-weight: 500;
+}
+.coding-fields input,
+.coding-fields select,
+.coding-fields textarea,
+.generated-recap-fallback {
+  width: 100%;
+  border: 1px solid var(--control-border, #7d8b80);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--background, #fff);
+  color: inherit;
+  font: inherit;
+}
+.generated-recap-fallback {
+  resize: vertical;
+  line-height: 1.5;
+  min-height: 180px;
+}
+.coding-fields textarea[name="code"] {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.coding-capture-queue {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.coding-capture-queue article {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+.coding-capture-queue img {
+  width: 100%;
+  height: 112px;
+  object-fit: contain;
+  border: 1px solid var(--border, #e4e4e7);
+  border-radius: 8px;
+}
+.coding-capture-queue span {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.coding-capture-queue article > div {
+  display: flex;
+  gap: 4px;
+}
+.coding-capture-queue .btn {
+  padding: 4px 7px;
+  min-height: 28px;
+  font-size: 11px;
+}
+.coding-response-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 8px 0 2px;
+}
+.coding-response-actions button {
+  background: transparent;
+  border: 1px solid var(--border, #e4e4e7);
+  color: inherit;
+  border-radius: 7px;
+  padding: 4px 7px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.coding-response-actions button:hover {
+  background: var(--muted, #f4f4f5);
+}
+.coding-attempt {
+  border-top: 1px solid var(--border, #e4e4e7);
+  margin-top: 12px;
+  padding-top: 10px;
+}
+.coding-attempt > p {
+  font-size: 12px;
+  color: var(--muted-foreground, #71717a);
+}
+.coding-reuse-capture {
+  display: block;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  padding: 0 8px 8px;
+  font: inherit;
+  font-size: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.coding-reuse-capture:focus-visible {
+  outline: 2px solid var(--ring, #a1a1aa);
+  outline-offset: -2px;
+}
+.coding-pending {
+  font-size: 10px !important;
+  padding: 2px 5px !important;
+}
+.coding-stream-status {
+  font-size: 11px;
+  opacity: 0.7;
+}
+.coding-fields :focus-visible,
+.coding-response-actions button:focus-visible,
+.coding-capture-queue button:focus-visible {
+  outline: 2px solid var(--ring, #a1a1aa);
+  outline-offset: 2px;
+}
+.repository-dialog [data-repository-view],
+.repository-dialog form {
+  display: grid;
+  gap: 12px;
+}
+.repository-dialog textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--control-border, var(--border));
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  line-height: 1.5;
+}
+.repository-dialog textarea[readonly] {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+}
+.repository-dialog code,
+.repository-dialog li {
+  overflow-wrap: anywhere;
+}
+.repository-dialog p,
+.repository-dialog li {
+  color: var(--foreground);
+}
+.repository-dialog .context-note {
+  color: var(--muted-foreground);
+}
+.coding-response-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+@media (max-width: 480px) {
+  .coding-capture-queue {
+    grid-template-columns: 1fr;
+  }
+  .coding-capture-queue img {
+    height: 140px;
+  }
+}

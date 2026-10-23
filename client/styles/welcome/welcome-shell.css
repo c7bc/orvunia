@@ -1,0 +1,176 @@
+.welcome-shell,
+.welcome-account {
+  --welcome-bg: var(--identity-paper);
+  --welcome-surface: var(--identity-paper);
+  --welcome-soft: var(--identity-soft);
+  --welcome-fg: var(--identity-ink);
+  --welcome-secondary: var(--identity-secondary);
+  --welcome-muted: #66776b;
+  --welcome-border: var(--identity-border);
+  --welcome-hover: #e8eee5;
+  --welcome-input: var(--identity-paper);
+  --welcome-focus: var(--identity-jade);
+  --welcome-error-bg: #fff8f5;
+  --welcome-error-border: #f4dcd5;
+  --welcome-error-text: #a54837;
+  color-scheme: light;
+  --welcome-controls-duration: 100ms;
+  --welcome-focus-duration: 200ms;
+  --welcome-menu-duration: 280ms;
+  --welcome-motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.welcome-account {
+  --welcome-fg: #212126;
+  --welcome-muted: #74747d;
+  --welcome-border: #00000026;
+  --welcome-account-primary: var(--action);
+  --welcome-account-primary-fg: #fff;
+}
+:is(body.dark-panel, body.dark, html.dark, [data-theme="dark"])
+  :is(.welcome-shell, .welcome-account) {
+  --welcome-bg: var(--identity-charcoal);
+  --welcome-surface: var(--identity-charcoal-rail);
+  --welcome-soft: var(--identity-charcoal-soft);
+  --welcome-fg: var(--identity-light);
+  --welcome-secondary: #bfcdc1;
+  --welcome-muted: var(--identity-light-secondary);
+  --welcome-border: var(--identity-dark-border);
+  --welcome-hover: #2a3a2e;
+  --welcome-input: #1e2921;
+  --welcome-focus: var(--identity-mint);
+  --welcome-error-bg: #332326;
+  --welcome-error-border: #684044;
+  --welcome-error-text: #f3aaa8;
+  color-scheme: dark;
+}
+:is(body.dark-panel, body.dark, html.dark, [data-theme="dark"])
+  .welcome-account {
+  --welcome-surface: #212126;
+  --welcome-input: #26262b;
+  --welcome-fg: #fff;
+  --welcome-border: #ffffff26;
+  --welcome-account-primary: var(--action);
+  --welcome-account-primary-fg: var(--action-foreground);
+}
+.welcome-shell {
+  height: 100dvh;
+  min-height: 540px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(440px, 48%) minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--welcome-bg);
+  color: var(--welcome-fg);
+  font-family: Geist, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+.welcome-shell * {
+  box-sizing: border-box;
+}
+.welcome-ui-language {
+  position: absolute;
+  z-index: 5;
+  top: 24px;
+  right: 28px;
+}
+.welcome-ui-language select {
+  padding: 5px 7px;
+  border: 1px solid var(--welcome-border);
+  border-radius: 10px;
+  background: var(--welcome-surface);
+  color: var(--welcome-secondary);
+  font: inherit;
+  font-size: 11px;
+}
+.welcome-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.welcome-main {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 48px;
+  background: var(--welcome-bg);
+  overflow-y: auto;
+}
+.welcome-introduction {
+  width: 100%;
+  max-width: 448px;
+  text-align: left;
+  transform: translateY(-20px);
+}
+.welcome-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+}
+.welcome-brand > span {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.welcome-introduction h1,
+.welcome-form h1 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: -1.25px;
+  margin: 18px 0 7px;
+}
+.welcome-introduction h1 {
+  color: var(--welcome-fg);
+}
+.welcome-introduction > p {
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--welcome-secondary);
+  font-weight: 500;
+  letter-spacing: -0.35px;
+  margin: 0;
+}
+.welcome-shell button,
+.welcome-shell input,
+.welcome-shell select {
+  font-family: inherit;
+}
+.welcome-primary {
+  width: 100%;
+  height: 44px;
+  border: 1px solid var(--action);
+  border-radius: 10px;
+  background: var(--action);
+  box-shadow: 0 2px 3px #00000012;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  cursor: pointer;
+  padding: 0 14px;
+}
+.welcome-primary:hover {
+  background: var(--action-hover);
+}
+.welcome-shell[class*="onboarding-"] .welcome-primary {
+  transition: background-color 150ms ease, border-color 150ms ease;
+}

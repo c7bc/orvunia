@@ -1,0 +1,13 @@
+export type Capability = "text" | "vision" | "transcription";
+export type CatalogModel = { id: string; revision: string; name: string; capabilities: Capability[];
+  maximumContext: number; files: { bytes: number }[]; source: string; evaluation: string;
+  format?: string; quantization?: string; license?: { name: string; url: string }; availability?: "retired" };
+export type Installation = { id: string; catalogId: string; catalogRevision: string; revision: number; state: string;
+  removal?: { requestId: string; expectedRevision: number } };
+export type ModelJob = { id: string; installationId: string; catalogId: string; catalogRevision: string; state: string; bytesDone: number;
+  bytesTotal: number; progressRevision: number; errorCode: string | null; retryable: boolean };
+export type ModelSnapshot = { catalog: CatalogModel[]; installations: Installation[];
+  jobs: ModelJob[]; hardware: { processors: number; totalMemoryBytes: number; freeDiskBytes: number | null };
+  runtimes: { installationId: string; healthy?: boolean }[];
+  compatibility: Record<string, { verdict: string; reasonCodes: string[] }> };
+export const activeJob = (job: ModelJob) => ["queued", "downloading", "verifying"].includes(job.state);

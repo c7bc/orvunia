@@ -1,0 +1,156 @@
+
+@keyframes welcome-editor-enter {
+  0%,
+  50% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes welcome-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes welcome-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-shell *,
+  .welcome-account *,
+  .welcome-shell *::before,
+  .welcome-account *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+:is(body.dark-panel, body.dark, html.dark, [data-theme="dark"])
+  .welcome-notice {
+  background: #21332b;
+  border-color: #385b49;
+  color: #a0d1b4;
+}
+
+@media (max-width: 1050px) {
+  .welcome-shell {
+    grid-template-columns: 52% minmax(0, 1fr);
+  }
+  .welcome-main {
+    padding: 40px;
+  }
+  .welcome-persona h1 {
+    font-size: 31px;
+    letter-spacing: -1px;
+  }
+  .welcome-demo-scene {
+    transform: translateY(-16px) scale(0.92);
+  }
+  .welcome-aside > h2 {
+    font-size: 27px;
+  }
+  .welcome-survey h1 {
+    font-size: 32px;
+  }
+  .welcome-chips button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .welcome-notes-preview {
+    height: 465px;
+  }
+  .welcome-footer {
+    left: 32px;
+    right: 32px;
+  }
+}
+@media (max-height: 690px) {
+  .welcome-main {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .welcome-reference-preview {
+    max-height: 450px;
+    margin-top: -50px;
+  }
+  .welcome-demo-scene {
+    transform: translateY(-16px) scale(0.88);
+  }
+  .welcome-meeting-card {
+    transform: scale(0.93);
+  }
+  .welcome-notes-preview {
+    height: 430px;
+    padding-top: 26px;
+  }
+  .welcome-notes-preview > h3 {
+    font-size: 18px;
+  }
+  .welcome-notes-preview > small {
+    margin-top: 17px;
+  }
+  .welcome-aside > h2 {
+    font-size: 25px;
+    bottom: 39px;
+  }
+  .welcome-demo-label {
+    bottom: 15px;
+  }
+  .welcome-survey {
+    max-height: 580px;
+    padding-top: 20px;
+  }
+  .welcome-survey h1 {
+    margin-bottom: 30px;
+  }
+  .welcome-survey hr {
+    margin: 20px 0;
+  }
+  .welcome-survey .welcome-nav {
+    padding-top: 20px;
+  }
+  .welcome-survey legend {
+    font-size: 14px;
+  }
+  .welcome-chips button {
+    min-height: 29px;
+    font-size: 11px;
+  }
+  .welcome-setup h1 {
+    font-size: 28px;
+  }
+  .welcome-setup .welcome-choices {
+    margin: 5px 0 0;
+  }
+  .welcome-setup .welcome-choice {
+    min-height: 52px;
+  }
+  .welcome-setup label {
+    margin: 5px 0;
+  }
+  .welcome-setup input,
+  .welcome-setup select {
+    height: 34px;
+  }
+  .welcome-setup .welcome-nav {
+    margin-top: 15px;
+  }
+  .welcome-introduction {
+    transform: translateY(-20px);
+  }
+  .welcome-introduction h1 {
+    font-size: 32px;
+  }
+  .welcome-footer {
+    bottom: 30px;
+  }
+}

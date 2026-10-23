@@ -1,0 +1,56 @@
+.welcome-shell {
+  grid-template-columns: minmax(440px, 50%) minmax(0, 1fr);
+}
+.welcome-introduction {
+  text-align: center;
+  max-width: 440px;
+}
+.welcome-brand {
+  justify-content: center;
+}
+.welcome-introduction h1 {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -1.2px;
+}
+.welcome-introduction > .welcome-primary {
+  margin: 30px auto 0;
+}
+.welcome-primary {
+  justify-content: center;
+  border-radius: 12px;
+}
+.welcome-aside {
+  background: linear-gradient(145deg, #e1edda, #f1f2e9 85%);
+  border-left: 0;
+}
+.welcome-grid {
+  opacity: 0.4;
+}
+.welcome-meeting-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 22px #203e271a;
+}
+.welcome-demo-control {
+  border-radius: 22px;
+  background: #292d32;
+}
+.welcome-preview {
+  border-radius: 18px;
+  background: #33383eea;
+}
+.welcome-aside > h2 {
+  font-size: 29px;
+  font-weight: 500;
+}
+.welcome-demo-label {
+  color: #626e62;
+}
+@media (max-width: 760px) {
+  .welcome-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .welcome-introduction h1 {
+    font-size: 32px;
+  }
+}

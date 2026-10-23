@@ -1,0 +1,180 @@
+
+@media (max-width: 660px) {
+  .meeting-bottom-bar .resume-meeting {
+    font-size: 10px;
+  }
+  .session-note-status {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .search-dialog:has(.command-results > .empty) {
+    transform: none;
+  }
+  .session-usage-messages pre {
+    max-width: 100%;
+    overflow: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .session-tab-pill {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Save errors use their own row so meeting controls remain aligned. */
+.detail-toolbar:has(
+  .session-note-status:is(
+    [data-note-state="error"],
+    [data-note-state="conflict"]
+  )
+) {
+  flex-wrap: wrap;
+}
+.session-note-status:is(
+  [data-note-state="error"],
+  [data-note-state="conflict"]
+) {
+  order: 3;
+  flex: 1 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 0;
+}
+.session-note-status:is([data-note-state="error"], [data-note-state="conflict"])
+  .session-note-message {
+  flex-basis: 100%;
+}
+.session-notes-action {
+  color: var(--primary);
+  padding: 2px 0;
+  font: inherit;
+  cursor: pointer;
+}
+.session-notes-action:hover {
+  text-decoration: underline;
+}
+.session-notes-action:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* 4.6 live transcript and post-session conversation variants. */
+.session-response-load {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.session-response-load:hover,
+.session-response-load:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.detail-transcript .speaker-self {
+  color: var(--primary) !important;
+}
+.transcript-voice-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--foreground) 70%, transparent);
+}
+.detail-transcript .transcript-pending-label {
+  color: color-mix(in oklab, var(--muted-foreground) 70%, transparent);
+  --transcript-highlight: oklch(from currentColor l c h / calc(alpha * 0.2));
+  --transcript-spread: calc(80px + 4ch);
+  --transcript-center: calc(50% + 10px);
+  --transcript-track: 200%;
+  background-image: linear-gradient(
+    105deg,
+    currentColor
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.5),
+    color-mix(in oklch, var(--transcript-highlight) 4%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.44),
+    color-mix(in oklch, var(--transcript-highlight) 17%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.37),
+    color-mix(in oklch, var(--transcript-highlight) 33%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.31),
+    color-mix(in oklch, var(--transcript-highlight) 50%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.25),
+    color-mix(in oklch, var(--transcript-highlight) 67%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.19),
+    color-mix(in oklch, var(--transcript-highlight) 83%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.12),
+    color-mix(in oklch, var(--transcript-highlight) 96%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * -0.06),
+    var(--transcript-highlight)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0),
+    color-mix(in oklch, var(--transcript-highlight) 96%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.06),
+    color-mix(in oklch, var(--transcript-highlight) 83%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.12),
+    color-mix(in oklch, var(--transcript-highlight) 67%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.19),
+    color-mix(in oklch, var(--transcript-highlight) 50%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.25),
+    color-mix(in oklch, var(--transcript-highlight) 33%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.31),
+    color-mix(in oklch, var(--transcript-highlight) 17%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.37),
+    color-mix(in oklch, var(--transcript-highlight) 4%, currentColor)
+      calc(var(--transcript-center) + var(--transcript-spread) * 0.44),
+    currentColor calc(var(--transcript-center) + var(--transcript-spread) * 0.5)
+  );
+  background-size: var(--transcript-track) 100%;
+  background-position-x: 0px;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dark-panel .transcript-pending-label {
+  --transcript-highlight: oklch(
+    from currentColor max(0.8, calc(l + 0.4)) c h / calc(alpha + 0.4)
+  );
+}
+.modal.session-review-chat {
+  position: absolute;
+  top: auto;
+  bottom: 16px;
+  left: 50%;
+  translate: -50% 0;
+  transform: none;
+  width: 720px;
+  max-width: calc(100vw - 32px);
+  height: 560px;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.session-review-chat > .modal-head {
+  display: none;
+}
+.session-review-thread {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+.session-review-mask {
+  height: 100%;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 24px,
+    black calc(100% - 24px),
+    transparent
+  );
+}

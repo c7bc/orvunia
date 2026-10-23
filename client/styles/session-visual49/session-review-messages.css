@@ -1,0 +1,102 @@
+/* Independently authored session message presentation from measured contracts. */
+:is(.session-review-messages, .session-usage-messages, .detail-chat-log)
+  [data-history-list]
+  > article,
+.session-usage-messages > article,
+.session-review-messages > article {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.session-user-message {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 28px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 35px;
+}
+.session-user-message .detail-user-question {
+  width: fit-content;
+  max-width: 75%;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 14px;
+  line-height: 1.375;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.session-review-messages .session-user-message .detail-user-question {
+  background: var(--foreground);
+  color: var(--background);
+}
+.session-assistant-message {
+  min-width: 0;
+  padding-bottom: 28px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 140px;
+}
+.session-assistant-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 6px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.session-assistant-label > svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+.session-assistant-label > small,
+.session-response-model {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 400;
+}
+.session-assistant-message .markdown {
+  min-width: 0;
+  color: var(--foreground);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.session-assistant-message .markdown :is(pre, code) {
+  background: var(--muted);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+.session-assistant-message .markdown pre {
+  max-width: 100%;
+  overflow: auto;
+}
+.session-assistant-message .markdown pre code {
+  background: transparent;
+}
+.session-assistant-message .markdown blockquote {
+  color: var(--muted-foreground);
+  border-color: var(--border);
+}
+.session-assistant-message .markdown a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.session-assistant-message .markdown :is(th, td) {
+  border-color: var(--border);
+}
+.session-assistant-message .detail-answer-actions {
+  flex-wrap: wrap;
+}
+.session-answer-pending {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 14px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--foreground) 70%, transparent);
+}

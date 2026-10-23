@@ -1,0 +1,176 @@
+
+.composer textarea {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  color: #e4eaf4;
+  resize: none;
+  padding: 0;
+  font-size: 12px;
+  min-height: 38px;
+  max-height: 110px;
+  line-height: 1.5;
+  outline: none;
+}
+.composer textarea::placeholder {
+  color: #798393;
+}
+.composer-footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 6px;
+}
+.composer-footer .icon-btn {
+  color: #8f9fb5;
+  width: 25px;
+  height: 25px;
+}
+.composer-footer .icon-btn:hover {
+  background: #ffffff0b;
+}
+.send {
+  margin-left: auto;
+  color: #edf5ff;
+  background: var(--action);
+  width: 28px;
+  height: 27px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  box-shadow: none;
+  border: 1px solid var(--action);
+}
+.composer-footer small {
+  font-size: 9px;
+  color: #778397;
+  margin-left: 4px;
+}
+.footer-tip {
+  text-align: center;
+  color: #626d7e;
+  font-size: 9px;
+  margin-top: 8px;
+}
+.thinking {
+  display: flex;
+  gap: 4px;
+  padding: 6px 0;
+}
+.thinking i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #93b1d6;
+  animation: pulse 1.2s infinite;
+}
+.thinking i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.thinking i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.2;
+    transform: translateY(-2px);
+  }
+}
+.control-shell {
+  padding: 3px;
+  height: 100vh;
+}
+.control-pill {
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #749c804d;
+  background: rgb(20 29 24 / var(--surface-alpha, 1));
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  padding: 5px 9px;
+  gap: 7px;
+  -webkit-app-region: drag;
+}
+.control-pill .control-brand {
+  margin-right: auto;
+  color: #edf4ff;
+  padding: 0 6px;
+  display: flex;
+}
+.control-pill button {
+  -webkit-app-region: no-drag;
+  color: #eef4ff;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 32px;
+  border-radius: 8px;
+  background: #2b3930;
+  box-shadow: none;
+  padding: 0 11px;
+}
+.control-pill button.blue {
+  background: var(--action);
+  box-shadow: none;
+}
+.control-pill button.round {
+  width: 32px;
+  padding: 0;
+}
+.control-pill button:hover {
+  filter: brightness(1.1);
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #0005;
+  backdrop-filter: blur(3px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+.modal {
+  background: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  width: 580px;
+  max-width: 100%;
+  max-height: calc(100vh - 44px);
+  overflow: auto;
+  border-radius: 14px;
+  box-shadow: 0 22px 90px #0004;
+  padding: 24px;
+}
+.overlay .modal {
+  --foreground: #e3e8f0;
+  --background: #19221c;
+  --border: #ffffff18;
+  --muted-foreground: #a8b8ad;
+  font-size: 12px;
+}
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 21px;
+}
+.modal h2 {
+  font-size: 18px;
+}
+.modal p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+.modal .fields {
+  margin-top: 20px;
+}
+.modal .field label {
+  font-size: 12px;
+}

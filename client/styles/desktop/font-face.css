@@ -1,0 +1,177 @@
+@font-face {
+  font-family: Geist;
+  src: url("/assets/geist.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --background: var(--identity-paper);
+  --foreground: var(--identity-ink);
+  --primary: var(--identity-jade);
+  --primary-foreground: #fff;
+  --muted: var(--identity-soft);
+  --muted-foreground: var(--identity-secondary);
+  --border: var(--identity-border);
+  --sidebar: var(--identity-rail);
+  --radius: 10px;
+  font-family: Geist, "Segoe UI", sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  font-size: 14px;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+button,
+input,
+textarea,
+select {
+  outline: none;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+button {
+  border: 0;
+  background: transparent;
+}
+svg {
+  flex-shrink: 0;
+}
+a {
+  color: var(--primary);
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.35px;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+small,
+.muted {
+  color: var(--muted-foreground);
+}
+small {
+  font-size: 12px;
+}
+input,
+textarea,
+select {
+  background: var(--background);
+  color: inherit;
+  border: 1px solid var(--control-border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  max-width: 100%;
+}
+textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+label {
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+input[type="range"] {
+  padding: 0;
+  accent-color: var(--primary);
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8884;
+  border-radius: 20px;
+}
+.boot {
+  height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 20px;
+  color: #777;
+}
+.brand-symbol {
+  font-size: 40px;
+  color: var(--primary);
+}
+.btn {
+  height: 38px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--background);
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.btn:hover {
+  background: var(--muted);
+}
+.btn.primary {
+  background: var(--action);
+  color: var(--action-foreground);
+  border-color: var(--action);
+  box-shadow: 0 1px 2px #00000012;
+}
+.btn.primary:hover {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+}
+.btn.danger {
+  color: #c33;
+}
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}

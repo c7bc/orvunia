@@ -1,0 +1,179 @@
+
+
+.account-menu button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    text-align: left;
+
+    padding: 7px 8px;
+
+    font-size: 12px;
+
+    border-radius: 8px;
+
+}
+
+.account-menu button:hover {
+
+    background: var(--muted);
+
+}
+
+.account-menu hr {
+
+    border: 0;
+
+    border-top: 1px solid var(--border);
+
+    margin: 4px -4px;
+
+}
+
+.studio-dialog-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 40;
+
+    background: #0008;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 48px 32px;
+
+    backdrop-filter: none;
+
+}
+
+.studio-dialog {
+
+    display: grid;
+
+    grid-template-columns: 232px 1fr;
+
+    width: min(calc(100vw - 64px), 960px);
+
+    height: min(calc(100dvh - 80px), 760px);
+
+    background: var(--background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow: 0 18px 60px #0004;
+
+    overflow: hidden;
+
+    color: var(--foreground);
+
+}
+
+.dialog-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    background: color-mix(in oklab, var(--muted) 40%, transparent);
+
+    border-right: 1px solid var(--border);
+
+    padding: 16px 12px;
+
+    overflow: auto;
+
+}
+
+.dialog-close {
+
+    height: 32px;
+
+    margin-bottom: 12px;
+
+}
+
+.dialog-close .icon-btn {
+
+    height: 32px;
+
+    width: 32px;
+
+    color: var(--muted-foreground);
+
+}
+
+.dialog-sidebar nav {
+
+    display: grid;
+
+    gap: 6px;
+
+}
+
+.dialog-nav {
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 6px 12px;
+
+    text-align: left;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: var(--muted-foreground);
+
+}
+
+.dialog-nav:hover {
+
+    color: var(--foreground);
+
+}
+
+.dialog-nav.selected {
+
+    background: color-mix(in oklab, var(--foreground) 5%, transparent);
+
+    color: var(--foreground);
+
+}
+
+.dialog-sidebar h3 {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 16px 12px 8px;
+
+    color: var(--muted-foreground);
+
+}

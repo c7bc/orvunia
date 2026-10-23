@@ -1,0 +1,175 @@
+
+
+.calendar-prompt {
+
+    font-size: 14px;
+
+    color: var(--muted-foreground);
+
+    line-height: 20px;
+
+    margin-top: 24px;
+
+}
+
+.calendar-prompt button {
+
+    font-weight: 500;
+
+    padding: 0;
+
+    color: var(--primary);
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+
+}
+
+.upcoming-meetings {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 250px;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+}
+
+.next-meeting {
+
+    position: relative;
+
+    padding: 8px 8px 8px 24px;
+
+}
+
+.next-meeting:before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 3px;
+
+    background: var(--primary);
+
+    border-radius: 4px;
+
+}
+
+.next-meeting small {
+
+    font-size: 12px;
+
+}
+
+.next-meeting h2 {
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.4px;
+
+}
+
+.next-meeting .flex {
+
+    margin-top: 5px;
+
+    justify-content: space-between;
+
+}
+
+.next-meeting p {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: var(--muted-foreground);
+
+}
+
+.meeting-join {
+
+    padding: 4px 8px;
+
+    border-radius: 8px;
+
+    color: var(--primary);
+
+    background: color-mix(in oklab, var(--primary) 15%, transparent);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+}
+
+.later-meetings {
+
+    display: grid;
+
+    gap: 8px;
+
+}
+
+.later-meeting {
+
+    border: 1px solid var(--border);
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    background:
+      radial-gradient(ellipse at 100% 0, #78bb971c, transparent 65%),
+      var(--background);
+
+}
+
+.later-meeting strong {
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    display: block;
+
+}
+
+.later-meeting small {
+
+    font-size: 12px;
+
+    margin-top: 3px;
+
+    display: block;
+
+}
+
+.dashboard-history {
+
+    flex: 1;
+
+    padding: 0 28px 28px;
+
+}

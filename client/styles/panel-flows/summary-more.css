@@ -1,0 +1,179 @@
+
+.summary-more > div {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  min-width: 214px;
+  padding: 5px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px #0003;
+  z-index: 5;
+}
+.summary-more button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: left;
+}
+.summary-more button:hover {
+  background: var(--muted);
+}
+.session-document .detail-notes-content {
+  padding: 24px 0 28px;
+}
+.session-document .notes-empty {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--muted-foreground);
+  text-align: left;
+}
+.session-detail-bottom {
+  padding: 12px 24px 24px;
+  background: transparent;
+}
+.meeting-bottom-bar {
+  max-width: 596px;
+  gap: 8px;
+}
+.meeting-bottom-bar .resume-meeting {
+  height: 34px;
+  border-radius: 18px;
+  padding: 0 12px;
+  font-size: 11px;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  font-weight: 500;
+}
+.meeting-bottom-bar .detail-chat-composer {
+  height: 42px;
+  border-radius: 24px;
+  padding: 6px 7px 6px 14px;
+  background: var(--muted);
+  border: 1px solid var(--border);
+}
+.meeting-bottom-bar .detail-chat-composer > textarea {
+  font-size: 13px;
+  line-height: 22px;
+}
+.meeting-bottom-bar .detail-chat-composer > button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.release-document {
+  width: min(672px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+.release-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.release-document-badge {
+  background: #dcfce7;
+  color: #166534;
+  padding: 7px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.dark-panel .release-document-badge {
+  background: #052e16;
+  color: #86efac;
+}
+.release-meta time {
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+.release-version-menu {
+  margin-left: auto;
+  position: relative;
+  font-size: 12px;
+}
+.release-version-menu > summary {
+  list-style: none;
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--muted) 35%, var(--background));
+  cursor: pointer;
+  white-space: nowrap;
+}
+.release-version-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.release-version-menu > div {
+  position: absolute;
+  right: 0;
+  top: 43px;
+  min-width: 215px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 6px 12px #0003;
+  z-index: 3;
+}
+.release-version-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.release-version-menu button:hover {
+  background: var(--muted);
+}
+.release-document > h1 {
+  font-size: 36px;
+  font-weight: 650;
+  line-height: 44px;
+  letter-spacing: -0.6px;
+  margin: 0 0 24px;
+}
+.release-intro,
+.release-document .release-body p,
+.release-document li {
+  font-size: 16px;
+  line-height: 28px;
+  color: color-mix(in oklab, var(--foreground) 80%, var(--muted-foreground));
+}
+.release-document .release-body h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin: 20px 0 20px;
+}
+.release-document .release-body ul {
+  list-style: disc;
+  padding-left: 30px;
+  margin: 0 0 20px;
+}
+.release-document .release-body li {
+  margin: 8px 0;
+  padding-left: 1px;
+}
+.release-document > footer {
+  text-align: center;
+  margin-top: 42px;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--muted-foreground);
+}
+.help-document {
+  max-width: 672px;
+  padding-top: 28px;
+}

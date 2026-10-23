@@ -1,0 +1,179 @@
+
+#timer{
+  font:11px Consolas,monospace;
+  color:#969ca9}
+.status-text.running .status-dot{
+  background:var(--green);
+  box-shadow:0 0 0 3px #82caaa12}
+.status-text.running{
+  color:var(--green)}
+.stop-button{
+  border:1px solid #47404d;
+  color:#c99cad}
+.studio-grid{
+  display:grid;
+  grid-template-columns:242px minmax(240px,.87fr) minmax(320px,1.28fr);
+  gap:16px;
+  align-items:start}
+.panel{
+  border:1px solid var(--line);
+  background:var(--surface);
+  border-radius:12px;
+  overflow:hidden}
+.panel-heading{
+  height:57px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  gap:8px;
+  border-bottom:1px solid #252933}
+.panel-heading h2{
+  font-size:12px;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0;
+  white-space:nowrap}
+.panel-heading h2 svg{
+  width:16px;
+  height:16px;
+  color:#959fb1}
+.context-person{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:21px 17px 22px}
+.context-person h3{
+  font-size:12px;
+  margin:0 0 6px;
+  font-weight:500}
+.context-person p{
+  font-size:10px;
+  color:#888f9f;
+  margin:0}
+.section-label{
+  font-size:8px;
+  letter-spacing:1.4px;
+  color:#737c8d;
+  padding:0 17px;
+  margin-bottom:10px}
+.job-card{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 10px;
+  margin:0 15px;
+  background:#1b1e26;
+  border:1px solid #30333e;
+  border-radius:8px}
+.company-icon{
+  width:27px;
+  height:27px;
+  background:#2b3340;
+  border:1px solid #435068;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#adc4e5;
+  font-size:12px;
+  font-weight:600}
+.job-card b{
+  display:block;
+  font-size:10px;
+  font-weight:500;
+  line-height:1.5}
+.job-card span:last-child{
+  display:block;
+  font-size:9px;
+  color:#9098a8;
+  margin-top:4px}
+.context-tags{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  padding:14px 16px 0}
+.context-tags span{
+  padding:5px 7px;
+  border:1px solid #313542;
+  border-radius:4px;
+  font-size:9px;
+  color:#a5abba}
+.divider{
+  height:1px;
+  background:#262b34;
+  margin:21px 17px}
+.document-row{
+  display:flex;
+  text-align:left;
+  align-items:center;
+  gap:9px;
+  margin:0 9px 6px;
+  padding:9px 7px;
+  width:calc(100% - 18px);
+  border-radius:6px}
+.document-row:hover{
+  background:#1c2028}
+.file-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:32px;
+  border-radius:5px;
+  background:#202a32;
+  color:#97b6c6}
+.file-icon.purple{
+  background:#29243a;
+  color:#baace0}
+.file-icon svg{
+  width:14px;
+  height:14px}
+.document-row b{
+  display:block;
+  font-size:10px;
+  font-weight:400}
+.document-row small{
+  display:block;
+  font-size:8px;
+  color:#7e8897;
+  margin-top:4px}
+.check-dot{
+  margin-left:auto;
+  color:#81bea4}
+.check-dot svg{
+  width:12px;
+  height:12px}
+.add-context{
+  width:calc(100% - 30px);
+  margin:8px 15px 18px;
+  border:1px dashed #3b3d49;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:9px;
+  font-size:10px;
+  color:#aba5bf}
+.add-context:hover{
+  border-color:var(--accent);
+  color:var(--accent)}
+.add-context svg{
+  width:13px}
+.context-hint{
+  margin:0 15px 17px;
+  padding:12px;
+  background:#211d2e;
+  border:1px solid #342a48;
+  border-radius:7px;
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  color:#bcaadf}
+.context-hint svg{
+  width:14px;
+  height:14px;
+  margin-top:1px}

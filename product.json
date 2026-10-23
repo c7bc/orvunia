@@ -1,0 +1,221 @@
+{
+  "edition": "personal",
+  "clientEntries": {
+    "desktop": "client/application/entry.ts",
+    "view-boot": "client/boot/index.ts",
+    "auxiliary": "client/auxiliary/entry.ts",
+    "app": "client/legacy-web/workspace-entry.ts",
+    "live": "client/legacy-web/live-entry.ts",
+    "coding-ui": "client/coding/index.ts",
+    "motion": "client/motion/index.ts",
+    "audio": "client/audio/index.ts",
+    "realtime-audio": "client/realtime/index.ts",
+    "session-history-preserve": "client/history/index.ts",
+    "session-history-ui": "client/history/view-index.ts",
+    "i18n-ui": "client/i18n/personal.ts",
+    "icons": "client/design/icons.ts",
+    "calendar-ui": "client/calendar/index.ts",
+    "followup-ui": "client/followups/index.ts",
+    "microphone-test": "client/microphone/index.ts",
+    "session-notes-ui": "client/notes/index.ts",
+    "provider-ui": "client/providers/index.ts",
+    "mode-prompt-ui": "client/prompt/index.ts",
+    "connections-ui": "client/connections/index.ts",
+    "models-ui": "client/models/index.ts",
+    "personal-onboarding-ui": "client/onboarding/controller.ts",
+    "panel-components": "client/components/index.ts",
+    "panel-ui": "client/panel/index.ts",
+    "account-format": "client/format/activity.ts",
+    "welcome-ui": "client/onboarding/controller.ts",
+    "api-client": "client/http/index.ts",
+    "overlay-layout": "client/overlay/index.ts",
+    "overlay-ui": "client/overlay/render.ts",
+    "answer-ui": "client/answers/index.ts",
+    "session-commands": "client/sessions/index.ts",
+    "studio-audio": "client/studio/index.ts",
+    "assets/gaze/gaze-math": "client/gaze/math.ts",
+    "gaze-ui": "client/gaze/index.ts",
+    "assets/gaze/gaze-worker": "client/gaze/worker-entry.ts",
+    "locales/panel-en": "client/i18n/panel.ts",
+    "locales/assistant-en": "client/i18n/assistant.ts",
+    "locales/coding-en": "client/i18n/coding.ts"
+  },
+  "nativeEntry": "next/packages/desktop/index.ts",
+  "notesEntry": "client/notes-rich/index.ts",
+  "styles": [
+    {
+      "path": "billing-ui.css",
+      "sources": [
+        "client/styles/personal/usage.css"
+      ]
+    },
+    {
+      "path": "calendar.css",
+      "sources": [
+        "client/styles/calendar/calendar-settings.css",
+        "client/styles/calendar/media.css"
+      ]
+    },
+    {
+      "path": "coding-ui.css",
+      "sources": [
+        "client/styles/coding-ui/coding-fields.css"
+      ]
+    },
+    {
+      "path": "desktop.css",
+      "sources": [
+        "client/styles/desktop/font-face.css",
+        "client/styles/desktop/icon-btn.css",
+        "client/styles/desktop/mode-grid.css",
+        "client/styles/desktop/setting-row.css",
+        "client/styles/desktop/live-status.css",
+        "client/styles/desktop/markdown.css",
+        "client/styles/desktop/composer.css",
+        "client/styles/desktop/source-grid.css",
+        "client/styles/desktop/media.css",
+        "client/styles/identity/tokens.css"
+      ]
+    },
+    {
+      "path": "gaze.css",
+      "sources": [
+        "client/styles/gaze/gaze-settings.css",
+        "client/styles/gaze/gaze-calibration.css"
+      ]
+    },
+    {
+      "path": "live-controls.css",
+      "sources": [
+        "client/styles/live-controls/root.css"
+      ]
+    },
+    {
+      "path": "live.css",
+      "sources": [
+        "client/styles/live/generated-answer.css"
+      ]
+    },
+    {
+      "path": "mode-prompt.css",
+      "sources": [
+        "client/styles/mode-prompt/modes-dialog.css"
+      ]
+    },
+    {
+      "path": "notes-rich.css",
+      "sources": [
+        "client/styles/notes-rich/notes-rich.css"
+      ]
+    },
+    {
+      "path": "panel-flows.css",
+      "sources": [
+        "client/styles/panel-flows/studio-dialog-backdrop.css",
+        "client/styles/panel-flows/microphone-source-copy.css",
+        "client/styles/panel-flows/studio-dialog.css",
+        "client/styles/panel-flows/mode-options.css",
+        "client/styles/panel-flows/mode-additional-options.css",
+        "client/styles/panel-flows/mode-repository.css",
+        "client/styles/panel-flows/auxiliary.css",
+        "client/styles/panel-flows/repository-consent.css",
+        "client/styles/panel-flows/summary-more.css",
+        "client/styles/panel-flows/help-document.css",
+        "client/styles/panel-flows/studio-dialog-2.css",
+        "client/styles/panel-flows/automatic-mode-card.css",
+        "client/styles/panel-flows/studio-dialog-3.css",
+        "client/styles/panel-flows/flow-select-trigger.css",
+        "client/styles/panel-flows/media.css",
+        "client/styles/panel-flows/root.css",
+        "client/styles/panel-flows/session-document.css",
+        "client/styles/panel-flows/media-2.css",
+        "client/styles/panel-flows/session-review-messages.css",
+        "client/styles/identity/controls.css",
+        "client/styles/identity/balanced-settings.css",
+        "client/styles/identity/balanced-menu.css",
+        "client/styles/identity/audio-status.css"
+      ]
+    },
+    {
+      "path": "panel-v3.css",
+      "sources": [
+        "client/styles/panel-v3/root.css",
+        "client/styles/panel-v3/titlebar-account.css",
+        "client/styles/panel-v3/overview-tools.css",
+        "client/styles/panel-v3/calendar-prompt.css",
+        "client/styles/panel-v3/history-group.css",
+        "client/styles/panel-v3/meeting-row-actions.css",
+        "client/styles/panel-v3/account-menu.css",
+        "client/styles/panel-v3/dialog-content.css",
+        "client/styles/panel-v3/toggle.css",
+        "client/styles/panel-v3/settings-legacy.css",
+        "client/styles/panel-v3/dialog-content-2.css",
+        "client/styles/panel-v3/mode-active.css",
+        "client/styles/panel-v3/mode-action.css",
+        "client/styles/panel-v3/ongoing-card.css",
+        "client/styles/panel-v3/detail-notes-content.css",
+        "client/styles/panel-v3/detail-chat-empty.css",
+        "client/styles/panel-v3/release-heading.css",
+        "client/styles/panel-v3/start-button.css",
+        "client/styles/panel-v3/assistant.css",
+        "client/styles/panel-v3/overlay-menu.css",
+        "client/styles/panel-v3/assistant-2.css",
+        "client/styles/panel-v3/user-message.css",
+        "client/styles/panel-v3/control-pill.css",
+        "client/styles/panel-v3/media.css",
+        "client/styles/panel-v3/command-results.css",
+        "client/styles/panel-v3/note-preset.css",
+        "client/styles/panel-v3/custom-mode-navigation.css",
+        "client/styles/panel-v3/mini-switch.css",
+        "client/styles/panel-v3/assistant-3.css",
+        "client/styles/panel-v3/media-2.css",
+        "client/styles/identity/balanced-panel.css",
+        "client/styles/identity/balanced-overlay.css",
+        "client/styles/identity/speech-chat.css"
+      ]
+    },
+    {
+      "path": "provider-ui.css",
+      "sources": [
+        "client/styles/provider-ui/provider-card.css"
+      ]
+    },
+    {
+      "path": "session-visual49.css",
+      "sources": [
+        "client/styles/session-visual49/session-review-messages.css"
+      ]
+    },
+    {
+      "path": "styles.css",
+      "sources": [
+        "client/styles/workspace/root.css",
+        "client/styles/workspace/profile-button.css",
+        "client/styles/workspace/root-2.css",
+        "client/styles/workspace/context-hint.css",
+        "client/styles/workspace/assistant-body.css",
+        "client/styles/workspace/capture-card.css",
+        "client/styles/workspace/empty-answer.css",
+        "client/styles/workspace/compact-header.css",
+        "client/styles/workspace/media.css",
+        "client/styles/workspace/media-2.css"
+      ]
+    },
+    {
+      "path": "welcome.css",
+      "sources": [
+        "client/styles/welcome/welcome-shell.css",
+        "client/styles/welcome/welcome-primary.css",
+        "client/styles/welcome/welcome-join-demo.css",
+        "client/styles/welcome/welcome-demo-person.css",
+        "client/styles/welcome/onboarding-6.css",
+        "client/styles/welcome/welcome-switch.css",
+        "client/styles/welcome/welcome-setup.css",
+        "client/styles/welcome/welcome-tutorial.css",
+        "client/styles/welcome/keyframes.css",
+        "client/styles/welcome/media.css",
+        "client/styles/identity/balanced-welcome.css"
+      ]
+    }
+  ]
+}

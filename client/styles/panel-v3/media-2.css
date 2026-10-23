@@ -1,0 +1,63 @@
+
+
+@media (hover: none) {
+
+    .assistant .chat-collapse > .icon-btn:first-child {
+     opacity: 1;
+     transform: none;
+   }
+
+}
+
+.microphone-test-dialog {
+   max-width: 460px;
+ }
+
+.microphone-meter {
+   height: 12px;
+   background: var(--muted);
+   border-radius: 20px;
+   overflow: hidden;
+   margin: 24px 0 14px;
+ }
+
+.microphone-meter > span {
+   display: block;
+   height: 100%;
+   width: 0;
+   background: linear-gradient(90deg,#0e705b,#6cddb4);
+   border-radius: inherit;
+   transition: width 80ms linear;
+ }
+
+.microphone-test-state {
+   min-height: 42px;
+   color: var(--muted-foreground);
+ }
+
+.browser-control-preview {
+   background: #111216;
+   display: grid;
+   place-items: center;
+   min-height: 100vh;
+ }
+
+.browser-control-preview #app {
+   width: 166px;
+   height: 50px;
+ }
+
+.browser-control-preview .control-shell {
+   width: 166px;
+   height: 50px;
+ }
+
+
+html[data-view="control"]:has(.browser-control-preview) {
+   background: #111216 !important;
+ }
+
+body.control.browser-control-preview {
+   background: #111216 !important;
+ }
+

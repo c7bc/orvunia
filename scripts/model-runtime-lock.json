@@ -1,0 +1,27 @@
+{
+  "format": "orvunia-model-runtime-lock/1",
+  "platform": "win32",
+  "architecture": "x64",
+  "runtimes": [
+    {
+      "kind": "whisper",
+      "version": "v1.8.4",
+      "url": "https://github.com/ggml-org/whisper.cpp/releases/download/v1.8.4/whisper-bin-x64.zip",
+      "archiveBytes": 4078768,
+      "archiveSha256": "74f973345cb52ef5ba3ec9e7e7af8e48cc8c71722d1528603b80588a11f82e3e",
+      "executable": "whisper-cli.exe",
+      "executableSha256": "d4c598cf97de103f888d1a53b8abddc85bf27ab752f785ca69318cedc8a2cf64",
+      "license": "https://github.com/ggml-org/whisper.cpp/blob/v1.8.4/LICENSE"
+    },
+    {
+      "kind": "llama",
+      "version": "b11734",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11734/llama-b11734-bin-win-cpu-x64.zip",
+      "archiveBytes": 19667015,
+      "archiveSha256": "bd6a8a8cb9d6ba115de3519d401f91dd5295b333243db44b6b8a3ce5e53ff8da",
+      "executable": "llama-server.exe",
+      "executableSha256": "88053c3223e0d2bf7cac7b3ab4ba3c68e64cf11ced0d52725937bd702baa370b",
+      "license": "https://github.com/ggml-org/llama.cpp/blob/b11734/LICENSE"
+    }
+  ]
+}

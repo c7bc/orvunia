@@ -1,0 +1,176 @@
+
+
+.assistant {
+
+    border-radius: 10px;
+
+    border: 1px solid #6887736b;
+    border-top: 2px solid #67c79e;
+
+    background: rgb(20 29 24 / var(--surface-alpha));
+
+    box-shadow: none;
+
+    isolation: isolate;
+
+}
+
+.overlay-top {
+
+    height: 36px;
+
+    padding: 0 11px;
+
+    gap: 8px;
+
+}
+
+.overlay-top .wordmark {
+
+    font-size: 12px;
+
+}
+
+.overlay-top select {
+
+    font-size: 12px;
+
+    height: 25px;
+
+    padding: 3px 7px;
+
+    background: transparent;
+
+    border: 0;
+
+}
+
+.overlay-top .icon-btn {
+
+    height: 24px;
+
+    width: 24px;
+
+}
+
+.live-status {
+
+    font-size: 11px;
+
+    padding: 1px 12px 9px;
+
+}
+
+.live-status .btn {
+
+    font-size: 11px;
+
+    height: 26px;
+
+}
+
+.overlay-tabs {
+
+    padding: 0 12px;
+
+    gap: 8px;
+
+}
+
+.overlay-tab {
+
+    font-size: 12px;
+
+    padding: 8px 10px;
+
+}
+
+.answer-area {
+
+    padding: 16px 18px;
+
+}
+
+.answer-welcome {
+
+    padding: 5px 18px 20px;
+
+}
+
+.answer-welcome h2 {
+
+    font-size: 21px;
+
+    font-weight: 500;
+
+}
+
+.answer-welcome > p {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+.suggestion {
+
+    font-size: 13px;
+
+    border: 1px solid #ffffff12;
+
+    background: #ffffff04;
+
+    padding: 10px 12px;
+
+    margin: 1px 0;
+
+    border-radius: 8px;
+
+}
+
+.suggestion:hover {
+
+    background: #ffffff05;
+
+}
+
+.answer-mark {
+
+    display: none;
+
+}
+
+.response-meta {
+
+    font-size: 11px;
+
+}
+
+.markdown {
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+}
+
+.markdown code {
+
+    font-size: 12px;
+
+}
+
+.markdown pre {
+
+    font-size: 12px;
+
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+
+    font-size: 15px;
+
+}

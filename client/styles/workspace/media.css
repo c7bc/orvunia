@@ -1,0 +1,93 @@
+
+
+@media(max-width:1040px){
+  .sidebar{
+    width:72px;
+    padding:25px 11px}
+  .brand{
+    padding:0;
+    justify-content:center}
+  .brand>span:last-child,.new-session kbd,.new-session svg+span,.nav-label,.sidebar-bottom,.nav-item .count,.nav-dot{
+    display:none}
+  .brand-mark{
+    width:34px;
+    height:34px}
+  .new-session{
+    font-size:0;
+    justify-content:center;
+    padding:12px;
+    margin:35px 0 20px}
+  .new-session svg{
+    width:20px;
+    height:20px}
+  .nav-item{
+    font-size:0;
+    justify-content:center;
+    padding:14px 0}
+  .nav-item svg{
+    width:21px;
+    height:21px}
+  .workspace{
+    margin-left:72px;
+    width:calc(100% - 72px)}
+  .studio-grid{
+    grid-template-columns:200px minmax(220px,1fr) minmax(290px,1.3fr)}
+  main{
+    padding:24px 17px 15px}
+  .topbar{
+    padding:0 17px}
+  .page-heading p{
+    font-size:11px}
+  .page-heading h1{
+    font-size:23px}
+  .context-person{
+    padding:18px 13px}
+  .subtle-badge{
+    display:none}
+}
+
+@media(max-width:900px){
+  .studio-grid{
+    grid-template-columns:minmax(240px,1fr) minmax(300px,1.2fr)}
+  .context-column{
+    grid-column:1/-1;
+    display:flex;
+    gap:15px}
+  .context-panel{
+    width:100%;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:12px;
+    gap:12px}
+  .context-panel .panel-heading{
+    border:0;
+    height:auto;
+    padding:0;
+    order:-1;
+    width:100%}
+  .context-person{
+    padding:0}
+  .context-person h3{
+    font-size:11px}
+  .context-panel .section-label,.context-panel .divider,.context-panel .document-row,.context-panel .add-context,.context-panel .context-hint,.tip-card{
+    display:none}
+  .context-panel .job-card{
+    margin:0;
+    margin-left:auto}
+  .context-tags{
+    padding:0}
+  .page-heading{
+    margin-bottom:22px}
+  .mode-row{
+    gap:10px}
+  .mode-switch button{
+    font-size:10px}
+  .session-control{
+    gap:8px}
+  .primary{
+    font-size:10px;
+    padding:10px}
+  .conversation-panel,.assistant-panel{
+    height:595px}
+}

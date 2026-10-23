@@ -1,0 +1,43 @@
+{
+  "sources": [
+    {
+      "url": "https://github.com/earendil-works/pi/blob/16f5f0af4d85ca583d045ceb5ed6d646fcaf7761/packages/agent/src/agent-loop.ts",
+      "sha256": "28a2b03e34a7e32f004aa851e54d3b5be9dad71c392205614cbc9abdf3a9020a",
+      "project": "pi",
+      "commit": "16f5f0af4d85ca583d045ceb5ed6d646fcaf7761",
+      "path": "packages/agent/src/agent-loop.ts",
+      "repository": "earendil-works/pi"
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/15adc3d91ecc6955ee0918607a5593e23bd4d538/packages/core/src/permission.ts",
+      "sha256": "d34a94cdd526cf74bb954506243e76cf498b07c8b9998fd472da7ea837bcd18f",
+      "project": "opencode",
+      "commit": "15adc3d91ecc6955ee0918607a5593e23bd4d538",
+      "path": "packages/core/src/permission.ts",
+      "repository": "anomalyco/opencode"
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/15adc3d91ecc6955ee0918607a5593e23bd4d538/packages/core/src/util/wildcard.ts",
+      "sha256": "8c38258732c7e569febf52a36468181e2c851f2dceea7112b618c0cf43ed3170",
+      "project": "opencode",
+      "commit": "15adc3d91ecc6955ee0918607a5593e23bd4d538",
+      "path": "packages/core/src/util/wildcard.ts",
+      "repository": "anomalyco/opencode"
+    },
+    {
+      "url": "https://github.com/anomalyco/opencode/blob/15adc3d91ecc6955ee0918607a5593e23bd4d538/packages/core/src/session/runner/max-steps.ts",
+      "sha256": "02393226c3446c7df0ef22af4ab231cacb4653d70e295f4c59089e109131b4e8",
+      "project": "opencode",
+      "commit": "15adc3d91ecc6955ee0918607a5593e23bd4d538",
+      "path": "packages/core/src/session/runner/max-steps.ts",
+      "repository": "anomalyco/opencode"
+    }
+  ],
+  "adaptations": {
+    "opencode": "Permission evaluation and wildcard matching adapted to case-sensitive snapshot names; deny default and scoped native grants. Maximum-step instructions adapted to evidence-based read-only reviews.",
+    "pi": "Durable client/server state transitions replace in-process model/tool calls. No discovered resources, shell, extensions, auto-retry, automatic compaction or provider SDK is copied."
+  },
+  "distribution": "Selected adapted source only; neither CLI, server, vendor SDK nor complete upstream coding engine is included.",
+  "schema": "orvunia.repository-engine-provenance/1",
+  "license": "MIT"
+}

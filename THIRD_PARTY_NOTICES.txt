@@ -1,0 +1,66 @@
+Orvunia — Third-party notices
+
+Repository agent engine adaptations
+Pi: Copyright (c) 2025 Mario Zechner. MIT license.
+OpenCode: Copyright (c) 2025 opencode. MIT license.
+Selected source adapted for Orvunia's durable read-only repository workflow:
+agent loop, permission evaluation, wildcard matching and maximum-step guidance.
+This is not a bundled copy of either complete coding agent or its CLI/server.
+Pinned commits, source identities and modifications:
+assets/licenses/repository-engine.json.
+Full notices: assets/licenses/Pi-MIT.txt and assets/licenses/OpenCode-MIT.txt.
+
+The MIT license in LICENSE covers the project's own implementation. It does
+not replace licenses of third-party packages, fonts, icons or runtimes.
+
+Geist font
+Copyright 2024 The Geist Project Authors (https://github.com/vercel/geist-font)
+License: SIL Open Font License 1.1.
+Source: the locked @fontsource-variable/geist npm package, official project
+https://github.com/vercel/geist-font . The bundled unmodified Latin variable
+font is copied from files/geist-latin-wght-normal.woff2 in that package.
+Full license: assets/licenses/Geist-OFL-1.1.txt and assets/Geist-OFL.txt.
+Recorded file identity: assets/licenses/PROVENANCE.json.
+
+Heroicons 20px solid icons
+Copyright (c) Tailwind Labs, Inc.
+License: MIT.
+Upstream: https://github.com/tailwindlabs/heroicons
+icons.js embeds cog-6-tooth, credit-card, document-text, key, language,
+question-mark-circle and user-circle paths. Full copyright, permission and
+warranty notice: assets/licenses/Heroicons-MIT.txt.
+
+MediaPipe Tasks Vision and Face Landmarker
+Upstream: https://github.com/google-ai-edge/mediapipe
+The bundled JavaScript/WASM runtime and the Face Landmarker model retain
+their upstream Apache-2.0 terms, copyright and any additional notices.
+Full license: assets/gaze/LICENSE-MEDIAPIPE.txt.
+Attribution and model details: assets/gaze/NOTICE.txt and README.txt.
+Versioned download sources, exact byte sizes, SHA256 hashes and model-card
+references: assets/gaze/PROVENANCE.json. These third-party runtime assets
+are unmodified. The project-authored gaze worker, calibration and UI are
+licensed under the project's MIT license. No competitor client binaries
+or source bundles are distributed with this feature.
+
+Runtime packages
+The JavaScript dependencies retain their own license files when installed
+through the lockfile. These include Fastify plugins, Zod, OpenAI SDK,
+Better Auth, Nodemailer, Marked, DOMPurify, Highlight.js, Mammoth, PDF.js,
+canvas and their transitive packages. Consult each installed package's
+LICENSE, COPYING and NOTICE files. For dual-licensed DOMPurify this project
+uses the Apache-2.0 option; for dual-licensed JSZip it uses the MIT option.
+Native components can have additional notices that must remain in packages.
+
+Desktop runtime
+Electron is MIT licensed and bundles Chromium, Node.js and additional
+components under their respective licenses. Keep the runtime's LICENSE,
+LICENSES.chromium.html and any accompanying notices in every redistributed
+installer and portable folder. The source archive excludes runtime binaries.
+
+Project icon
+The Orvunia application icon derives from the final SVG supplied by the user,
+based on the preserved generated concept. It uses the project MIT license. Competitor
+logos, source bundles, binaries, screenshots and decompiler output are not
+part of the Community source release.
+
+The notes visual editor uses public Tiptap, ProseMirror and Markdown dependencies. The pinned dependency versions and complete MIT/ISC notices are shipped in assets/editor/PROVENANCE.json and assets/editor/LICENSES.txt. Its Cadence wrapper is independently authored.

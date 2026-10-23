@@ -1,0 +1,170 @@
+
+
+.overview-tools h1 {
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.65px;
+
+    color: var(--foreground);
+
+    margin-right: 8px;
+
+}
+
+.round-outline {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    height: 32px;
+
+    min-width: 32px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--background);
+
+    color: color-mix(in oklab, var(--muted-foreground) 80%, transparent);
+
+    font-size: 12px;
+
+    padding: 0 8px;
+
+}
+
+.round-outline:hover {
+
+    color: var(--foreground);
+
+    background: var(--muted);
+
+}
+
+.mini-switch {
+
+    width: 27px;
+
+    height: 15px;
+
+    border-radius: 8px;
+
+    background: #a1a1aa;
+
+    position: relative;
+
+    margin-left: 2px;
+
+}
+
+.mini-switch:after {
+
+    content: "";
+
+    width: 11px;
+
+    height: 11px;
+
+    position: absolute;
+
+    left: 2px;
+
+    top: 2px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow: 0 1px 2px #0002;
+
+}
+
+.mini-switch.on {
+
+    background: var(--primary);
+
+}
+
+.mini-switch.on:after {
+
+    left: 14px;
+
+}
+
+.start-tools {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+.mode-selector {
+
+    padding: 5px 8px;
+
+    font-size: 12px;
+
+    background: transparent;
+
+    border-color: var(--border);
+
+    border-radius: 8px;
+
+    max-width: 155px;
+
+    height: 30px;
+
+}
+
+.start-button {
+
+    height: 41px;
+
+    padding: 0 22px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    background: var(--action);
+
+    color: var(--action-foreground);
+
+    border: 1px solid var(--action);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.15px;
+
+    box-shadow: 0 2px 3px #00000012;
+
+    transition: background-color 150ms ease, border-color 150ms ease;
+
+}
+
+.start-button:hover {
+
+    background: var(--action-hover);
+    border-color: var(--action-hover);
+
+}

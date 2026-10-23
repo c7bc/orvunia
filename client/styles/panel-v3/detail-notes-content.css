@@ -1,0 +1,161 @@
+
+
+.detail-notes-content {
+
+    padding: 28px 32px;
+
+}
+
+.detail-notes-content .markdown {
+
+    color: var(--foreground);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+.saved-answer {
+
+    margin-bottom: 30px;
+
+}
+
+.saved-answer .section-head h2 {
+
+    font-size: 16px;
+
+    letter-spacing: -0.3px;
+
+}
+
+.notes-empty {
+
+    font-size: 14px;
+
+    color: var(--muted-foreground);
+
+    padding: 20px 0;
+
+}
+
+.notes-empty p {
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: 8px;
+
+}
+
+.detail-transcript {
+
+    margin-bottom: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+.detail-transcript > div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+}
+
+.detail-transcript strong {
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+}
+
+.detail-transcript small {
+
+    font-size: 11px;
+
+}
+
+.detail-transcript p {
+
+    color: var(--foreground);
+
+}
+
+.session-assistant {
+
+    border-left: 1px solid var(--border);
+
+    padding: 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+
+    background: color-mix(in oklab, var(--muted) 20%, transparent);
+
+}
+
+.session-assistant-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    padding: 4px 0 14px;
+
+}
+
+.detail-chat-log {
+
+    flex: 1;
+
+    overflow: auto;
+
+    min-height: 0;
+
+}
+
+.detail-chat-log > article {
+
+    padding: 12px 0 20px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.detail-chat-log .markdown {
+
+    color: var(--foreground);
+
+    font-size: 13px;
+
+}
+
+.detail-chat-log > article > small {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+}

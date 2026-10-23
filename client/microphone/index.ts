@@ -1,0 +1,1 @@
+export { createMicrophoneTest } from "./controller";

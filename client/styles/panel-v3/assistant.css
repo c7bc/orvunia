@@ -1,0 +1,161 @@
+
+
+.assistant .composer-footer {
+
+    padding-top: 5px;
+
+    height: 29px;
+
+    gap: 5px;
+
+}
+
+.composer-footer select {
+
+    background: transparent;
+
+    border: 0;
+
+    padding: 3px 5px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    max-width: 145px;
+
+    color: #d1d1d8;
+
+    height: 26px;
+
+    outline: none;
+
+}
+
+.composer-auto {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 11px;
+
+    color: #8f8d9c;
+
+    border: 1px solid #ffffff13;
+
+    border-radius: 5px;
+
+    padding: 4px 6px;
+
+    height: 24px;
+
+}
+
+.composer-auto.active {
+
+    color: var(--identity-mint);
+
+    background: #347c5528;
+
+    border-color: #6cddb440;
+
+}
+
+.composer-footer .send {
+
+    margin-left: 3px;
+
+    flex-shrink: 0;
+
+}
+
+.chat-collapse {
+
+    height: 27px;
+
+    min-height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 9px;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    color: #a1a1aa;
+
+    user-select: none;
+
+    -webkit-app-region: drag;
+
+}
+
+.chat-collapse .icon-btn {
+
+    -webkit-app-region: no-drag;
+
+    height: 24px;
+
+    width: 24px;
+
+    border-radius: 6px;
+
+    background: #2b3930;
+
+    box-shadow: none;
+
+}
+
+.chat-collapse .overlay-recording-status {
+
+    font-size: 10px;
+
+    color: #a5b3a9;
+
+}
+
+.chat-collapse .icon-btn:last-child {
+
+    background: transparent;
+
+    box-shadow: none;
+
+    color: #a5b3a9;
+
+}
+
+.compact-capture-indicator {
+
+    height: 19px;
+
+    padding: 3px 14px 0;
+
+    flex-shrink: 0;
+
+    font-size: 10px;
+
+    color: #85818f;
+
+    display: flex;
+
+    gap: 5px;
+
+    align-items: center;
+
+}
+
+.compact-capture-indicator span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}

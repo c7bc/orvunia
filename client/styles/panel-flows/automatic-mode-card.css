@@ -1,0 +1,181 @@
+
+.automatic-mode-card {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.automatic-mode-explainer {
+  min-height: 203px;
+  margin-top: 26px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+.automatic-mode-explainer > span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  display: grid;
+  place-items: center;
+}
+.automatic-mode-explainer > p {
+  max-width: 480px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 23px;
+  color: var(--muted-foreground);
+}
+.automatic-mode-explainer > .btn {
+  height: 32px;
+  font-size: 13px;
+  padding: 0 10px;
+}
+.builtin-mode-customize {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.builtin-mode-customize > summary {
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.shortcut-capture-prompt {
+  font-size: 8px;
+  letter-spacing: 0.35px;
+}
+.keyboard-shortcut-row:focus-within {
+  margin-left: -10px;
+  padding-left: 10px;
+  margin-right: -10px;
+  padding-right: 10px;
+  box-shadow: none;
+}
+.search-dialog {
+  width: 482px;
+  transform: translateY(48px);
+}
+.search-dialog .command-results {
+  padding: 0;
+  margin-top: 4px;
+}
+.search-dialog .command-results > p {
+  padding: 8px;
+  font-size: 11px;
+}
+.search-dialog .command-results > button {
+  padding: 6px 8px;
+}
+.dark-panel .search-dialog {
+  background: var(--identity-charcoal-rail);
+  border-color: var(--border);
+}
+.dark-panel .search-dialog .command-input {
+  background: var(--muted);
+}
+.dark-panel .search-dialog .command-results > .command-selected {
+  background: var(--selected);
+  color: var(--selected-foreground);
+}
+body:not(.dark-panel) .template-symbol.rose {
+  background: #fce7f3;
+  color: #9d174d;
+}
+body:not(.dark-panel) .template-symbol.amber {
+  background: #fef3c7;
+  color: #92400e;
+}
+body:not(.dark-panel) .template-symbol.green {
+  background: #d1fae5;
+  color: #065f46;
+}
+body:not(.dark-panel) .template-symbol.blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+body:not(.dark-panel) .template-symbol.purple {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+body:not(.dark-panel) .template-symbol.cyan {
+  background: #cffafe;
+  color: #155e75;
+}
+body:not(.dark-panel) .modes-dialog .mode-active.is-active {
+  color: #0369a1;
+  background: #e0f2fe;
+}
+@media (max-height: 600px) {
+  .search-dialog {
+    transform: translateY(16px);
+  }
+}
+
+/* Component geometry verified against the saved 1050 × 700 reference. */
+.studio-dialog .main-preferences {
+  margin-top: 23px;
+}
+.microphone-source-card {
+  margin-top: 19px;
+}
+.mode-editor-title {
+  margin-bottom: 18px;
+}
+.modes-dialog .real-time-prompt > label {
+  margin-bottom: 11px;
+}
+.automatic-mode-overview > .mode-section {
+  margin-bottom: 18px;
+}
+.automatic-mode-overview > .mode-section > h2 {
+  margin-bottom: 8px;
+}
+.search-dialog .command-results > p {
+  line-height: 16px;
+}
+.search-dialog .command-results > p:first-child {
+  padding-block: 5px;
+}
+.search-dialog .command-results > p:not(:first-child) {
+  margin-top: 2px;
+}
+/* Independently authored interaction states using the observed shared component scale. */
+.studio-dialog
+  :is(
+    .btn,
+    .icon-btn,
+    .dialog-nav,
+    .mode-template-row,
+    .mode-active,
+    .mode-new-button
+  ),
+.summary-more :is(summary, button),
+.detail-tabs button,
+.search-dialog .command-results > button {
+  transition:
+    color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.studio-dialog :is(button, input, textarea, select, summary):focus-visible,
+.summary-more :is(summary, button):focus-visible,
+.detail-tabs button:focus-visible {
+  outline: 0;
+  border-color: var(--ring, #0e705b);
+  box-shadow: 0 0 0 3px
+    color-mix(in oklab, var(--ring, #0e705b) 50%, transparent);
+}

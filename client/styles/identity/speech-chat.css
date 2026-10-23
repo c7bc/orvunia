@@ -1,0 +1,51 @@
+.assistant .chat-collapse[hidden] {
+  display: none;
+}
+.chat-speech-message {
+  display: block;
+  width: fit-content;
+  max-width: min(90%, 600px);
+  margin: 8px 0 12px auto;
+  padding: 9px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--foreground, #ecf2ed);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  animation: chat-speech-appear 160ms ease-out both;
+}
+.chat-speech-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 7px;
+  color: var(--muted-foreground, #adb3af);
+  font-size: 10px;
+  line-height: 16px;
+}
+.chat-speech-meta strong {
+  font-weight: 600;
+}
+.chat-speech-meta time {
+  color: inherit;
+}
+.chat-speech-state {
+  margin-left: auto;
+  color: inherit;
+}
+.chat-speech-message p {
+  margin: 5px 0 0;
+  white-space: pre-wrap;
+}
+.chat-speech-partial p,
+.chat-speech-partial .chat-speech-state {
+  font-style: italic;
+}
+@keyframes chat-speech-appear {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-speech-message { animation: none; }
+}

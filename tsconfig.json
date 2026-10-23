@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "legacy",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "bun"
+    ],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@cadence/components": [
+        "./client/components/index.ts"
+      ],
+      "@cadence/i18n": [
+        "./client/i18n/personal.ts"
+      ],
+      "@cadence/icons": [
+        "./client/design/icons.ts"
+      ],
+      "@cadence/notes-rich": [
+        "./client/notes-rich/index.ts"
+      ]
+    }
+  },
+  "files": [
+    "client/gaze/vision-types.ts",
+    "next/packages/realtime/transport.ts"
+  ],
+  "include": [
+    "next/**/*.ts"
+  ]
+}

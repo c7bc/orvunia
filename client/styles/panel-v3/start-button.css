@@ -1,0 +1,174 @@
+
+
+.start-button {
+
+    padding: 0 17px;
+
+    border-width: 1px;
+
+    border-color: var(--action);
+
+    box-shadow: 0 2px 3px #00000012;
+
+}
+
+.start-button svg {
+
+    width: 17px;
+
+    height: 17px;
+
+}
+
+.modes-dialog .dialog-content {
+
+    padding: 32px;
+
+}
+
+.editor-toolbar {
+
+    gap: 6px;
+
+}
+
+.editor-toolbar button {
+
+    width: 26px;
+
+    height: 25px;
+
+    border-radius: 4px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 13px;
+
+}
+
+.editor-toolbar button:hover {
+
+    background: var(--muted);
+
+}
+
+.detail-title-edit {
+
+    font: inherit;
+
+    letter-spacing: inherit;
+
+    text-align: left;
+
+    padding: 0;
+
+    border-radius: 4px;
+
+}
+
+.detail-title-edit:hover {
+
+    background: var(--muted);
+
+}
+
+/* Transparent HTML, opaque glyphs, and native monitor scale: no bitmap zoom. */
+.assistant {
+
+    position: relative;
+
+    padding-top: 9px;
+
+}
+
+.overlay-drag-handle {
+
+    position: absolute;
+
+    inset: 0 0 auto;
+
+    height: 10px;
+
+    z-index: 2;
+
+    -webkit-app-region: drag;
+
+}
+
+.assistant.compact .answer-area {
+
+    display: none;
+
+}
+
+.assistant.expanded .answer-area {
+
+    display: block;
+
+    padding: 8px 18px 4px;
+
+    flex: 1;
+
+    min-height: 0;
+
+}
+
+.assistant .quick-actions {
+
+    margin-top: auto;
+
+    flex-shrink: 0;
+
+    min-height: 32px;
+
+    align-items: center;
+
+    padding: 0 10px;
+
+    overflow-x: auto;
+
+}
+
+.assistant .chip {
+
+    padding: 6px 8px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+.assistant .composer-wrap {
+
+    padding: 6px 10px 10px;
+
+    flex-shrink: 0;
+
+}
+
+.assistant .composer {
+
+    padding: 9px 8px 7px;
+
+}
+
+.assistant .composer textarea {
+
+    min-height: 32px;
+
+    height: 32px;
+
+    max-height: 80px;
+
+    line-height: 20px;
+
+    font-size: 13px;
+
+    resize: none;
+
+    font-weight: 500;
+
+}

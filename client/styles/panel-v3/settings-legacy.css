@@ -1,0 +1,179 @@
+
+
+.settings-legacy .preference-copy p:empty {
+
+    display: none;
+
+}
+
+.settings-legacy .notice {
+
+    font-size: 12px;
+
+}
+
+.settings-legacy .preference-copy h3 {
+
+    max-width: 190px;
+
+}
+
+.connection-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    margin-top: 20px;
+
+}
+
+.connection-card h3 {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+.connection-card p {
+
+    font-size: 12px;
+
+    color: var(--muted-foreground);
+
+    margin-top: 4px;
+
+}
+
+.provider-mark {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    color: #4285f4;
+
+    font-size: 27px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: 600;
+
+}
+
+.provider-mark.outlook {
+
+    color: #1682db;
+
+}
+
+.connection-card + .section-head {
+
+    margin-top: 32px;
+
+}
+
+.dialog-content .section-head h2 {
+
+    font-size: 14px;
+
+    letter-spacing: 0;
+
+}
+
+.dialog-content .section-head {
+
+    margin-bottom: 12px;
+
+}
+
+.dialog-content .document {
+
+    margin-top: 10px;
+
+}
+
+.dialog-content > .stack .empty {
+
+    font-size: 12px;
+
+}
+
+.dialog-content > .notice {
+
+    margin-top: 22px;
+
+}
+
+.profile-identity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 24px 0;
+
+}
+
+.profile-avatar {
+
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    background: var(--muted);
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 24px;
+
+    color: var(--muted-foreground);
+
+}
+
+.profile-identity h3 {
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+}
+
+.profile-identity p {
+
+    font-size: 12px;
+
+    color: var(--muted-foreground);
+
+    margin-top: 4px;
+
+}
+
+.dialog-content .fields {
+
+    gap: 16px;
+
+}

@@ -1,0 +1,12 @@
+
+@media (max-width: 650px) {
+  .calendar-provider {
+    flex-wrap: wrap;
+  }
+  .calendar-provider > button {
+    margin-left: 62px;
+  }
+  .calendar-section-heading + .calendar-events {
+    grid-template-columns: 1fr;
+  }
+}

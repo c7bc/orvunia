@@ -1,0 +1,179 @@
+
+@media (max-width: 760px) {
+  .welcome-shell {
+    grid-template-columns: 1fr;
+    min-height: 100dvh;
+    height: auto;
+    overflow: auto;
+  }
+  .welcome-main {
+    min-height: 100dvh;
+    padding: 35px 24px;
+  }
+  .welcome-aside {
+    display: none;
+  }
+  .welcome-form {
+    max-width: 430px;
+  }
+  .welcome-persona h1 {
+    font-size: 30px;
+    white-space: normal;
+  }
+  .welcome-auth-brand {
+    top: 24px;
+    left: 24px;
+  }
+  .welcome-back {
+    top: 14px;
+    left: 18px;
+  }
+  .welcome-footer {
+    left: 24px;
+    right: 24px;
+    bottom: 30px;
+  }
+  .welcome-principles {
+    gap: 10px;
+    font-size: 8px;
+  }
+  .welcome-survey {
+    min-height: 570px;
+    height: calc(100dvh - 70px);
+    max-height: none;
+  }
+  .welcome-survey h1 {
+    font-size: 30px;
+  }
+  .welcome-tour > .welcome-link {
+    position: static;
+    margin: 20px auto 0;
+  }
+  .onboarding-6 .welcome-tour > .welcome-link {
+    position: absolute;
+    top: 374px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    white-space: nowrap;
+  }
+  .welcome-account .account-section {
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .welcome-account .account-editor .account-name-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .welcome-account .account-photo-editor {
+    align-items: flex-start;
+  }
+  .welcome-account .account-photo-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* Cloud account surfaces inherit the shared identity without changing local forms. */
+.welcome-account.account-reference {
+  --welcome-account-primary: var(--primary, #0e705b);
+  --welcome-account-primary-fg: var(--primary-foreground, #fff);
+  --welcome-account-link: var(--primary, #0e705b);
+  --welcome-border: #00000012;
+  --welcome-surface: transparent;
+  --welcome-input: transparent;
+  --welcome-fg: #212126;
+  --welcome-muted: #74747d;
+}
+:is(body.dark-panel, body.dark, html.dark, [data-theme="dark"])
+  .welcome-account.account-reference {
+  --welcome-fg: #fafafa;
+  --welcome-secondary: #a1a1aa;
+  --welcome-muted: #a1a1aa;
+  --welcome-border: #ffffff0d;
+  --welcome-account-link: var(--primary, #6cddb4);
+  --welcome-account-primary: var(--primary, #6cddb4);
+  --welcome-account-primary-fg: var(--primary-foreground, #102a20);
+}
+.welcome-account.account-reference.account-shell > h2 {
+  margin-bottom: 16px;
+}
+.welcome-account.account-reference .account-section {
+  padding: 16px 0;
+}
+.welcome-account.account-reference .account-section > h3 {
+  font-weight: 600;
+}
+.welcome-account.account-reference
+  .account-section-content
+  > :is(
+    .account-profile-row,
+    .account-data-row,
+    .account-connected,
+    .account-device
+  ) {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.welcome-account.account-reference .account-profile-row {
+  min-height: 56px;
+  gap: 16px;
+}
+.welcome-account.account-reference .account-avatar {
+  background: var(--action);
+  color: #fff;
+}
+.welcome-account.account-reference .account-avatar.large {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+}
+.welcome-account.account-reference .account-action {
+  color: var(--welcome-account-link);
+  margin-top: 0;
+  min-height: 32px;
+}
+.welcome-account.account-reference .account-action:hover {
+  color: var(--welcome-account-link);
+}
+.welcome-account.account-reference .account-update-profile {
+  margin-left: auto;
+  padding: 6px 8px;
+  white-space: nowrap;
+}
+.welcome-account.account-reference .account-data-row > span:first-child {
+  font-size: 13px;
+}
+.welcome-account.account-reference .account-data-row {
+  gap: 6px;
+  min-height: 40px;
+}
+.welcome-account.account-reference .account-badge {
+  border: 0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 11px;
+  line-height: 16px;
+}
+.welcome-account.account-reference .account-connected {
+  min-height: 40px;
+  gap: 4px;
+  margin: 0;
+  font-size: 13px;
+}
+.welcome-account.account-reference .account-connected > strong {
+  font-weight: 400;
+}
+.welcome-account.account-reference .account-device {
+  margin-top: 0;
+  gap: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.welcome-account.account-reference .account-device > svg {
+  width: 32px;
+  height: 24px;
+  margin-top: 0;
+}
+.welcome-account.account-reference .account-device strong {
+  font-size: 13px;
+}

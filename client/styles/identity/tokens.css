@@ -1,0 +1,66 @@
+:root {
+  --identity-paper: #fbfaf7;
+  --identity-ink: #252a27;
+  --identity-soft: #f1f2ee;
+  --identity-secondary: #626a65;
+  --identity-border: #dedfda;
+  --identity-rail: #f5f5f1;
+  --identity-jade: #126c50;
+  --identity-jade-hover: #095c4a;
+  --identity-mint: #71cba2;
+  --identity-charcoal: #121416;
+  --identity-charcoal-soft: #242628;
+  --identity-charcoal-rail: #191b1d;
+  --identity-light: #ecf2ed;
+  --identity-light-secondary: #adb3af;
+  --identity-dark-border: #34383a;
+  --identity-control-border: #7d8b80;
+  --identity-dark-control-border: #737c75;
+  --control-border: var(--identity-control-border);
+  --action: var(--identity-jade);
+  --action-hover: var(--identity-jade-hover);
+  --action-foreground: #fff;
+  --selected: #deeee3;
+  --selected-foreground: #08553f;
+  --radius: 10px;
+  --radius-panel: 12px;
+  --font: Geist, "Segoe UI", sans-serif;
+}
+.dark-panel,
+body.dark,
+html.dark,
+[data-theme="dark"],
+body.overlay,
+body.control {
+  --control-border: var(--identity-dark-control-border);
+  --selected: #203c2f;
+  --selected-foreground: #a3edc8;
+}
+body.overlay,
+body.control {
+  --background: #19221c;
+  --foreground: var(--identity-light);
+  --muted: #ffffff0b;
+  --muted-foreground: #a8b8ad;
+  --border: #ffffff24;
+  --primary: var(--identity-mint);
+  --primary-foreground: #102a20;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: var(--primary);
+}
+::selection {
+  background: #63cba66b;
+  color: inherit;
+}

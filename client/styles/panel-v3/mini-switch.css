@@ -1,0 +1,176 @@
+
+
+.mini-switch {
+   width: 32px;
+   height: 18px;
+   background: #71717a;
+ }
+
+.mini-switch:after {
+   width: 14px;
+   height: 14px;
+ }
+
+.mini-switch.on:after {
+   left: 16px;
+ }
+
+.start-tools {
+   position: relative;
+   display: block;
+   height: 43px;
+ }
+
+.start-button {
+   height: 43px;
+   padding: 0 25px;
+   min-width: 164px;
+ }
+
+.start-mode-caption {
+   position: absolute;
+   top: 45px;
+   left: 0;
+   width: 100%;
+   max-width: 100%;
+   height: 17px;
+   padding: 0 14px 0 4px;
+   border: 0;
+   border-radius: 0;
+   text-align: center;
+   text-align-last: center;
+   font-size: 11px;
+   color: var(--muted-foreground);
+   box-shadow: none;
+   background: transparent;
+ }
+
+.calendar-prompt {
+   margin-top: 28px;
+ }
+
+.calendar-prompt button {
+   font-weight: 400;
+ }
+
+.history-group > h2 {
+   font-weight: 500;
+ }
+
+.meeting-row {
+   height: 40px;
+   padding: 0 8px 0 12px;
+   margin-bottom: 4px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+ }
+
+.meeting-row:hover, .meeting-row:focus-within, .meeting-row.menu-active {
+   background: color-mix(in oklab, var(--foreground) 8%, transparent);
+ }
+
+.meeting-main {
+   flex: 1;
+   min-width: 0;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   padding: 0;
+   text-align: left;
+ }
+
+.meeting-main > strong {
+   min-width: 0;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   font-size: 14px;
+   font-weight: 500;
+ }
+
+.meeting-row-meta {
+   margin-left: auto;
+   gap: 8px;
+   color: var(--foreground);
+ }
+
+.meeting-duration {
+   font-size: 11px;
+   font-weight: 500;
+   line-height: 20px;
+   border-radius: 20px;
+   min-width: 36px;
+   padding: 0 6px;
+   text-align: center;
+   background: color-mix(in oklab, var(--muted) 65%, transparent);
+ }
+
+.history-menu-trigger {
+   width: 28px;
+   height: 28px;
+   border-radius: 5px;
+   opacity: 0;
+ }
+
+.meeting-row:hover .history-menu-trigger, .meeting-row:focus-within .history-menu-trigger, .meeting-row.menu-active .history-menu-trigger {
+   opacity: 1;
+ }
+
+.history-row-menu {
+   position: absolute;
+   z-index: 50;
+   top: 40px;
+   right: 12px;
+   width: 146px;
+   padding: 4px;
+   border: 1px solid var(--border);
+   border-radius: 8px;
+   background: var(--sidebar);
+   box-shadow: 0 3px 12px #0002;
+ }
+
+.history-row-menu.above {
+   top: auto;
+   bottom: 40px;
+ }
+
+.history-row-menu button {
+   height: 32px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   padding: 0 8px;
+   text-align: left;
+   border-radius: 4px;
+   color: #f87171;
+   font-size: 14px;
+ }
+
+.history-row-menu button:hover {
+   background: #ef444414;
+ }
+
+.empty-symbol {
+   margin-bottom: 4px;
+ }
+
+.first-session {
+   gap: 20px;
+   min-height: 250px;
+ }
+
+.assistant {
+   border-radius: 10px;
+   border: 1px solid #6887736b;
+   border-top: 2px solid #67c79e;
+   background: rgb(20 29 24 / var(--surface-alpha));
+   box-shadow: none;
+ }
+
+.assistant .composer-wrap {
+   padding: 5px 10px 10px;
+ }

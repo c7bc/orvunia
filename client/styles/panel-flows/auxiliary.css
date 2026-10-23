@@ -1,0 +1,15 @@
+.detached-surfaces #dialogs,
+.detached-surfaces .overlay-menu,
+.detached-surfaces > body > .flow-select-popup { visibility:hidden!important; pointer-events:none!important; position:fixed!important; }
+.detached-surfaces .assistant.menu-open { min-height:0!important; }
+html:has(.auxiliary-window) { background:transparent!important; height:auto!important; min-height:0!important; overflow:hidden; }
+body.auxiliary-window { margin:0; padding:12px; height:auto!important; min-height:0!important; overflow:hidden; color:var(--text,#e8eeeb); background:var(--surface,#171b1c); border:1px solid var(--border,#ffffff20); border-radius:16px; }
+.auxiliary-header { height:28px; display:flex; align-items:center; justify-content:space-between; padding:0 4px 8px; font-size:12px; color:#b5c7bd; -webkit-app-region:drag; }
+.auxiliary-header button { -webkit-app-region:no-drag; color:#dce8e0; font-size:22px; width:28px; height:28px; border-radius:6px; }
+.auxiliary-header button:hover { background:#ffffff12; }
+#auxiliary-content { max-height:calc(100vh - 62px); overflow:auto; scrollbar-width:thin; }
+.auxiliary-window .overlay-menu { position:relative!important; inset:auto!important; width:100%!important; max-height:none!important; margin:0; box-shadow:none; }
+.auxiliary-window .modal-backdrop { position:relative!important; inset:auto!important; padding:0!important; min-height:0!important; background:transparent!important; backdrop-filter:none!important; display:block; }
+.auxiliary-window .modal { width:100%!important; max-width:none!important; max-height:none!important; margin:0!important; padding:16px!important; border:0; box-shadow:none; }
+.auxiliary-window .flow-select-popup { position:relative!important; inset:auto!important; width:100%!important; min-width:0!important; max-height:260px!important; transform:none!important; margin-top:8px; }
+.auxiliary-window [data-auxiliary-layer="select"] { position:relative; z-index:100; }

@@ -1,0 +1,109 @@
+
+
+@media(max-width:650px){
+  .sidebar{
+    display:none}
+  .workspace{
+    margin:0;
+    width:100%}
+  .topbar{
+    height:50px;
+    padding:0 16px}
+  .breadcrumb{
+    font-size:9px;
+    gap:7px}
+  .local-badge{
+    font-size:8px}
+  .top-actions{
+    gap:5px}
+  main{
+    padding:23px 14px 18px}
+  .page-heading{
+    align-items:flex-start}
+  .page-heading h1{
+    font-size:23px;
+    max-width:250px;
+    line-height:1.2}
+  .page-heading p{
+    font-size:11px;
+    line-height:1.7;
+    max-width:240px}
+  .eyebrow{
+    font-size:7px;
+    letter-spacing:1.6px}
+  .page-heading>.secondary{
+    font-size:0;
+    padding:8px}
+  .page-heading>.secondary svg{
+    width:18px;
+    height:18px}
+  .mode-row{
+    flex-direction:column;
+    align-items:stretch;
+    gap:13px}
+  .mode-switch{
+    width:100%}
+  .mode-switch button{
+    flex:1;
+    justify-content:center;
+    font-size:11px;
+    padding:11px 7px}
+  .session-control{
+    justify-content:flex-end}
+  .session-control .status-text{
+    display:flex;
+    margin-right:auto;
+    font-size:9px}
+  .session-control #timer{
+    font-size:10px}
+  .studio-grid{
+    display:flex;
+    flex-direction:column}
+  .studio-grid>*{
+    width:100%}
+  .context-panel{
+    padding:12px}
+  .context-panel .context-tags{
+    display:none}
+  .context-person .avatar{
+    display:none}
+  .job-card{
+    padding:8px!important}
+  .job-card b{
+    font-size:9px}
+  .job-card span:last-child{
+    font-size:8px}
+  .context-panel .panel-heading{
+    display:none}
+  .conversation-panel{
+    height:355px}
+  .assistant-panel{
+    height:610px}
+  .workspace-footer{
+    font-size:8px}
+  .workspace-footer>span:last-child{
+    display:none}
+  .form-grid{
+    grid-template-columns:1fr;
+    gap:0}
+  .compact-panel{
+    width:min(355px,calc(100vw - 24px));
+    right:12px;
+    bottom:12px}
+  .summary-stat{
+    gap:6px}
+  .summary-stat div{
+    padding:9px}
+  .summary-stat small{
+    font-size:8px}
+  .modal-header,.modal-body,.modal-footer{
+    padding-left:18px;
+    padding-right:18px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{
+    animation:none!important;
+    transition:none!important}
+}
+

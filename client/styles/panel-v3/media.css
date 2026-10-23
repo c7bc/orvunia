@@ -1,0 +1,179 @@
+
+
+@media (max-width: 680px) {
+
+    .global-search {
+
+        max-width: 300px;
+
+        width: 50vw;
+
+    }
+
+    .global-search span {
+
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+
+    }
+
+    .dashboard-overview {
+
+        padding: 20px;
+
+    }
+
+    .overview-heading {
+
+        gap: 20px;
+
+    }
+
+    .dashboard-history {
+
+        padding: 0 20px 20px;
+
+    }
+
+    .studio-dialog-backdrop {
+
+        padding: 12px;
+
+    }
+
+    .studio-dialog {
+
+        width: 100%;
+
+        height: calc(100dvh - 24px);
+
+        grid-template-columns: 155px 1fr;
+
+    }
+
+    .dialog-content {
+
+        padding: 18px;
+
+    }
+
+    .dialog-nav {
+
+        font-size: 12px;
+
+        padding: 6px 8px;
+
+        gap: 7px;
+
+    }
+
+    .dialog-nav svg {
+
+        width: 17px;
+
+    }
+
+    .preference-icon {
+
+        display: none;
+
+    }
+
+    .preference-copy p {
+
+        max-width: 190px;
+
+    }
+
+    .preference-control select {
+
+        max-width: 120px;
+
+    }
+
+    .preference-row {
+
+        gap: 9px;
+
+    }
+
+    .settings-legacy .shortcut-input {
+
+        width: 125px;
+
+        font-size: 10px;
+
+    }
+
+    .detail-columns {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .session-assistant {
+
+        min-height: 300px;
+
+        border-top: 1px solid var(--border);
+
+        border-left: 0;
+
+    }
+
+    .upcoming-meetings {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .later-meetings:empty {
+
+        display: none;
+
+    }
+
+    .account-menu {
+
+        right: 16px;
+
+    }
+
+    .mode-editor-title h1 {
+
+        font-size: 24px;
+
+    }
+
+}
+
+body.browser-preview .overlay-shell {
+
+    width: 540px;
+
+    height: var(--overlay-height, 152px);
+
+}
+
+.assistant .composer textarea {
+
+    max-height: 96px;
+
+}
+
+.markdown pre code {
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+}
+
+/* 3.1: authenticated client flow comparison, 14 October 2026. */
+.search-dialog {
+   width: 480px;
+   max-width: calc(100vw - 32px);
+ }

@@ -1,0 +1,177 @@
+
+#schedule-form .flow-select-trigger {
+  height: 40px;
+  border-radius: 10px;
+}
+#schedule-form .form-footer {
+  margin-top: 28px;
+}
+.flow-disclosure > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 32px;
+}
+.flow-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+.flow-disclosure > summary::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 180ms cubic-bezier(0.2, 0, 0, 1);
+  margin: 0 3px;
+}
+.flow-disclosure[data-disclosure-open="true"] > summary::before {
+  transform: rotate(45deg);
+}
+.flow-disclosure-content {
+  overflow: hidden;
+}
+.history-pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.history-pagination > button {
+  padding: 6px 10px;
+  min-height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  transition:
+    background-color 150ms ease,
+    opacity 150ms ease;
+}
+.history-pagination > button:hover:not(:disabled) {
+  background: var(--selected);
+  color: var(--selected-foreground);
+}
+.history-pagination .history-latest {
+  margin-left: auto;
+}
+.history-pagination small {
+  margin-left: 4px;
+}
+.detail-chat-log [data-history-list] > article {
+  padding: 0 0 22px;
+  border-bottom: 0;
+}
+.detail-chat-log [data-history-list] > article > small {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+.assistant .history-pagination {
+  padding: 0 10px;
+  font-size: 11px;
+}
+.assistant .history-pagination button {
+  padding: 5px 8px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .history-pagination > button {
+    transition: none;
+  }
+}
+.flow-disclosure-inner {
+  display: flow-root;
+  padding-top: 16px;
+}
+.flow-disclosure-inner > :first-child {
+  margin-top: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-disclosure > summary::before {
+    transition: none;
+  }
+}
+.mode-type-row .flow-select {
+  width: 210px;
+  max-width: 220px;
+}
+.mode-type-row .flow-select-trigger {
+  border-radius: 10px;
+}
+.flow-select-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  min-width: 128px;
+  max-width: calc(100vw - 16px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+  color: var(--foreground);
+  box-shadow:
+    0 4px 12px #0003,
+    0 0 0 1px color-mix(in oklab, var(--foreground) 10%, transparent);
+  font-family: Geist, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  transform-origin: top center;
+  animation: flow-menu-enter 160ms cubic-bezier(0.2, 0.65, 0.3, 1) both;
+  scrollbar-width: thin;
+}
+.dark-panel .flow-select-popup {
+  background: var(--identity-charcoal-rail);
+  color: var(--identity-light);
+  border-color: var(--identity-dark-border);
+}
+body:not(.dark-panel) .flow-select-popup {
+  background: var(--identity-paper);
+  color: var(--identity-ink);
+  border-color: var(--identity-border);
+}
+.flow-select-popup[data-side="top"] {
+  transform-origin: bottom center;
+  animation-name: flow-menu-up-enter;
+}
+.flow-select-popup [role="option"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: default;
+  user-select: none;
+}
+.flow-select-popup [role="option"] > span:first-child {
+  flex: 1;
+  min-width: 0;
+}
+.flow-select-popup [role="option"].highlighted {
+  background: var(--selected);
+  color: var(--selected-foreground);
+}
+.flow-select-popup [aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.flow-select-check {
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  font-size: 12px;
+}
+.flow-select-group {
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}

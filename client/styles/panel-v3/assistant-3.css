@@ -1,0 +1,177 @@
+
+
+.assistant .composer {
+   border: 1px solid #425248;
+   border-radius: 10px;
+   background: rgb(10 18 13 / .72);
+   box-shadow: none;
+   padding: 8px 8px 6px;
+ }
+
+.assistant .composer textarea {
+   font-weight: 400;
+   color: #f4f4f5;
+ }
+
+.assistant .composer textarea::placeholder {
+   color: #a1a1aa;
+   opacity: 1;
+ }
+
+.assistant .chip {
+   color: #e4eee7;
+   font-size: 12px;
+   font-weight: 500;
+ }
+
+.assistant .smart-chip {
+   border: 0;
+   border-radius: 6px;
+   background: #2c3e32;
+   font-size: 12px;
+   padding: 2px 8px;
+   height: 23px;
+   color: #e4eee7;
+ }
+
+.assistant .smart-chip svg {
+   display: none;
+ }
+
+.assistant .composer-footer {
+   gap: 6px;
+ }
+
+.assistant .send {
+   width: 24px;
+   height: 24px;
+   border: 1px solid var(--action);
+   background: var(--action);
+ }
+
+.control-shell {
+   padding: 0;
+ }
+
+.control-pill {
+   padding: 5px 10px;
+   gap: 7px;
+   border: 1px solid #6887736b;
+   background: rgb(20 29 24 / var(--surface-alpha));
+   box-shadow: none;
+   border-radius: 10px;
+ }
+
+.control-pill .control-brand {
+   margin: 0;
+   padding: 0;
+   width: 28px;
+   min-width: 28px;
+   height: 28px;
+   color: #f4f4f5;
+   background: transparent;
+   box-shadow: none;
+ }
+
+.control-pill .control-toggle {
+   height: 32px;
+   flex: 1;
+   min-width: 0;
+   padding: 0 11px;
+   font-size: 12px;
+   font-weight: 500;
+   background: #2b3930;
+   gap: 7px;
+ }
+
+.control-pill .control-stop {
+   width: 32px;
+   min-width: 32px;
+   height: 32px;
+   padding: 0;
+   border-radius: 8px;
+ }
+
+.start-tools {
+   width: 164px;
+ }
+
+.start-button {
+   width: 164px;
+   min-width: 164px;
+   padding: 0 10px;
+   white-space: nowrap;
+ }
+
+
+.assistant .quick-actions {
+   padding-top: 8px;
+   min-height: 39px;
+ }
+
+.assistant.compact .composer textarea {
+   min-height: 26px;
+   height: 26px;
+ }
+
+/* Composer bounds preserve native overlay sizing and keyboard reachability. */
+.assistant .composer textarea {
+   max-height: 50px;
+   scrollbar-width: thin;
+   scrollbar-color: #71717a transparent;
+ }
+
+.assistant .quick-actions {
+   overflow-x: auto;
+   overflow-y: hidden;
+   overscroll-behavior-x: contain;
+ }
+
+.assistant .overlay-menu {
+
+    bottom: var(--overlay-menu-bottom, 116px);
+
+    max-height: var(--overlay-menu-available, 365px);
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #71717a transparent;
+
+}
+
+.assistant .chat-collapse > .icon-btn:first-child {
+
+    opacity: 0;
+
+    transform: translateY(-3px);
+
+    transition: opacity 150ms ease-out, transform 150ms ease-out, filter 150ms ease-out;
+
+}
+
+.assistant:hover .chat-collapse > .icon-btn:first-child,
+.assistant:focus-within .chat-collapse > .icon-btn:first-child {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.assistant .chat-collapse > .icon-btn:first-child:hover {
+
+    filter: brightness(1.1);
+
+    transform: translateY(-1px);
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .assistant .chat-collapse > .icon-btn:first-child {
+     transform: none !important;
+   }
+
+}

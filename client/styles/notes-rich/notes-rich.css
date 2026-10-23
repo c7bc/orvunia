@@ -1,0 +1,123 @@
+.notes-rich{
+  position:relative;
+  min-height:160px;
+  margin-bottom:24px;
+  color:var(--foreground);
+  font:400 14px/1.65 Geist,Arial,sans-serif}
+
+.notes-rich [hidden]{
+  display:none!important}
+
+.notes-rich .tiptap{
+  outline:none;
+  min-height:160px;
+  padding:0;
+  max-width:none;
+  overflow-wrap:anywhere}
+
+.notes-rich .tiptap p{
+  margin:0 0 12px}
+.notes-rich .tiptap h1,.notes-rich .tiptap h2,.notes-rich .tiptap h3{
+  font-weight:600;
+  line-height:1.4;
+  margin:20px 0 10px}
+.notes-rich .tiptap h1{
+  font-size:22px}
+.notes-rich .tiptap h2{
+  font-size:19px}
+.notes-rich .tiptap h3{
+  font-size:16px}
+
+.notes-rich .tiptap ul,.notes-rich .tiptap ol{
+  padding-left:24px;
+  margin:12px 0}
+.notes-rich .tiptap li{
+  margin:4px 0}
+.notes-rich .tiptap li p{
+  margin:0}
+.notes-rich .tiptap blockquote{
+  border-left:2px solid currentColor;
+  opacity:.8;
+  padding-left:16px;
+  margin:16px 0}
+.notes-rich .tiptap pre{
+  white-space:pre-wrap;
+  background:var(--muted,#8882);
+  border-radius:6px;
+  padding:12px;
+  font:12px/1.6 Consolas,monospace}
+.notes-rich .tiptap code{
+  font-family:Consolas,monospace;
+  font-size:.9em}
+.notes-rich .tiptap a{
+  color:inherit;
+  text-decoration:underline;
+  cursor:text}
+.notes-rich .tiptap hr{
+  border:0;
+  border-top:1px solid #8884;
+  margin:20px 0}
+
+.notes-rich .tiptap p.is-editor-empty:first-child:before{
+  content:attr(data-placeholder);
+  float:left;
+  height:0;
+  pointer-events:none;
+  color:var(--muted-foreground,#888);
+  opacity:.7}
+
+.notes-rich-tools{
+  position:absolute;
+  top:0;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  width:max-content;
+  max-width:100%;
+  flex-wrap:wrap;
+  margin:0;
+  padding:4px;
+  background:var(--background,#202020);
+  border:1px solid #8884;
+  border-radius:8px;
+  box-shadow:0 3px 12px #0002}
+
+.notes-rich-tools button,.notes-source-toggle{
+  font:inherit;
+  color:inherit;
+  background:transparent;
+  border:0;
+  border-radius:4px;
+  cursor:pointer}
+.notes-rich-tools button{
+  min-width:28px;
+  padding:3px 6px;
+  font-size:12px}
+.notes-rich-tools button:hover,.notes-rich-tools button[aria-pressed=true]{
+  background:#8883}
+.notes-rich-tools button:focus-visible,.notes-source-toggle:focus-visible{
+  outline:2px solid #9098ff;
+  outline-offset:2px}
+
+.notes-source-toggle{
+  position:absolute;
+  right:0;
+  bottom:-22px;
+  font-size:10px;
+  opacity:0;
+  transition:opacity .1s}
+.notes-rich:hover .notes-source-toggle,.notes-rich:focus-within .notes-source-toggle{
+  opacity:.6}
+.notes-source-toggle:disabled{
+  cursor:default}
+.notes-source-hint{
+  font-size:11px;
+  color:var(--muted-foreground,#888);
+  margin:8px 0}
+
+@media(prefers-reduced-motion:reduce){
+  .notes-source-toggle{
+    transition:none}
+}
+

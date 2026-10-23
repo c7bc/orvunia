@@ -1,0 +1,9 @@
+node_modules
+website
+.git
+data
+work
+next/runtime/
+.env*
+**/*.sqlite*
+**/*.log

@@ -1,0 +1,23 @@
+.studio-dialog .flow-select-trigger,
+.welcome-shell .flow-select-trigger,
+.welcome-account .flow-select-trigger,
+.studio-dialog .preference-control select,
+.welcome-form :is(input, select),
+.welcome-account .account-editor input {
+  border-color: var(--control-border);
+}
+.flow-select-microphone .flow-select-trigger {
+  border: 1px solid var(--control-border);
+  padding: 0 8px;
+  border-radius: 8px;
+}
+.prompt-editor,
+.modes-dialog .prompt-editor,
+.search-dialog .command-input {
+  border-color: var(--control-border);
+}
+.studio-dialog .flow-select-trigger:focus-visible,
+.welcome-account .account-editor input:focus,
+.welcome-form :is(input, select):focus-visible {
+  border-color: var(--primary);
+}

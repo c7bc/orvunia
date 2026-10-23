@@ -1,0 +1,17 @@
+.billing-local-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  background: var(--background);
+}
+.billing-local-card h2 {
+  font-size: 24px;
+  letter-spacing: -.6px;
+  margin: 20px 0 12px;
+}
+.billing-local-card p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin: 12px 0;
+}

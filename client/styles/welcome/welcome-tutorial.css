@@ -1,0 +1,176 @@
+
+.welcome-tutorial kbd {
+  font:
+    11px Geist,
+    Arial,
+    sans-serif;
+  white-space: nowrap;
+  background: #fafafa;
+  border: 1px solid #e5e5e8;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: #666;
+}
+.welcome-form .welcome-error,
+.welcome-introduction .welcome-error {
+  font-size: 11px;
+  color: #a94837;
+  background: #fff8f5;
+  border: 1px solid #f4dcd5;
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: left;
+  margin: 13px 0;
+}
+.welcome-form .welcome-notice {
+  font-size: 11px;
+  color: #45735c;
+  background: #f5fbf7;
+  border: 1px solid #dceee3;
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: left;
+  margin: 13px 0;
+}
+.welcome-device-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px;
+  border: 1px solid #e6e6e9;
+  border-radius: 9px;
+  background: #fcfcfd;
+}
+.welcome-device-details small {
+  color: #999;
+  font-size: 10px;
+  margin-top: 8px;
+}
+.welcome-device-details strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.welcome-device-details span {
+  font-size: 12px;
+  color: #888;
+}
+.welcome-device-details hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 12px 0 1px;
+}
+.welcome-device-details code {
+  font-size: 27px;
+  letter-spacing: 5px;
+  text-align: center;
+  line-height: 1.8;
+  color: var(--primary);
+}
+.welcome-device-warning {
+  font-size: 10px !important;
+  margin-top: 18px !important;
+  color: #999 !important;
+}
+
+.welcome-account {
+  max-width: 100%;
+  font-family: Geist, Arial, sans-serif;
+  color: var(--text, #222);
+  font-size: 13px;
+}
+.welcome-account * {
+  box-sizing: border-box;
+}
+.welcome-account.account-shell > h2 {
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.65px;
+  font-weight: 600;
+  padding: 0 0 19px;
+  margin: 0 0 22px;
+  border-bottom: 1px solid var(--line, #ececef);
+}
+.welcome-account.account-local h2 {
+  border: 0;
+  margin-bottom: 12px;
+}
+.welcome-account.account-shell {
+  padding: 0;
+}
+.welcome-account .account-shell > h2 {
+  font-size: 23px;
+  line-height: 30px;
+  letter-spacing: -0.65px;
+  font-weight: 600;
+  padding: 0 0 19px;
+  margin: 0 0 22px;
+  border-bottom: 1px solid var(--line, #ececef);
+}
+.welcome-account .account-section {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 18px;
+  padding: 0 0 23px;
+  margin: 0 0 23px;
+  border-bottom: 1px solid var(--line, #ececef);
+}
+.welcome-account .account-section:last-child {
+  border: 0;
+}
+.welcome-account .account-section > h3 {
+  font-size: 12px;
+  font-weight: 550;
+  margin: 5px 0;
+  color: var(--text, #42424a);
+}
+.welcome-account .account-section-content {
+  min-width: 0;
+  position: relative;
+}
+.welcome-account .account-password-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.welcome-account .account-password-row > span {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.welcome-account .account-editor.account-editor-destructive {
+  background: var(--welcome-soft);
+}
+.welcome-account .account-profile-row,
+.welcome-account .account-data-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 35px;
+}
+.welcome-account .account-profile-row > strong {
+  font-weight: 500;
+  font-size: 13px;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.welcome-account .account-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 13px;
+  background: #e4e8ee;
+  color: #737f90;
+  overflow: hidden;
+}
+.welcome-account .account-avatar > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

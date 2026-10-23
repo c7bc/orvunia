@@ -1,0 +1,31 @@
+const messages = {
+  title: ["Repositório", "Repository", "Repositorio"],
+  info: ["Como usar um repositório na entrevista", "Using a repository in an interview", "Cómo usar un repositorio en la entrevista"],
+  description: ["Prepare o código de um desafio anterior ou de um projeto que será discutido na entrevista.", "Prepare code from an earlier exercise or a project to discuss during the interview.", "Prepara el código de un ejercicio anterior o un proyecto que se discutirá en la entrevista."],
+  explanation: ["Útil quando você já trabalhou em um repositório em etapas anteriores do processo. O agente pode consultar os arquivos aprovados, fazer code review, ajudar a explicar decisões e sugerir ajustes e testes. Você aplica as mudanças e executa os testes no editor. A pasta original permanece somente leitura para o agente.", "Useful when you worked on a repository in earlier stages. The agent can consult approved files, review code, explain decisions, and suggest changes and tests. You apply changes and run tests in your editor. The agent has read-only access to the original folder.", "Útil si trabajaste en un repositorio en etapas anteriores. El agente puede consultar archivos aprobados, revisar código, explicar decisiones y sugerir cambios y pruebas. Tú aplicas los cambios y ejecutas las pruebas en el editor. El agente solo puede leer la carpeta original."],
+  lifetime: ["A conexão é lembrada neste computador para este modo. Cada sessão relê os arquivos permitidos; alterações durante a sessão exigem atualização manual.", "The connection is remembered on this computer for this mode. Each session re-reads allowed files; changes during a session require a manual refresh.", "La conexión se recuerda en este equipo para este modo. Cada sesión vuelve a leer los archivos permitidos; los cambios durante la sesión requieren una actualización manual."],
+  notice: ["Ao selecionar e conectar, você permite que o assistente leia os arquivos permitidos desta pasta e envie os trechos necessários ao provedor de IA configurado. A pasta original não será alterada. Você pode desconectá-la quando quiser. Os filtros de arquivos sensíveis continuam ativos, mas não garantem a ausência de segredos.", "By selecting and connecting, you allow the assistant to read allowed files in this folder and send necessary excerpts to the configured AI provider. The original folder will not be changed. You can disconnect it at any time. Sensitive-file filters remain active but cannot guarantee the absence of secrets.", "Al seleccionar y conectar, permites que el asistente lea los archivos permitidos de esta carpeta y envíe los fragmentos necesarios al proveedor de IA configurado. La carpeta original no se modificará. Puedes desconectarla cuando quieras. Los filtros de archivos sensibles siguen activos, pero no garantizan la ausencia de secretos."],
+  reconnect: ["Para autorizar o acesso com o novo aviso, conecte esta pasta uma vez nas configurações do modo. Os dados existentes serão preservados.", "To authorize access with the new notice, connect this folder once in the mode settings. Existing data will be preserved.", "Para autorizar el acceso con el nuevo aviso, conecta esta carpeta una vez en la configuración del modo. Los datos existentes se conservarán."],
+  select: ["Selecionar e conectar pasta", "Select and connect folder", "Seleccionar y conectar carpeta"],
+  change: ["Trocar e conectar pasta", "Change and connect folder", "Cambiar y conectar carpeta"],
+  review: ["Ver arquivos", "View files", "Ver archivos"],
+  remove: ["Desconectar pasta", "Disconnect folder", "Desconectar carpeta"],
+  scope: ["Arquivos ou pastas permitidos, um por linha", "Allowed files or folders, one per line", "Archivos o carpetas permitidos, uno por línea"],
+  advanced: ["Personalizar arquivos permitidos (opcional)", "Customize allowed files (optional)", "Personalizar archivos permitidos (opcional)"],
+  scopeHint: ["A pasta é escolhida pelo gerenciador de arquivos. Aqui você pode limitar os arquivos dentro dela, usando nomes relativos como src ou README.md, um por linha. Não insira o caminho completo da pasta.", "Choose the folder in the file manager. Here you can limit files inside it using relative names such as src or README.md, one per line. Do not enter the full folder path.", "Elige la carpeta en el administrador de archivos. Aquí puedes limitar sus archivos con nombres relativos como src o README.md, uno por línea. No introduzcas la ruta completa de la carpeta."],
+  choose: ["Escolher pasta e preparar prévia", "Choose folder and prepare preview", "Elegir carpeta y preparar vista previa"],
+  ready: ["Pasta preparada para este modo", "Folder prepared for this mode", "Carpeta preparada para este modo"],
+  selected: ["Pasta selecionada", "Folder selected", "Carpeta seleccionada"],
+  fileCount: ["arquivos selecionados", "selected files", "archivos seleccionados"],
+  lineCount: ["linhas", "lines", "líneas"],
+  included: ["Arquivos incluídos", "Included files", "Archivos incluidos"],
+  content: ["Ver conteúdo dos arquivos", "View file contents", "Ver contenido de los archivos"],
+  done: ["Concluir", "Done", "Listo"],
+  empty: ["Nenhuma pasta preparada", "No folder prepared", "Ninguna carpeta preparada"],
+  unavailable: ["Abra o cliente desktop para selecionar uma pasta.", "Open the desktop app to select a folder.", "Abre la aplicación de escritorio para seleccionar una carpeta."],
+  error: ["Não foi possível preparar a pasta. Confira os arquivos permitidos e tente novamente.", "Could not prepare the folder. Check the allowed files and try again.", "No se pudo preparar la carpeta. Comprueba los archivos permitidos e inténtalo de nuevo."],
+  pending: ["Permita o uso dos arquivos para consultar o repositório na conversa.", "Allow file access to use the repository in your conversation.", "Permite el uso de los archivos para consultar el repositorio en la conversación."],
+} as const;
+export function preparationMessage(locale: string, key: keyof typeof messages) {
+  return messages[key][locale.startsWith("es") ? 2 : locale.startsWith("en") ? 1 : 0];
+}

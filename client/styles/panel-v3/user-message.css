@@ -1,0 +1,167 @@
+
+
+.user-message {
+
+    font-size: 12px;
+
+    background: #235641;
+
+    border: 0;
+
+    border-radius: 10px 10px 3px 10px;
+
+    box-shadow: none;
+
+    color: #f4f4f5;
+
+    padding: 7px 10px;
+
+}
+
+.response-card {
+
+    margin-bottom: 25px;
+
+}
+
+.quick-actions {
+
+    padding: 8px 10px 0;
+
+    gap: 5px;
+
+    scrollbar-width: none;
+
+}
+
+.chip {
+
+    font-size: 12px;
+
+    border: 1px solid #ffffff18;
+
+    background: #ffffff04;
+
+    border-radius: 6px;
+
+    padding: 6px 8px;
+
+    color: #c2c1c9;
+
+    font-weight: 500;
+
+    gap: 6px;
+
+}
+
+.chip + .chip:before {
+
+    content: none;
+
+    color: #77747f;
+
+    margin-right: 6px;
+
+}
+
+.chip:hover {
+
+    background: #ffffff12;
+
+}
+
+.composer-wrap {
+
+    padding: 6px 10px 10px;
+
+}
+
+.composer {
+
+    background: #0d1510;
+
+    border: 0.5px solid #ffffff29;
+
+    border-radius: 6px;
+
+    padding: 9px 9px 7px;
+
+    box-shadow: none;
+
+}
+
+.composer textarea {
+
+    font-size: 13px;
+
+    line-height: 20px;
+
+    min-height: 32px;
+
+    color: #fafafa;
+
+    font-weight: 500;
+
+}
+
+.composer-footer {
+
+    padding-top: 4px;
+
+}
+
+.composer-footer .icon-btn {
+
+    width: 25px;
+
+    height: 25px;
+
+    color: #a1a1aa;
+
+}
+
+.composer-footer small {
+
+    font-size: 10px;
+
+}
+
+.send {
+
+    border-radius: 6px;
+
+    height: 24px;
+
+    width: 24px;
+
+    background: #235641;
+
+    box-shadow: none;
+
+    border: 0;
+
+}
+
+.footer-tip {
+
+    display: none;
+
+}
+
+.transcript-line p {
+
+    font-size: 13px;
+
+}
+
+.transcript-line .who {
+
+    font-size: 11px;
+
+}
+
+.control-shell {
+
+    padding: 0;
+
+}

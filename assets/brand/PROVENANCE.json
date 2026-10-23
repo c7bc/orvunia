@@ -1,0 +1,75 @@
+{
+  "format": "orvunia-original-artwork/1",
+  "created": "2026-10-16",
+  "origin": "Independent project brief and generated raster concept; final logo SVG supplied by the user; native project SVG/HTML illustrations. No competitor reference media.",
+  "license": "MIT, to the extent the project can license its rights; dependency notices remain separate.",
+  "concept": "assets/brand/prompt.md",
+  "reproducibleSocialImages": "website/scripts/assets.mjs",
+  "files": [
+    {
+      "path": "assets/brand/logo.svg",
+      "bytes": 1917,
+      "sha256": "0b9156343639bb3264b367ca8f4b12c17cd239de83bf4a906ea4e81d30d957e8"
+    },
+    {
+      "path": "assets/brand/icon.svg",
+      "bytes": 2007,
+      "sha256": "b5f95ba6d21e78fc5f26e25a1f6fb5cb1f76fc86239cb7cfc09480d0cea52146"
+    },
+    {
+      "path": "assets/brand/logo-concept.png",
+      "bytes": 566156,
+      "sha256": "cb5d359875ebba45942747c59a19292eb9a87804d291482b580fc51500b3f5ae"
+    },
+    {
+      "path": "assets/brand/prompt.md",
+      "bytes": 1659,
+      "sha256": "f70844e60044b32ebc356e62bfd571dc95aba5d21bbe016e81d9409834114729"
+    },
+    {
+      "path": "website/public/brand/avatar-1.svg",
+      "bytes": 225,
+      "sha256": "8e745594e10615cfe3e8e60258598479a5d7eec7d34d1ebbfb0733ddced355ff"
+    },
+    {
+      "path": "website/public/brand/avatar-2.svg",
+      "bytes": 225,
+      "sha256": "f2fe44e834c322ea5ecad58af2b1593a65d0889acd8ed633cfc13e6435f119e2"
+    },
+    {
+      "path": "website/public/brand/avatar-3.svg",
+      "bytes": 225,
+      "sha256": "08cfc03bbb455fe49eaab4542bb315bcbaeaeddd9d5ac611b30e2ffb11c3ab65"
+    },
+    {
+      "path": "website/public/brand/avatar-4.svg",
+      "bytes": 225,
+      "sha256": "5e988cfdec4cd88e77fb8c3deadb6941d9f27f04d0b4f87ca741fca3d92b4091"
+    },
+    {
+      "path": "website/public/brand/editor-scene.svg",
+      "bytes": 1289,
+      "sha256": "d1fe48e34ae6d41fe7615b39423fd8efa92d29607d48a1eeb4e1b0662af6aa98"
+    },
+    {
+      "path": "website/public/icon.svg",
+      "bytes": 1917,
+      "sha256": "0b9156343639bb3264b367ca8f4b12c17cd239de83bf4a906ea4e81d30d957e8"
+    },
+    {
+      "path": "website/public/og/en.png",
+      "bytes": 44387,
+      "sha256": "fc4e9464da4a74a81c7806604be11fad0f92eeedd11925407bf096cb9261ddcb"
+    },
+    {
+      "path": "website/public/og/pt-BR.png",
+      "bytes": 48278,
+      "sha256": "0c9e31e8ca0e636fb2b1abd66cfe89a03319c360245f05227d9850e45d07c3ec"
+    },
+    {
+      "path": "website/public/og/es.png",
+      "bytes": 47940,
+      "sha256": "d161a9db423b8c32031d1502d41936630941fb4d47b8b1bfca586cc04037c8f9"
+    }
+  ]
+}

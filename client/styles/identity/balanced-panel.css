@@ -1,0 +1,80 @@
+.dashboard-container {
+  max-width: 1040px;
+}
+.dashboard-frame {
+  border-radius: 14px;
+}
+.dashboard-overview {
+  padding: 32px 32px 28px;
+}
+.overview-tools h1 {
+  font-size: 29px;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+}
+.round-outline {
+  border-radius: 18px;
+}
+.start-button {
+  border-radius: 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px #00000012;
+}
+.account-button {
+  border-radius: 50%;
+}
+.global-search {
+  border-color: transparent;
+  box-shadow: none;
+}
+.release-badge {
+  border-radius: 14px;
+  font-size: 12px;
+  padding: 4px 10px;
+}
+.history-group {
+  padding-top: 22px;
+}
+.history-group > h2 {
+  font-weight: 400;
+}
+.meeting-row {
+  min-height: 54px;
+  height: auto;
+  margin-bottom: 2px;
+  padding: 4px 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 8px;
+}
+.meeting-row:hover,
+.meeting-row:focus-within,
+.meeting-row.menu-active {
+  border-color: transparent;
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.history-row-menu {
+  top: calc(100% - 2px);
+}
+.history-row-menu.above {
+  top: auto;
+  bottom: calc(100% - 2px);
+}
+.meeting-row-copy strong {
+  font-weight: 500;
+}
+.meeting-row-symbol {
+  border-radius: 12px;
+}
+.detail-toolbar h1,
+.mode-editor-title h1 {
+  font-weight: 500;
+}
+@media (max-width: 760px) {
+  .dashboard-overview {
+    padding: 24px 20px;
+  }
+  .overview-tools h1 {
+    font-size: 25px;
+  }
+}

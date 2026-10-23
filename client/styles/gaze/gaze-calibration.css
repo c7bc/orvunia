@@ -1,0 +1,30 @@
+
+.gaze-calibration footer {
+  position: absolute;
+  bottom: 22px;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 10px;
+}
+@media (max-width: 650px) {
+  .gaze-setting-heading {
+    flex-wrap: wrap;
+  }
+  .gaze-state {
+    margin-left: 62px;
+  }
+  .gaze-calibration header {
+    padding: 15px;
+  }
+  .gaze-calibration header small {
+    display: none;
+  }
+  .gaze-instructions {
+    top: 30%;
+  }
+  .gaze-instructions h2 {
+    font-size: 20px;
+  }
+}

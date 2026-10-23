@@ -1,0 +1,25 @@
+/* The observed mode editor uses a 200px, 16px plain-text prompt surface. */
+.modes-dialog .prompt-editor > textarea {
+  font:
+    400 16px/24px Geist,
+    Arial,
+    sans-serif;
+  padding: 10px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  overflow-wrap: anywhere;
+}
+.modes-dialog .prompt-format-tools > summary {
+  transition: opacity 120ms ease;
+}
+.modes-dialog .prompt-format-tools > summary:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--ring, #6b9dff);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .modes-dialog .prompt-format-tools > summary {
+    transition: none;
+  }
+}

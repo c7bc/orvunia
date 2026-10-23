@@ -1,0 +1,52 @@
+import type { ProviderSettings } from "../../packages/providers/settings.ts";
+import type { HttpFetch } from "../../packages/providers/http.ts";
+import type { AssetService } from "../../packages/assets/service.ts";
+import type { SessionApi } from "./sessions.ts";
+import type { ConversationService } from "../../packages/conversations/service.ts";
+import type { Identity } from "../../packages/identity/principal.ts";
+import type { WorkspaceService } from "../../packages/workspaces/service.ts";
+import type { ModeService } from "../../packages/workspaces/modes.ts";
+
+export type LogEvent = Record<string, string | number | boolean>;
+export type ApiDependencies = {
+  repositoryAgent?: { service: import("../../packages/repository-agent/service.ts").RepositoryAgent;
+    sessions: import("../../packages/sessions/repository.ts").SessionRepository };
+  nativeModels?: { verify: ReturnType<typeof import("../../packages/local-models/native-proof.ts").nativeSelectionVerifier> };
+  localModels?: import("../../packages/local-models/compose.ts").LocalModelComposition["service"];
+  connections?: {
+    service: import("../../packages/connections/service.ts").ConnectionService;
+    probe: import("../../packages/connections/routes.ts").ConnectionProbe;
+  };
+  updates?: import("../../packages/updates/service.ts").UpdateService;
+  documents?: import("../../packages/assets/extract.ts").DocumentExtractor;
+  client?: (request: Request) => Promise<Response | null>;
+  resetWorkspace?: (workspaceId: string) => Promise<void>;
+  publicInfo?: import("../../packages/config/public.ts").PublicDeployment;
+  followups?: import("../../packages/followups/service.ts").FollowupService;
+  calendar?: import("../../packages/calendar/service.ts").CalendarService;
+  realtime?: import("../../packages/realtime/service.ts").RealtimeService;
+  expansions?: import("../../packages/expansions/service.ts").ExpansionService;
+  deployment?: "local" | "cloud";
+  realtimeAvailable?: boolean;
+  index?: import("../../packages/search/service.ts").SessionIndex;
+  transcription?: import("../../packages/transcription/service.ts").RecordedTranscriptionService;
+  maximumBodyBytes?: number;
+  answers?: import("../../packages/answers/service.ts").AnswerService;
+  providers?: { settings: ProviderSettings; transport: HttpFetch };
+  assets?: AssetService;
+  sessions?: SessionApi;
+  workspace?: { service: WorkspaceService; modes: ModeService };
+  origin: string;
+  identity: Identity;
+  conversations: ConversationService;
+  ready(): Promise<boolean>;
+  log(event: LogEvent): void;
+  limit?: (request: Request) => Promise<boolean>;
+  extension?: {
+    projectOutput?(request: Request, output: unknown, context: { status: number; headers: Headers }): Response | void | Promise<Response | void>;
+    excludeResource?(resource: "providers" | "answers"): boolean;
+    routes(identity: Identity): import("elysia").AnyElysia;
+    publicRequest(request: Request): boolean;
+    error(error: unknown): { code: import("../../packages/i18n/messages.ts").ErrorCode; status: number } | undefined;
+  };
+};

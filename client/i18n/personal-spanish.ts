@@ -1,0 +1,11 @@
+import connections from "./spanish/connections";
+import google from "./spanish/google";
+import speechChat from "./spanish/speech-chat";
+import part1 from "./spanish/personal-1";
+import part2 from "./spanish/personal-2";
+import part3 from "./spanish/personal-3";
+import part4 from "./spanish/personal-4";
+import part5 from "./spanish/personal-5";
+import part6 from "./spanish/personal-6";
+import part7 from "./spanish/personal-7";
+export default { ...google, ...connections, ...speechChat, ...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...part7 };

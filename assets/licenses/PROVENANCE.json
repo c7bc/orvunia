@@ -1,0 +1,104 @@
+{
+  "schema": "cadence.assets/1",
+  "date": "2026-10-16",
+  "assets": [
+    {
+      "path": "assets/geist.woff2",
+      "bytes": 29400,
+      "sha256": "19f9c92546aa300c312235e3125af1b81394d8db9a4bc4a425cd5b641d2d54e1"
+    },
+    {
+      "path": "assets/Geist-OFL.txt",
+      "bytes": 4486,
+      "sha256": "71609cbb5c78b5870d712eab73a31d76622635c6ed034ab5cee3b9ecbda8685f"
+    },
+    {
+      "path": "assets/licenses/Geist-OFL-1.1.txt",
+      "bytes": 4486,
+      "sha256": "71609cbb5c78b5870d712eab73a31d76622635c6ed034ab5cee3b9ecbda8685f"
+    },
+    {
+      "path": "assets/licenses/Heroicons-MIT.txt",
+      "bytes": 1071,
+      "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+    },
+    {
+      "path": "assets/icon.png",
+      "bytes": 8377,
+      "sha256": "1bc45fd425b59d13021568c409b558e14a37ef979e80047d2b75f2770661e6d0"
+    },
+    {
+      "path": "assets/icon.ico",
+      "bytes": 16736,
+      "sha256": "082ba9d15bd7364e1c249695ea92597818a8a58bdf230dcb21129fae5abb23cb"
+    }
+  ],
+  "font": {
+    "package": "@fontsource-variable/geist",
+    "version": "5.3.0",
+    "pathInPackage": "files/geist-latin-wght-normal.woff2",
+    "license": "OFL-1.1",
+    "upstream": "https://github.com/vercel/geist-font",
+    "provenance": "Copied unmodified from the locked official fontsource package, not a competitor bundle."
+  },
+  "icons": {
+    "license": "MIT",
+    "copyright": "Copyright (c) Tailwind Labs, Inc.",
+    "upstream": "https://github.com/tailwindlabs/heroicons",
+    "matches": [
+      {
+        "key": "settings",
+        "name": "cog-6-tooth",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/cog-6-tooth.svg",
+        "upstreamSvgSha256": "dd512a682f0c1b9c8596ac482e76e139fab63035a8653d516a77699e4704b599",
+        "verified": true
+      },
+      {
+        "key": "card",
+        "name": "credit-card",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/credit-card.svg",
+        "upstreamSvgSha256": "59224cf83929be196a0386346f0a5bdd6ab59428e9dda055bf49e92238001be9",
+        "verified": true
+      },
+      {
+        "key": "file",
+        "name": "document-text",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/document-text.svg",
+        "upstreamSvgSha256": "b2db156ea0a1581db101c5ac682c2392e6212c07b6802255e25e92c35e1f8140",
+        "verified": true
+      },
+      {
+        "key": "shield",
+        "name": "key",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/key.svg",
+        "upstreamSvgSha256": "42fe168d6e49f3222b4b330a2e6a9852c578bbdcab97b26d7f1a3df4e9c47e31",
+        "verified": true
+      },
+      {
+        "key": "language",
+        "name": "language",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/language.svg",
+        "upstreamSvgSha256": "8945ef9402de4c89f755e239341e1fc52a427e00164353a5620f9e9951ad1bc0",
+        "verified": true
+      },
+      {
+        "key": "help",
+        "name": "question-mark-circle",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/question-mark-circle.svg",
+        "upstreamSvgSha256": "6c477b5cb805625912bdbd12f1737442901ae30dbd55a2ec03dc29a79ab431bf",
+        "verified": true
+      },
+      {
+        "key": "user",
+        "name": "user-circle",
+        "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/20/solid/user-circle.svg",
+        "upstreamSvgSha256": "0c7ffe6bad98b5c481e36cfc6b5ad0e4e40555922ef40a45bc2cf97aa3eaeb8b",
+        "verified": true
+      }
+    ]
+  },
+  "applicationIcon": {
+    "provenance": "Rendered from the user-supplied native vector assets/brand/logo.svg; original image-generation concept preserved separately.",
+    "license": "MIT"
+  }
+}

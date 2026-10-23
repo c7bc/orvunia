@@ -1,0 +1,177 @@
+
+[data-panel-menu-managed] [role="menuitem"]:disabled,
+[data-panel-menu-managed] [aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.panel-menu-snapshot {
+  user-select: none;
+  contain: layout paint;
+}
+body:not(.dark-panel) .studio-dialog .flow-select-trigger {
+  background: #fff;
+  border-color: var(--control-border);
+  box-shadow: 0 1px 2px #0000000d;
+}
+body:not(.dark-panel)
+  .studio-dialog
+  .flow-select-microphone
+  .flow-select-trigger {
+  background: transparent;
+  box-shadow: none;
+}
+@media (max-width: 620px) {
+  .studio-dialog {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .studio-dialog .dialog-sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 49px;
+    gap: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 0;
+    padding: 8px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .studio-dialog .dialog-close {
+    height: 32px;
+    margin: 0;
+    flex-shrink: 0;
+    position: sticky;
+    left: 0;
+    background: inherit;
+    z-index: 2;
+  }
+  .studio-dialog .dialog-sidebar nav {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    gap: 4px;
+  }
+  .studio-dialog .dialog-nav {
+    width: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .studio-dialog .dialog-sidebar > h3,
+  .studio-dialog .dialog-sidebar > .grow {
+    display: none;
+  }
+  .studio-dialog .dialog-bottom-actions {
+    display: flex;
+    gap: 4px;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .modes-dialog .mode-new-button {
+    width: auto;
+    min-width: 104px;
+    flex-shrink: 0;
+  }
+  .modes-dialog .custom-mode-navigation {
+    margin: 0;
+    min-height: 32px;
+    overflow: visible;
+  }
+  .mode-sidebar-footer {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    flex-shrink: 0;
+  }
+  .studio-dialog .dialog-content {
+    padding: 18px;
+  }
+  .studio-dialog .preference-copy {
+    flex-basis: 100%;
+  }
+  .studio-dialog .preference-icon {
+    display: grid;
+  }
+  .studio-dialog .preference-control {
+    max-width: calc(100% - 58px);
+  }
+  .studio-dialog .preference-control .flow-select {
+    min-width: 110px;
+    max-width: 100%;
+    width: 150px;
+  }
+  .studio-dialog .preference-control .btn {
+    min-width: 0;
+    white-space: normal;
+  }
+  .studio-dialog .microphone-source-card {
+    padding: 12px;
+    gap: 12px;
+  }
+  .studio-dialog .microphone-source-card > .btn {
+    max-width: 125px;
+    flex-shrink: 0;
+  }
+  .studio-dialog .mode-template-row {
+    gap: 12px;
+  }
+  .studio-dialog .mode-template-row .template-symbol {
+    width: 40px;
+    height: 40px;
+  }
+  .studio-dialog .mode-template-row > span:last-child {
+    min-width: 0;
+  }
+  .studio-dialog .mode-template-row strong {
+    flex-wrap: wrap;
+  }
+  .search-dialog {
+    transform: none;
+  }
+  .studio-dialog .section-head,
+  .studio-dialog .note-section-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .studio-dialog .mode-type-row {
+    flex-wrap: wrap;
+  }
+  .studio-dialog .mode-type-row .flow-select {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-menu-snapshot {
+    display: none;
+  }
+}
+[data-panel-menu-managed] {
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+[data-panel-menu-managed] [data-action="mode-delete"]:focus-visible {
+  background: color-mix(in oklab, var(--destructive, #ef4444) 12%, transparent);
+  color: var(--destructive, #f87171);
+}
+.dashboard-window > .account-menu .account-menu-header :is(strong, small) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* Session controls share the authored workspace visual hierarchy. */
+.meeting-row {
+  min-height: 76px;
+}
+.detail-toolbar .summary-actions {
+  gap: 4px;
+}
+.detail-toolbar .summary-actions .btn {
+  padding: 0 8px;
+  font-size: 12px;
+}
+.session-document .detail-header h1 {
+  font-weight: 500;
+}

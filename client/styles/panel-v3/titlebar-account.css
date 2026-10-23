@@ -1,0 +1,177 @@
+
+
+.titlebar-account {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-top: 3px;
+
+}
+
+.account-button {
+
+    height: 30px;
+
+    width: 30px;
+
+    border-radius: var(--radius-panel);
+
+    border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+
+    background: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: var(--muted-foreground);
+
+}
+
+.titlebar-account .window-controls {
+
+    gap: 2px;
+
+}
+
+.titlebar-account .icon-btn {
+
+    width: 32px;
+
+    height: 25px;
+
+}
+
+.dashboard-frame {
+
+    flex: 1;
+
+    min-height: 0;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-panel);
+
+    margin: 4px 10px 10px;
+
+    overflow: hidden;
+
+    background: var(--background);
+
+    position: relative;
+
+}
+
+.dashboard-frame.capture-protected {
+
+    border-style: dashed;
+
+}
+
+.dashboard-scroll {
+
+    height: 100%;
+
+    overflow: auto;
+
+}
+
+.dashboard-container {
+
+    width: 100%;
+
+    max-width: 928px;
+
+    margin: auto;
+
+}
+
+.dashboard-home {
+
+    display: flex;
+
+    min-height: 100%;
+
+    flex-direction: column;
+
+}
+
+.dashboard-overview {
+
+    padding: 28px 28px 24px;
+
+    background: var(--background);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.release-badge {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    border-radius: 8px;
+
+    padding: 4px 12px 4px 14px;
+
+    display: flex;
+
+    gap: 6px;
+
+    align-items: center;
+
+    margin: -4px 0 12px;
+
+}
+
+.release-badge:hover {
+
+    background: #bbf7d0;
+
+}
+
+.dark-panel .release-badge {
+
+    background: #052e16;
+
+    color: #86efac;
+
+}
+
+.overview-heading {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-height: 43px;
+
+}
+
+.overview-tools {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}

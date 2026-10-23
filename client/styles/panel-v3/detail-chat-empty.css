@@ -1,0 +1,167 @@
+
+
+.detail-chat-empty {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: var(--muted-foreground);
+
+    font-size: 12px;
+
+}
+
+.detail-chat-composer {
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 10px;
+
+    background: var(--background);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    margin-top: 12px;
+
+}
+
+.detail-chat-composer textarea {
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    resize: none;
+
+    font-size: 12px;
+
+    width: 100%;
+
+    outline: none;
+
+    line-height: 1.6;
+
+}
+
+.detail-chat-composer > button {
+
+    width: 26px;
+
+    height: 26px;
+
+    border-radius: 50%;
+
+    background: var(--foreground);
+
+    color: var(--background);
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+}
+
+.detail-chat-log .markdown pre,
+.detail-notes-content .markdown pre {
+
+    background: var(--muted);
+
+    color: var(--foreground);
+
+    border-color: var(--border);
+
+}
+
+.detail-chat-log .markdown code,
+.detail-notes-content .markdown code {
+
+    color: inherit;
+
+}
+
+.standalone-page {
+
+    padding: 24px;
+
+}
+
+.standalone-page > .settings-heading {
+
+    margin-top: 30px;
+
+}
+
+.standalone-page > .settings-heading h2 {
+
+    font-size: 28px;
+
+    letter-spacing: -0.7px;
+
+    font-weight: 500;
+
+}
+
+.help-steps {
+
+    display: grid;
+
+    gap: 26px;
+
+    margin-top: 32px;
+
+}
+
+.help-step {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+}
+
+.help-step h3 {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin: 3px 0 7px;
+
+}
+
+.help-step p {
+
+    font-size: 13px;
+
+    color: var(--muted-foreground);
+
+    line-height: 1.6;
+
+    max-width: 540px;
+
+}
+
+.release-heading {
+
+    margin-top: 32px;
+
+}

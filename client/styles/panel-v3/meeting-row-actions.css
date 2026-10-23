@@ -1,0 +1,179 @@
+
+
+.meeting-row-actions {
+
+    display: flex;
+
+    margin-left: 8px;
+
+    opacity: 0;
+
+}
+
+.meeting-row:hover .meeting-row-actions,
+.meeting-row:focus-within .meeting-row-actions {
+
+    opacity: 1;
+
+}
+
+.meeting-row-actions .icon-btn {
+
+    width: 26px;
+
+    height: 26px;
+
+}
+
+.first-session {
+
+    margin-top: 24px;
+
+    border: 1px dashed var(--border);
+
+    border-radius: 8px;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 24px;
+
+    text-align: center;
+
+}
+
+.empty-header {
+
+    max-width: 448px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.empty-symbol {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: var(--muted);
+
+    color: var(--foreground);
+
+}
+
+.empty-header h2 {
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.4px;
+
+}
+
+.empty-header p {
+
+    font-size: 14px;
+
+    line-height: 21px;
+
+    color: var(--muted-foreground);
+
+}
+
+.btn.neutral-primary {
+
+    background: var(--foreground);
+
+    color: var(--background);
+
+    height: 36px;
+
+    font-size: 14px;
+
+    border-radius: 6px;
+
+}
+
+.btn {
+
+    font-size: 13px;
+
+    letter-spacing: 0;
+
+    border-radius: 6px;
+
+    height: 36px;
+
+}
+
+.btn.primary {
+
+    background: var(--primary);
+
+}
+
+.account-menu {
+
+    position: absolute;
+
+    right: 115px;
+
+    top: 37px;
+
+    width: 195px;
+
+    padding: 4px;
+
+    border-radius: 7px;
+
+    border: 1px solid var(--border);
+
+    background: var(--background);
+
+    box-shadow: 0 4px 18px #0002;
+
+    z-index: 30;
+
+}
+
+.account-menu-header {
+
+    padding: 7px 8px;
+
+}
+
+.account-menu-header strong,
+.account-menu-header small {
+
+    display: block;
+
+    font-size: 12px;
+
+}
+
+.account-menu-header small {
+
+    font-size: 11px;
+
+    margin-top: 4px;
+
+}

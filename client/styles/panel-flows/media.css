@@ -1,0 +1,179 @@
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-select-trigger,
+  .flow-select-popup {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.studio-dialog {
+  --ring: var(--identity-jade);
+}
+.dark-panel .studio-dialog {
+  --ring: var(--identity-mint);
+}
+.builtin-mode-customize:not([open]) > summary {
+  margin-bottom: 0;
+}
+/* Compact viewport and motion fallbacks. */
+.search-dialog {
+  height: 334px;
+  max-height: min(334px, calc(100dvh - 44px));
+}
+.panel-mode-exit {
+  contain: layout paint;
+  user-select: none;
+}
+.flow-select-popup.flow-select-popup-clerk {
+  animation: flow-clerk-select-enter 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: top center;
+}
+@keyframes flow-clerk-select-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-mode-exit {
+    display: none !important;
+  }
+  .flow-select-popup.flow-select-popup-clerk {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+.search-dialog {
+  transform: translateY(50px);
+}
+@media (max-height: 600px) {
+  .search-dialog {
+    transform: translateY(16px);
+  }
+}
+
+/* Account content remains distinct from the navigation rail. */
+.studio-dialog
+  .dialog-content[data-settings-view="profile"]:has(.account-reference),
+.studio-dialog
+  .dialog-content[data-settings-view="security"]:has(.account-reference) {
+  padding: 28px 32px;
+}
+.dark-panel .studio-dialog .dialog-content:has(.account-reference),
+.dark-panel .studio-dialog .dialog-content:has(.account-loading) {
+  background: var(--background);
+}
+.account-loading {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+}
+.account-loading::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top-color: var(--muted-foreground);
+  border-left-color: var(--muted-foreground);
+  border-radius: 50%;
+  animation: account-loading-spin 800ms linear infinite;
+}
+@keyframes account-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .account-loading::after {
+    animation: none;
+  }
+}
+
+/* Native caption controls keep operating-system hit targets. */
+.dashboard-titlebar:has(.window-controls button) {
+  padding-right: 0;
+}
+.titlebar-account:has(.window-controls button) {
+  padding-top: 0;
+}
+.titlebar-account .window-controls {
+  gap: 0;
+}
+.titlebar-account .window-controls .icon-btn {
+  width: 46px;
+  height: 36px;
+  border-radius: 0;
+}
+.dashboard-window > .account-menu {
+  top: 34px;
+  right: 12px;
+  width: 176px;
+}
+.dashboard-window:has(.window-controls button) > .account-menu {
+  right: 144px;
+}
+.dashboard-window > .account-menu .account-menu-header small {
+  margin-top: 0;
+}
+.dashboard-window > .account-menu hr {
+  margin: 4px -4px;
+}
+.account-load-error {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  font-size: 13px;
+}
+/* Menus retain accessible roles and keyboard targets. */
+.dashboard-window > .account-menu {
+  border-radius: 8px;
+}
+.dashboard-window > .account-menu .account-menu-header {
+  padding: 6px 8px;
+}
+.dashboard-window > .account-menu .account-menu-header strong {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.dashboard-window > .account-menu .account-menu-header small {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--muted-foreground);
+}
+.dashboard-window > .account-menu button {
+  min-height: 32px;
+  padding: 6px 8px;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 6px;
+}
+.mode-editor-title {
+  align-items: flex-start;
+}
+.mode-options > div {
+  width: 176px;
+  min-width: 176px;
+  top: 36px;
+}
+.mode-options [data-action="mode-delete"] {
+  color: var(--destructive, #f87171);
+}
+.mode-options [data-action="mode-delete"]:is(:hover, :focus-visible) {
+  background: color-mix(in oklab, var(--destructive, #ef4444) 12%, transparent);
+}
+[data-panel-menu-managed] {
+  animation: none !important;
+  max-width: calc(100vw - 16px);
+}
+[data-panel-menu-managed] [role="menuitem"]:focus-visible {
+  outline: 0;
+  box-shadow: none;
+  background: var(--muted);
+}

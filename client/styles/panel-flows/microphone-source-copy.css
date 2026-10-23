@@ -1,0 +1,179 @@
+
+.microphone-source-copy > div {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+.microphone-source-copy svg {
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+.microphone-source-copy select {
+  width: 100%;
+  min-width: 0;
+  max-width: 370px;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 18px;
+  box-shadow: none;
+}
+.microphone-source-card > .btn {
+  grid-column: 2;
+  grid-row: 1;
+  height: 36px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid color-mix(in oklab, var(--foreground) 15%, transparent);
+  font-size: 12px;
+  padding: 0 10px;
+}
+.studio-dialog .advanced-settings {
+  margin: 0;
+  padding: 0;
+}
+.studio-dialog .advanced-settings > summary {
+  margin: 0 -12px;
+  padding: 12px;
+  background: color-mix(in oklab, var(--muted) 40%, transparent);
+  border-radius: 8px;
+}
+.studio-dialog .advanced-settings[open] > summary {
+  margin-bottom: 20px;
+}
+.studio-dialog .advanced-settings > .preferences-group {
+  margin-top: 0;
+  gap: 20px;
+}
+.studio-dialog .advanced-settings #gaze-settings-mount {
+  margin-top: 32px;
+}
+.language-preferences {
+  margin: 24px 0 0;
+  gap: 20px;
+}
+.language-code-options {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding-top: 16px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.language-code-options > summary {
+  cursor: pointer;
+}
+.language-code-options > select {
+  margin-top: 16px;
+  min-width: 180px;
+}
+.keyboard-shortcut-groups {
+  margin-top: 24px;
+}
+.keyboard-shortcut-group {
+  margin: 0 0 28px;
+}
+.keyboard-shortcut-group > h3 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 0 4px;
+}
+.keyboard-shortcut-row {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding: 7px 0;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 20px;
+  cursor: text;
+}
+.keyboard-shortcut-row > svg {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+.keyboard-shortcut-row > span:first-of-type {
+  flex: 1;
+  min-width: 0;
+}
+.keyboard-shortcut-row small {
+  display: block;
+  font-size: 10px;
+  line-height: 14px;
+  color: #e5a54b;
+}
+.keyboard-shortcut-row:focus-within {
+  background: color-mix(in oklab, var(--foreground) 4%, transparent);
+  box-shadow: 0 0 0 10px color-mix(in oklab, var(--foreground) 4%, transparent);
+}
+.shortcut-control {
+  min-width: 48px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+}
+.shortcut-keycaps {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.shortcut-keycaps kbd {
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 18px;
+  min-width: 19px;
+  height: 20px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--muted-foreground);
+  background: var(--muted);
+  text-align: center;
+}
+.shortcut-control .shortcut-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-width: 1px;
+  height: 100%;
+  opacity: 0;
+  cursor: text;
+  padding: 0;
+}
+.shortcut-capture-prompt {
+  display: none;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.shortcut-control:focus-within .shortcut-keycaps {
+  display: none;
+}
+.shortcut-control:focus-within .shortcut-capture-prompt {
+  display: block;
+}
+.calendar-local-options {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  border-top: 1px solid var(--border);
+  margin-top: 36px;
+  padding-top: 16px;
+}
+.calendar-local-options > summary {
+  cursor: pointer;
+}
+.calendar-local-options > .section-head,
+.calendar-local-options .flow-disclosure-inner > .section-head {
+  margin-top: 20px;
+}

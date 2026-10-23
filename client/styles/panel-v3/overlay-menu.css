@@ -1,0 +1,176 @@
+
+
+.overlay-menu {
+
+    position: absolute;
+
+    bottom: 116px;
+
+    left: 10px;
+
+    width: calc(100% - 20px);
+
+    max-height: 365px;
+
+    overflow: auto;
+
+    background: #222126;
+
+    border: 1px solid #ffffff18;
+
+    box-shadow: 0 7px 24px #0005;
+
+    border-radius: 8px;
+
+    padding: 4px;
+
+    z-index: 20;
+
+}
+
+.overlay-menu-caption {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+
+    color: #93909f;
+
+    padding: 7px 9px;
+
+    font-weight: 500;
+
+}
+
+.overlay-menu button {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    color: #d4d2de;
+
+    padding: 7px 9px;
+
+    border-radius: 4px;
+
+}
+
+.overlay-menu button:hover {
+
+    background: #ffffff0d;
+
+}
+
+.overlay-menu button small {
+
+    margin-left: auto;
+
+    font-size: 10px;
+
+}
+
+.overlay-menu hr {
+
+    border: 0;
+
+    border-top: 1px solid #ffffff12;
+
+    margin: 4px -4px;
+
+}
+
+.browser-preview .overlay-shell {
+
+    width: 540px;
+
+    height: var(--overlay-height, 152px);
+
+}
+
+html:has(body.browser-preview) {
+
+    background: #101218 !important;
+
+}
+
+.calendar-events {
+
+    display: grid;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+}
+
+.calendar-events > article {
+
+    display: flex;
+
+    gap: 9px;
+
+    align-items: center;
+
+    border: 1px solid var(--border);
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+}
+
+.calendar-events > article > div {
+
+    flex: 1;
+
+}
+
+.calendar-events strong,
+.calendar-events small {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+.calendar-events small {
+
+    font-size: 11px;
+
+    margin-top: 5px;
+
+}
+
+.calendar-events .btn {
+
+    font-size: 12px;
+
+    height: 30px;
+
+}
+
+.calendar-empty {
+
+    margin-top: 24px;
+
+}
+
+.overlay-shell {
+
+    padding: 0;
+
+    height: 100vh;
+
+}

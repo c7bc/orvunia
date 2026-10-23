@@ -1,0 +1,20 @@
+MediaPipe Tasks Vision 1.1.1
+Copyright Google LLC / The MediaPipe Authors.
+Distributed under the Apache License, Version 2.0; see LICENSE-MEDIAPIPE.txt.
+The upstream JavaScript and WebAssembly files are unmodified copies from the published npm package.
+
+Face Landmarker model bundle, float16, version 1
+The upstream BlazeFace, FaceMesh V2 and Blendshape V2 model cards each identify their model license as Apache License, Version 2.0.
+See PROVENANCE.json for the versioned download URL, exact hashes, and model-card evidence URLs.
+
+Cadence adds a local worker, iris-relative geometry, temporary nine-point calibration,
+ridge regression, signal rejection and smoothing. MediaPipe Face Landmarker itself
+does not supply a calibrated screen-gaze estimate. These additions do not identify people.
+
+Google's general MediaPipe Tasks privacy notice permits usage/performance metrics.
+Cadence's dedicated worker restricts fetch, XMLHttpRequest and importScripts to
+same-origin /assets/gaze/ files and disables WebSocket/EventSource. The application
+must also serve a restrictive CSP (connect-src 'self', worker-src 'self').
+Frames, facial landmarks, calibration features and coefficients stay in memory.
+
+No Cluely or InterviewCoder source code is included in this implementation.

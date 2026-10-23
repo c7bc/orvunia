@@ -1,0 +1,168 @@
+
+
+.release-heading h1 {
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.8px;
+
+    margin: 20px 0 12px;
+
+    max-width: 600px;
+
+}
+
+.release-heading p,
+.release-body p {
+
+    font-size: 14px;
+
+    color: var(--muted-foreground);
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+}
+
+.release-body h2 {
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    margin: 32px 0 10px;
+
+}
+
+.search-dialog {
+
+    padding: 0;
+
+    width: 600px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+.search-dialog .modal-head {
+
+    display: none;
+
+}
+
+.command-input {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 14px 18px;
+
+    color: var(--muted-foreground);
+
+}
+
+.command-input input {
+
+    border: 0;
+
+    background: transparent;
+
+    outline: none;
+
+    flex: 1;
+
+    padding: 3px;
+
+    font-size: 14px;
+
+}
+
+.command-results {
+
+    max-height: 420px;
+
+    overflow: auto;
+
+    padding: 8px;
+
+}
+
+.command-results > p {
+
+    font-size: 11px;
+
+    color: var(--muted-foreground);
+
+    padding: 7px 10px;
+
+}
+
+.command-results > button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    text-align: left;
+
+    border-radius: 6px;
+
+    padding: 11px 10px;
+
+    font-size: 13px;
+
+}
+
+.command-results > button:hover {
+
+    background: var(--muted);
+
+}
+
+.command-results small {
+
+    margin-left: auto;
+
+    font-size: 11px;
+
+}
+
+.overview-heading {
+
+    min-height: 53px;
+
+}
+
+.calendar-prompt button {
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+}
+
+.btn.neutral-primary {
+
+    color: var(--foreground);
+
+    background: var(--background);
+
+    height: 32px;
+
+    padding: 0 10px;
+
+}

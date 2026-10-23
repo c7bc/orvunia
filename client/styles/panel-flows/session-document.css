@@ -1,0 +1,174 @@
+
+.session-document input.detail-title-edit {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1.03;
+  padding: 0;
+}
+.session-document input.detail-title-edit:hover {
+  background: transparent;
+}
+.session-document input.detail-title-edit:focus {
+  outline: none;
+}
+.session-document input.detail-title-edit:focus-visible {
+  box-shadow: 0 1px 0 var(--border);
+}
+.detail-header > div:first-child {
+  min-width: 0;
+  flex: 1;
+}
+.session-personal-notes {
+  min-height: 160px;
+}
+.session-personal-notes textarea {
+  display: block;
+  resize: none;
+  width: 100%;
+  min-height: 160px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 14px;
+  line-height: 22px;
+}
+.session-personal-notes textarea:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.session-personal-notes textarea::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.8;
+}
+.session-note-status {
+  margin-left: 2px;
+  margin-right: auto;
+  min-width: 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 16px;
+}
+.session-note-status:empty {
+  display: none;
+}
+.session-document .detail-tabs > button {
+  position: relative;
+  isolation: isolate;
+  height: 24px;
+  padding: 4px 8px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.session-document .detail-tabs {
+  padding: 4px;
+}
+.meeting-bottom-bar .resume-meeting {
+  font-size: 12px;
+}
+.meeting-bottom-bar .detail-chat-composer > textarea {
+  min-width: 0;
+  scrollbar-width: none;
+}
+.session-document .detail-tabs > button.selected {
+  background: transparent;
+  box-shadow: none;
+}
+.session-tab-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: var(--background);
+  box-shadow: 0 1px 3px #0002;
+  transform-origin: left center;
+  z-index: -1;
+  pointer-events: none;
+}
+.session-tab-label {
+  position: relative;
+}
+.session-document .detail-tabs > button:focus-visible {
+  outline: 2px solid var(--ring, #71717a);
+  outline-offset: 2px;
+}
+.session-document .detail-transcript {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.375;
+}
+.session-document .detail-transcript > div {
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.session-document .detail-transcript strong {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 500;
+}
+.session-document .detail-transcript small {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 500;
+}
+.session-usage-messages > article {
+  padding-bottom: 24px;
+}
+.session-usage-action {
+  display: block;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-bottom: 6px;
+}
+.session-usage-messages .markdown {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.session-usage-messages .detail-answer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.session-usage-messages .detail-answer-actions > small {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.meeting-bottom-bar .detail-chat-composer > button:disabled {
+  background: color-mix(in oklab, var(--foreground) 30%, transparent);
+  color: var(--muted);
+  cursor: default;
+}
+.session-data {
+  margin-top: 28px;
+  color: var(--muted-foreground);
+}
+.session-data > summary {
+  cursor: pointer;
+  font-size: 12px;
+}
+.session-document .detail-notes-content:focus {
+  outline: none;
+}
+.search-dialog:has(.command-results > .empty) {
+  height: 114px;
+  transform: translateY(-60px);
+}
+.search-dialog .command-results > .empty {
+  padding: 20px 8px 16px;
+  min-height: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}

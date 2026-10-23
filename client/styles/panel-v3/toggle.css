@@ -1,0 +1,177 @@
+
+
+.toggle.on:after {
+
+    left: 16px;
+
+}
+
+.version-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 3px 8px;
+
+    font-size: 11px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    color: var(--muted-foreground);
+
+    white-space: nowrap;
+
+}
+
+.audio-test-card {
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    background: color-mix(in oklab, var(--background) 70%, transparent);
+
+}
+
+.audio-meter {
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    padding-bottom: 6px;
+
+}
+
+.audio-meter i {
+
+    height: 8px;
+
+    width: 6px;
+
+    border-radius: 20px;
+
+    background: var(--primary);
+
+    opacity: 0.2;
+
+}
+
+.audio-test-card p {
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    color: var(--muted-foreground);
+
+    margin: 4px auto;
+
+    max-width: 350px;
+
+}
+
+.text-button {
+
+    font-size: 12px;
+
+    color: var(--muted-foreground);
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+
+    padding: 5px 0;
+
+}
+
+.advanced-settings {
+
+    margin-top: -8px;
+
+}
+
+.advanced-settings summary {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    padding: 12px;
+
+    margin: -12px;
+
+    list-style: none;
+
+    border-radius: 6px;
+
+}
+
+.advanced-settings summary:hover {
+
+    background: var(--muted);
+
+}
+
+.advanced-settings[open] summary {
+
+    margin-bottom: 12px;
+
+}
+
+.advanced-settings .preferences-group {
+
+    margin-bottom: 12px;
+
+}
+
+.settings-legacy > h2 {
+
+    font-size: 14px;
+
+    letter-spacing: 0;
+
+}
+
+.settings-legacy > .subtitle {
+
+    font-size: 12px;
+
+    margin-top: 3px;
+
+}
+
+.settings-legacy .preference-row {
+
+    margin-top: 22px;
+
+}
+
+.settings-legacy .shortcut-input {
+
+    width: 190px;
+
+    font-size: 11px;
+
+    padding: 7px 8px;
+
+    height: 32px;
+
+}

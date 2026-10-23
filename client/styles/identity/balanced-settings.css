@@ -1,0 +1,110 @@
+.studio-dialog {
+  width: min(1080px, calc(100vw - 64px));
+  height: min(820px, calc(100dvh - 64px));
+  grid-template-columns: 252px minmax(0, 1fr);
+  border-radius: 16px;
+  --flow-icon-size: 48px;
+}
+.studio-dialog .dialog-sidebar {
+  padding: 16px 12px;
+}
+.studio-dialog .dialog-sidebar nav {
+  gap: 4px;
+}
+.studio-dialog .dialog-nav {
+  height: 40px;
+  min-height: 40px;
+  gap: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.studio-dialog .dialog-nav.selected {
+  box-shadow: none;
+  font-weight: 500;
+  background: color-mix(in srgb, var(--primary) 9%, var(--muted));
+  color: var(--foreground);
+}
+.studio-dialog .dialog-nav.selected svg {
+  color: var(--primary);
+}
+.studio-dialog .dialog-content {
+  padding: 30px;
+}
+.studio-dialog .settings-heading h2 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.studio-dialog .settings-heading p {
+  font-size: 13px;
+  line-height: 20px;
+}
+.studio-dialog .main-preferences {
+  gap: 22px;
+}
+.studio-dialog .preference-row {
+  min-height: 54px;
+}
+.studio-dialog .preference-icon {
+  border-radius: 12px;
+}
+.studio-dialog .preference-copy h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.studio-dialog .preference-copy p {
+  font-size: 13px;
+  line-height: 19px;
+  max-width: 360px;
+}
+.studio-dialog .advanced-settings > summary {
+  background: transparent;
+}
+.studio-dialog .advanced-settings > summary:hover {
+  background: var(--muted);
+}
+.studio-dialog .microphone-source-card {
+  padding: 16px;
+  border-radius: 12px;
+}
+.microphone-source-copy h3 {
+  font-weight: 500;
+}
+.studio-dialog .calendar-provider-icon,
+.studio-dialog .profile-avatar {
+  border-radius: 12px;
+}
+.studio-dialog .billing-local-card {
+  border-radius: 16px;
+}
+@media (max-width: 950px) {
+  .studio-dialog {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+  .studio-dialog .dialog-nav {
+    font-size: 14px;
+  }
+  .studio-dialog .dialog-content {
+    padding: 24px;
+  }
+}
+@media (max-width: 620px) {
+  .studio-dialog {
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 24px);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    border-radius: 12px;
+  }
+  .studio-dialog-backdrop {
+    padding: 12px;
+  }
+  .studio-dialog .dialog-nav {
+    height: 34px;
+    min-height: 34px;
+    font-size: 13px;
+  }
+  .studio-dialog .dialog-content {
+    padding: 20px;
+  }
+}

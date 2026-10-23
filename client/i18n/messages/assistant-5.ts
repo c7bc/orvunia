@@ -1,0 +1,48 @@
+export default {
+  "Geração de respostas": "Response generation",
+  "Seu modelo, sua chave e seu contexto.": "Your model, key, and context.",
+  "Microfone e áudio da conversa.": "Microphone and conversation audio.",
+  "Chave do ambiente": "Environment key",
+  "Chave salva": "Saved key",
+  "Servidor local": "Local server",
+  "Sem chave": "No key",
+  "Configuração não salva": "Unsaved configuration",
+  Provedor: "Provider",
+  "Endereço da API": "API base URL",
+  "Chave da API": "API key",
+  Modelo: "Model",
+  "Listar modelos": "List models",
+  "O modelo aceita imagens": "The model supports images",
+  "Limite de saída": "Output limit",
+  "Modelo de transcrição ao vivo": "Live transcription model",
+  "Salvar conexões": "Save connections",
+  "Conexões salvas.": "Connections saved.",
+  "Deixe vazio para manter a chave atual":
+    "Leave empty to keep the current key",
+  "Cole a chave deste provedor": "Paste this provider's key",
+  "Apagar a chave salva": "Delete saved key",
+  "Nome do modelo na sua conta": "Model name in your account",
+  "OpenAI e Deepgram oferecem o modo ao vivo. Os outros provedores usam trechos de áudio.":
+    "OpenAI and Deepgram support live transcription. Other providers use audio segments.",
+  "As chaves ficam no servidor": "Keys stay on the server",
+  ", protegidas pelo cofre deste sistema":
+    ", protected by the operating system vault",
+  ", no diretório privado de dados": ", in the private data directory",
+  ". Elas não voltam ao navegador. Áudio, imagens e contexto serão enviados aos provedores que você escolher.":
+    ". They are never returned to the browser. Audio, images, and context are sent to the providers you choose.",
+  "Consultando o provedor…": "Contacting provider...",
+  "Acompanhar o olhar": "Follow your eyes",
+  Experimental: "Experimental",
+  "Estima onde você olha usando as íris e a posição do rosto.":
+    "Estimates where you look using iris and face position.",
+  "Precisa de webcam, boa iluminação e calibração em nove pontos. Mantenha a cabeça estável; óculos, reflexos e movimentos podem reduzir a precisão. A calibração é temporária e deve ser repetida ao mudar de posição.":
+    "Requires a webcam, good lighting, and nine-point calibration. Keep your head steady; glasses, reflections, and movement may reduce accuracy. Calibration is temporary and must be repeated when you move.",
+  "Ativar e calibrar": "Enable and calibrate",
+  "Desligar câmera": "Turn camera off",
+  Recalibrar: "Recalibrate",
+  Desligado: "Off",
+  "Carregando modelo": "Loading model",
+  Calibrando: "Calibrating",
+  Acompanhando: "Tracking",
+  Pausado: "Paused",
+};

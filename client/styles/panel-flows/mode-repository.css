@@ -1,0 +1,96 @@
+.mode-repository-section .context-note {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 12px 0 18px;
+}
+.mode-repository-section .section-head .icon-btn {
+  flex: 0 0 auto;
+}
+.mode-repository-section .context-preview {
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.mode-repository-section .form-footer {
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.mode-professional-context .context-preview {
+  margin-top: 16px;
+}
+.repository-scope-options {
+  margin-top: 20px;
+}
+.repository-scope-options summary {
+  color: var(--muted-foreground);
+  cursor: pointer;
+}
+.repository-scope-options label {
+  display: block;
+  margin-bottom: 10px;
+}
+.repository-preparation-dialog {
+  width: min(720px, calc(100vw - 32px));
+}
+.repository-preview {
+  min-width: 0;
+  margin-block: 20px;
+}
+.repository-folder {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+  font-size: 18px;
+}
+.repository-preview-summary,
+.repository-preview-note {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin-block: 12px 20px;
+}
+.repository-file-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+  max-height: min(280px, 35dvh);
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.repository-file-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+}
+.repository-file-list li + li {
+  border-top: 1px solid var(--border);
+}
+.repository-file-list span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.repository-file-list small {
+  color: var(--muted-foreground);
+  flex: 0 0 auto;
+}
+.repository-content summary {
+  cursor: pointer;
+  padding-block: 10px;
+}
+.repository-content .repository-content-text {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 260px;
+  max-height: 40dvh;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  font: 12px/1.7 ui-monospace, SFMono-Regular, Consolas, monospace;
+  resize: vertical;
+  white-space: pre;
+}
