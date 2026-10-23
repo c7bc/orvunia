@@ -7695,8 +7695,8 @@
     },
     {
       "path": "next/tests/unit/system-audio-native.test.ts",
-      "bytes": 5934,
-      "sha256": "68fdca5bb2da4b690dc90354e56dda77bb34f7f823fc1c38448c0e33a4d82c15"
+      "bytes": 5990,
+      "sha256": "57aa26a60a3fa7f3d3c2120eaeb2a24b058ad5b6ad3f33fca198c42ea9d0f5ae"
     },
     {
       "path": "next/tests/unit/system-audio-preferences.test.ts",

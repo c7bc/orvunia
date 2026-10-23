@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test";
+import { join } from "node:path";
 import { systemAudioFixture, syntheticCatalog, syntheticEndpoint } from "../support/system-audio-fixture.ts";
 import { systemAudioHelperEnvironment } from "../../packages/desktop/system-audio/helper.ts";
 
@@ -81,6 +82,6 @@ test("system audio rejects an unexpected endpoint and malformed helper metadata"
 test("system audio helpers inherit only the Windows runtime environment without provider or identity credentials", () => {
   const result = systemAudioHelperEnvironment({ SystemRoot: "C:\\Windows", TEMP: "C:\\Temp", OPENAI_API_KEY: "never-in-child",
     CADENCE_AUTH_SECRET: "never-in-child", PATH: "C:\\untrusted", DATABASE_URL: "never-in-child" });
-  expect(result.environment).toEqual({ SystemRoot: "C:\\Windows", TEMP: "C:\\Temp", PATH: "C:\\Windows\\System32" });
-  expect(result.executable).toBe("C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe");
+  expect(result.environment).toEqual({ SystemRoot: "C:\\Windows", TEMP: "C:\\Temp", PATH: join("C:\\Windows", "System32") });
+  expect(result.executable).toBe(join("C:\\Windows", "System32", "WindowsPowerShell", "v1.0", "powershell.exe"));
 });
