@@ -13,6 +13,7 @@ import { classify, copiedReport } from "./fixture.mjs";
 import { installNetworkGuard } from "./network.mjs";
 import { createProgress } from "./progress.mjs";
 import { releaseShell } from "./interception.mjs";
+import { createStartup } from "./startup.mjs";
 const state = await loadContext(process.argv[2]);
 const build = JSON.parse(await readFile(join(state.evidence, "build.json")));
 assert.equal(build.coreCommit, coreCommit); assert.equal(build.version, desktopVersion);
@@ -24,7 +25,7 @@ await physical(state.profile);
 assert.equal(await distributionDigest(join(unpacked, "resources/app.asar")), build.archiveSha256);
 const progress = await createProgress(state.evidence);
 const step = (name, operation, timeout) => progress.step(name, operation, timeout);
-let application, interception, permissions, network, child, exit, panel;
+let application, interception, permissions, network, child, exit, panel, startup;
 const report = { status: "running", coreCommit, toolingCommit: state.identity.toolingCommit,
   desktopVersion, launchMode: "packaged-candidate", surface: "real-dashboard-session-detail",
   appAsarSha256: build.archiveSha256, physicalCapture: false, paidProviderCalls: 0,
@@ -36,6 +37,8 @@ try {
     args: [`--candidate-runtime=${runtime}`, `--candidate-profile=${state.profile}`],
     cwd: state.root, env: isolatedEnvironment(process.env), timeout: 30000 }), 35000);
   child = application.process(); exit = once(child, "exit");
+  for (const stream of ["stdout", "stderr"]) child[stream]?.on("data", bytes => startup?.observe(stream, bytes));
+  startup = await step("startup-diagnostics", () => createStartup(application, state.evidence));
   const identity = await step("identity", () => application.evaluate(({ app }) => ({ packaged: app.isPackaged,
     version: app.getVersion(), profile: app.getPath("userData"), pid: process.pid })));
   assert.equal(identity.packaged, true); assert.equal(identity.version, desktopVersion);
@@ -51,7 +54,9 @@ try {
   await step("locate-panel", async () => {
   for (let attempt = 0; attempt < 600; attempt++) {
     panel = application.windows().find(page => page.url().includes("view=panel"));
-    if (panel) break; await new Promise(done => setTimeout(done, 100));
+    if (panel) break;
+    if (attempt % 100 === 0) await startup.capture("panel-wait");
+    await new Promise(done => setTimeout(done, 100));
   }
   assert.ok(panel, "Real packaged dashboard required");
   }, 65000);
@@ -97,6 +102,12 @@ try {
 } catch (error) { report.status = "failed"; report.errorType = error.name;
   report.failedStage = progress.state.failedStage ?? progress.state.stage; throw error; }
 finally {
+  if (startup) {
+    await step("startup-final-state", () => startup.capture("finally"), 5000).catch(() => {
+      report.startupDiagnosticsUnconfirmed = true; report.status = "failed";
+    });
+    await startup.persist();
+  }
   if (panel) await step("failure-diagnostics", async () => {
     report.pageState = await panel.evaluate(() => ({ ready: document.readyState, bridge: Boolean(window.cadence),
       fixtureButtons: document.querySelectorAll("button.meeting-main[data-session]").length,
@@ -121,6 +132,11 @@ finally {
     }
     report.cleanExit = child?.exitCode === 0;
     if (!report.cleanExit || report.exitUnconfirmed || report.adapterRestoreUnconfirmed || report.clipboardCleanupUnconfirmed) report.status = "failed";
+  }
+  if (startup) {
+    await startup.persist();
+    report.nativeStartupErrorCount = startup.state.nativeErrors.length;
+    if (report.nativeStartupErrorCount) report.status = "failed";
   }
   report.lastStage = progress.state.stage;
   await writeFile(join(state.evidence, "reporting.json"), JSON.stringify(report, null, 2), { flag: "wx" });

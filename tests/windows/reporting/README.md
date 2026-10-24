@@ -56,3 +56,12 @@ An assertion failure remains a failure. The artifact expires after one day.
 A green result qualifies Windows Server native clipboard and the instrumented
 reporting boundary only. Windows11 hardware, real mailto handling, MSIX/Store,
 DPAPI migration, AI quality and end-to-end support delivery remain separate gates.
+
+Startup diagnostics record only finite window roles/loading flags, known public error
+codes and output-class booleans; never URLs, exception text, filesystem paths or
+stream contents. A QA-only showErrorBox recorder remains for the process lifetime.
+Any call fails the run and is persisted before failure; the synchronous native
+error dialog is not displayed or qualified. This observation adapter changes no
+backend, renderer, clipboard, sender or report validation behavior.
+Only recognized public OS/SQLite/module error-code enums are retained, including
+codes split across stream chunks. All other message and stream text is discarded.
