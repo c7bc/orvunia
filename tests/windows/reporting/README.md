@@ -12,6 +12,11 @@ ended session and answer containing a small TypeScript code block. No provider,
 microphone, computer audio, camera, screenshot input or repository context is used.
 The fixture and credentials are never inserted into production or product bundles.
 The seed identity token stays only in the temporary profile, never in evidence.
+Storage is initialized with the pinned product's prepareDesktopStorage, including
+its normal activation pointer and verified backend-data directory. The answer is
+seeded only into that returned directory/workspace, then reopened through the
+same preparation routine. No database is placed in the legacy data directory and
+no migration pointer is written by the harness.
 
 The actual dashboard opens that saved session. The actual text/code copy buttons
 must show Copied feedback, and Electron's native clipboard readback must exactly
