@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { createRequire } from "node:module";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { join } from "node:path";
+import { loadContext, physical } from "./context.mjs";
+import { coreCommit, desktopVersion, appId } from "./config.mjs";
+import { run } from "./process.mjs";
+import { distributionDigest, verifyPublicDistribution } from "./runtime-audit.mjs";
+import { desktopConfiguration } from "./configuration.mjs";
+import { writeInstallationPathGuard } from "./path-budget.mjs";
+import { auditArchive } from "./archive.mjs";
+const [statePath, sourcePath] = process.argv.slice(2), state = await loadContext(statePath), source = await physical(sourcePath);
+assert.equal(execFileSync("git", ["-C", source, "rev-parse", "HEAD"], { encoding: "utf8" }).trim(), coreCommit);
+assert.equal(execFileSync("git", ["-C", source, "status", "--porcelain"], { encoding: "utf8" }), "");
+assert.equal(JSON.parse(await readFile(join(source, "package.json"))).name, "@orvunia/core");
+const bun = execFileSync("where.exe", ["bun"], { encoding: "utf8" }).trim().split(/\r?\n/)[0];
+await run(bun, ["install", "--frozen-lockfile", "--ignore-scripts"], { cwd: source, timeout: 600000 });
+await run(process.execPath, [join(source, "node_modules/electron/install.js")], { cwd: source, timeout: 600000 });
+await run(bun, ["run", "build"], { cwd: source });
+await run(bun, ["run", "check"], { cwd: source });
+const bunSha256 = await distributionDigest(bun);
+assert.equal(bunSha256, "095db4abae203d42f29fdec26da4a882fcde6333cdd84e40c0c7828c0cf543f6", "Bun differs from audited 1.4.3 Windows x64");
+await run(bun, [join(source, "next/scripts/package-public-runtime.ts"), source, bun, bunSha256, state.runtime], { cwd: source, timeout: 600000 });
+const runtime = await verifyPublicDistribution(source, state.runtime);
+const configuration = desktopConfiguration(source, state.runtime, state.distribution, join(source, "node_modules/electron/dist"));
+await mkdir(state.distribution);
+const pathGuard = await writeInstallationPathGuard(state.runtime, configuration.electronDist, state.distribution);
+configuration.nsis.include = pathGuard.include;
+await writeFile(join(state.distribution, "configuration.json"), JSON.stringify(configuration));
+await run(process.execPath, [join(import.meta.dirname, "worker.mjs"), statePath, source], { cwd: source, timeout: 900000 });
+const archive = await auditArchive(source, state.distribution);
+const setup = join(state.distribution, `Orvunia-QA-Setup-${desktopVersion}.exe`);
+const report = { version: desktopVersion, appId, coreCommit, bunSha256, runtimeManifestSha256: await distributionDigest(join(state.runtime, "backend-release.json")),
+  sourceManifestSha256: runtime.release.sourceManifestSha256, clientManifestSha256: runtime.release.clientManifestSha256,
+  setupSha256: await distributionDigest(setup), ...archive, pathGuard, installed: false, source: "pinned-public-checkout" };
+await writeFile(join(state.evidence, "build.json"), JSON.stringify(report, null, 2), { flag: "wx" });

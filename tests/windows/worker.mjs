@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { createRequire } from "node:module";
+import { loadContext, physical } from "./context.mjs";
+import { appId } from "./config.mjs";
+const [statePath, sourcePath] = process.argv.slice(2), state = await loadContext(statePath), source = await physical(sourcePath);
+const config = JSON.parse(await readFile(join(state.distribution, "configuration.json")));
+assert.equal(config.appId, appId); assert.equal(config.directories.output, state.distribution);
+assert.equal(config.publish, null); assert.equal(config.forceCodeSigning, false);
+assert.equal(config.win.signExecutable, false); assert.equal(config.nsis.runAfterFinish, false);
+assert.equal(config.nsis.createDesktopShortcut, false); assert.equal(config.nsis.createStartMenuShortcut, false);
+const require = createRequire(import.meta.url), { build, Platform, Arch } = require("electron-builder");
+await build({ projectDir: source, targets: Platform.WINDOWS.createTarget(["nsis"], Arch.x64), config });

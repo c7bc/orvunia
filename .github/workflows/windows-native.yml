@@ -1,0 +1,65 @@
+name: Windows Local native QA
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        type: choice
+        options: [first-launch, lifecycle]
+        default: first-launch
+      baseline_release_id:
+        description: Draft release ID containing the exact approved 4.10.1 baseline; lifecycle only
+        type: string
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: windows-local-native-qa
+  cancel-in-progress: false
+jobs:
+  native:
+    if: github.repository == 'c7bc/orvunia' && github.event_name == 'workflow_dispatch'
+    runs-on: windows-2025
+    timeout-minutes: 45
+    steps:
+      - name: Preserve exact repository line endings on this disposable runner
+        run: git config --global core.autocrlf false
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: d6d95486f6fcc057df437c95304771997bcac0a9
+          path: work/source
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.4.3
+      - name: Install isolated QA tools without lifecycle scripts
+        run: bun install --cwd tests/windows --frozen-lockfile --ignore-scripts
+      - name: Test tooling contracts without running the app
+        run: node --test (Get-ChildItem tests/windows/spec -Filter '*.test.mjs' | Select-Object -ExpandProperty FullName)
+      - name: Establish owned ephemeral runner paths
+        id: qa
+        run: node tests/windows/prepare.mjs
+      - name: Download checksum-pinned historical baseline draft
+        if: inputs.suite == 'lifecycle'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          QA_BASELINE_RELEASE_ID: ${{ inputs.baseline_release_id }}
+        run: node tests/windows/download.mjs '${{ steps.qa.outputs.state }}' "$env:QA_BASELINE_RELEASE_ID"
+      - name: Build and audit pinned public Local 4.10.3
+        run: node tests/windows/build.mjs '${{ steps.qa.outputs.state }}' '${{ github.workspace }}/work/source'
+      - name: Install, inspect real Electron, quit and uninstall
+        env:
+          QA_SUITE: ${{ inputs.suite }}
+        run: pwsh -NoProfile -File tests/windows/lifecycle.ps1 -State '${{ steps.qa.outputs.state }}' -Suite "$env:QA_SUITE"
+      - name: Collect only synthetic allowlisted evidence
+        if: always() && steps.qa.outputs.state != ''
+        run: node tests/windows/evidence.mjs '${{ steps.qa.outputs.state }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always() && steps.qa.outputs.evidence != ''
+        with:
+          name: local-native-qa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.qa.outputs.evidence }}
+          retention-days: 1
+          if-no-files-found: error
