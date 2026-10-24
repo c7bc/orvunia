@@ -14,6 +14,7 @@ import { installNetworkGuard } from "./network.mjs";
 import { createProgress } from "./progress.mjs";
 import { releaseShell } from "./interception.mjs";
 import { createStartup } from "./startup.mjs";
+import { captureLocales } from "./screenshots.mjs";
 const state = await loadContext(process.argv[2]);
 const build = JSON.parse(await readFile(join(state.evidence, "build.json")));
 assert.equal(build.coreCommit, coreCommit); assert.equal(build.version, desktopVersion);
@@ -89,6 +90,8 @@ try {
   const code = await step("copy-code", () => verifyCopy(application, panel, ".detail-chat-log .copy-code", selected.code));
   assert.equal(code.label, "Copied."); report.codeCopied = true;
   Object.assign(report, await verifyDialog(application, panel, selected, interception, step));
+  report.screenshotDrafts = await captureLocales(application, panel, state.evidence, selected, interception, step,
+    { toolingCommit: state.identity.toolingCommit, archiveSha256: build.archiveSha256 });
   const permissionRequests = await step("verify-permissions", () => permissions.evaluate(value => [...value.requests]));
   assert.deepEqual(permissionRequests, []); report.permissionRequests = 0;
   const blocked = await step("verify-network", () => network.evaluate(value => [...value.blocked]));

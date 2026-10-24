@@ -70,3 +70,12 @@ error dialog is not displayed or qualified. This observation adapter changes no
 backend, renderer, clipboard, sender or report validation behavior.
 Only recognized public OS/SQLite/module error-code enums are retained, including
 codes split across stream chunks. All other message and stream text is discarded.
+
+The draft screenshot pass uses the same normal packaged candidate and real native
+settings in en, pt-BR and es. It requests a 1920x1080 content area through the own
+BrowserWindow APIs, verifies real content/renderer/PNG dimensions and refuses
+images below 1366x768, blank images, oversized files or mismatched measured pixels.
+No image is enlarged or composited. Each locale gets technical-code and report
+scenes, captions at most 200 characters and a provenance manifest. No extra draft
+open/send action occurs; all report examples are synthetic. These are QA drafts
+from an unsigned non-registered candidate, never final Store/MSIX screenshots.
