@@ -39,7 +39,8 @@ const passed = lifecycle?.status === "passed" && phases.some(value => value.phas
 const summary = { status: passed ? "passed-hosted-windows-server-native-scope" : "failed-or-incomplete", environment: "GitHub hosted Windows Server2025 x64",
   toolingCommit: state.identity.toolingCommit, coreCommit: build?.coreCommit ?? null, desktopVersion: build?.version ?? null,
   setupSha256: build?.setupSha256 ?? null, archiveSha256: build?.archiveSha256 ?? null, bunSha256: build?.bunSha256 ?? null,
-  lifecycle, phases, images, transcriptOrResponseQualityTested: false, physicalAudioTested: false, apiCalls: 0,
+  lifecycle, phases, images, transcriptOrResponseQualityTested: false, physicalAudioTested: false, paidProviderCalls: 0,
+  localBackendApiUsed: phases.some(value => value.persistedState === "ended") ? true : null,
   win11Qualified: false, msixStoreQualified: false, profileDatabaseOrCookiesUploaded: false,
   nativeLogsUploaded: false, ownRendererScreenshotsOnly: true, cleanupBoundary: "Owned install/runtime executables checked; tooling wrapper deadlines remain bounded and runner is disposable" };
 await writeFile(join(state.evidence, "summary.json"), JSON.stringify(summary, null, 2));

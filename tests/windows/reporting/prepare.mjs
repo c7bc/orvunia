@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { loadContext, physical } from "../context.mjs";
+import { distributionDigest } from "../runtime-audit.mjs";
+import { run } from "../process.mjs";
+const [statePath, sourcePath] = process.argv.slice(2);
+const state = await loadContext(statePath), source = await physical(sourcePath);
+const build = JSON.parse(await readFile(join(state.evidence, "build.json")));
+const bun = execFileSync("where.exe", ["bun"], { encoding: "utf8" }).trim().split(/\r?\n/)[0];
+assert.equal(await distributionDigest(bun), build.bunSha256);
+await run(bun, [join(import.meta.dirname, "seed.mjs"), statePath, source], { cwd: source, timeout: 60000 });

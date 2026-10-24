@@ -19,6 +19,11 @@
       "sha256": "dd7fca17bf9fa941ca069038a566d0cdbfe63cbc52b3f951f121073694d3135f"
     },
     {
+      "path": ".github/workflows/windows-reporting.yml",
+      "bytes": 2346,
+      "sha256": "0a1c9174e7df865240a689e5d66d68a322b80a5458178e7cb335f44b92174b63"
+    },
+    {
       "path": ".gitignore",
       "bytes": 52,
       "sha256": "276b4f341fdfe0adf91cf37dd6d195c1d3ac2f5cc0994360593a531b4affaff7"
@@ -7955,8 +7960,8 @@
     },
     {
       "path": "tests/windows/evidence.mjs",
-      "bytes": 3922,
-      "sha256": "82a9b693e985dac67fc8d7bc43d223d49a8ff482031e01501af24f70287efafb"
+      "bytes": 4024,
+      "sha256": "0efbbc697663ce5b95b2cf9830795bd7cfa2b5fdde901eaff975551ef9caab8a"
     },
     {
       "path": "tests/windows/lifecycle-support.ps1",
@@ -7999,6 +8004,56 @@
       "sha256": "c4fc551b60aabcbe8fd86659d1257065686021aa644325e531528a98815ff4ab"
     },
     {
+      "path": "tests/windows/reporting/cleanup.ps1",
+      "bytes": 775,
+      "sha256": "975706afd44b25d41a866310f337261879f5e6acc400da05f57837029b604abe"
+    },
+    {
+      "path": "tests/windows/reporting/copy.mjs",
+      "bytes": 764,
+      "sha256": "e7e1f2da4d680ef2db6a448a9e85baef731d12a76f255d8618a7428273d6da01"
+    },
+    {
+      "path": "tests/windows/reporting/dialog.mjs",
+      "bytes": 2537,
+      "sha256": "2e22c624efdc84608fdecd0a54feb20d193cebe8e396dca15b2a2f19f34d9077"
+    },
+    {
+      "path": "tests/windows/reporting/fixture.mjs",
+      "bytes": 1744,
+      "sha256": "4bcf49b6c6c26fc9c3e4acbc35e142e6a29b128d968d222ae2f875ed1596dd69"
+    },
+    {
+      "path": "tests/windows/reporting/native.mjs",
+      "bytes": 7334,
+      "sha256": "74555f847c711b9f708a72a93bccda263ce1b1d6ee487dfdf05c5716eba3496c"
+    },
+    {
+      "path": "tests/windows/reporting/network.mjs",
+      "bytes": 1199,
+      "sha256": "269212b14f3d2f1f896889991833ef245acd01265ca81e83496bef3ecb4bd99d"
+    },
+    {
+      "path": "tests/windows/reporting/prepare.mjs",
+      "bytes": 804,
+      "sha256": "fc976fe37e5fe729d7ca9bad7bf2acedcaf4782c1768b3e578c2d20eec72f673"
+    },
+    {
+      "path": "tests/windows/reporting/README.md",
+      "bytes": 3284,
+      "sha256": "c58da7b46c5324f11516abdf7bf5c5f1f23d6e35bfd91915f776338b20910072"
+    },
+    {
+      "path": "tests/windows/reporting/seed.mjs",
+      "bytes": 2069,
+      "sha256": "479b90c02c8e75c58064289aba536acdea4b942fb7fae00e3bdc52a70413032f"
+    },
+    {
+      "path": "tests/windows/reporting/store.mjs",
+      "bytes": 926,
+      "sha256": "e8750b6d3fa3a245cf08698f43c07eca2895120f61413e6bf85e190e91d85adc"
+    },
+    {
       "path": "tests/windows/runtime-audit.mjs",
       "bytes": 2103,
       "sha256": "5294986153444abf6225752d5b207f2943f9e45d186db46def7ee5ec6ba49884"
@@ -8017,6 +8072,11 @@
       "path": "tests/windows/spec/packaging.test.mjs",
       "bytes": 2341,
       "sha256": "64e184407a3cf9dc4f24081704099c8406ae83c532c480f6f0283d3950f48bd6"
+    },
+    {
+      "path": "tests/windows/spec/reporting.test.mjs",
+      "bytes": 4971,
+      "sha256": "0ac6c62b8b1b3b068b26e15f116b60cd0ff16b3035ad9e0f6140a520ccae912a"
     },
     {
       "path": "tests/windows/worker.mjs",
