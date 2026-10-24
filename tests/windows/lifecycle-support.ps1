@@ -82,3 +82,14 @@ function Assert-NoOwnedProcesses {
   if ($owned.Count) { $report.orphanProcessCount = $owned.Count; throw 'Owned QA executable survived shutdown' }
   $report.orphanProcessCount = 0
 }
+function Invoke-OwnedUninstall([string]$Label) {
+  if ($qa.installation -match '[\s"]') { throw 'Synchronous NSIS QA target must be space-free' }
+  $source = Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')
+  $copy = Join-Path $qa.root ($Label + '.exe')
+  if ((Get-Item -LiteralPath $source).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Uninstaller is redirected' }
+  $expected = (Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash
+  [IO.File]::Copy($source, $copy, $false)
+  if ((Get-FileHash -LiteralPath $copy -Algorithm SHA256).Hash -ne $expected) { throw 'Copied uninstaller changed' }
+  $report.uninstallerCopies += @{ label = $Label; sha256 = $expected.ToLowerInvariant(); exactCopy = $true }
+  Invoke-OwnedProcess $copy @('/S', ('_?=' + $qa.installation)) $Label -DeadlineSeconds 600
+}

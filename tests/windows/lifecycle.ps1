@@ -18,7 +18,7 @@ if (Test-Path -LiteralPath $uninstallRoot) {
 if ($existing.Count) { throw 'Pre-existing QA registration cannot be replaced' }
 $report = [ordered]@{ status = 'running'; suite = $Suite; windows11Qualified = $false; windowsStoreQualified = $false;
   baselineTested = $false; upgradeTested = $false; physicalAudioTested = $false; providerCalls = 0;
-  syntheticProfile = $true; steps = @(); registrations = @(); installationRemoved = $false }
+  syntheticProfile = $true; steps = @(); registrations = @(); uninstallerCopies = @(); installationRemoved = $false }
 $registration = $null
 function Run-Native([string]$Phase) { Invoke-OwnedProcess (Get-Command node).Source @((Join-Path $PSScriptRoot 'native.mjs'), $State, $Phase) ('native-' + $Phase) }
 try {
@@ -37,7 +37,7 @@ try {
   Assert-FinalFiles; Run-Native 'update'; Assert-NoOwnedProcesses
   $report.upgradeTested = $Suite -eq 'lifecycle'
   Run-Native 'quit'; Assert-NoOwnedProcesses
-  Invoke-OwnedProcess (Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')) @('/S') 'uninstall' -DeadlineSeconds 600
+  Invoke-OwnedUninstall 'uninstall'
   $until = [DateTime]::UtcNow.AddSeconds(45)
   while (((Test-Path -LiteralPath $registration) -or (Test-Path -LiteralPath (Join-Path $qa.installation 'Orvunia QA.exe'))) -and
       [DateTime]::UtcNow -lt $until) { Start-Sleep -Milliseconds 200 }
@@ -52,7 +52,7 @@ finally {
       $entry = Get-ItemProperty -LiteralPath $registration
       if ($entry.DisplayName -eq $contract.productName -and
           (RegistrationDirectory $entry).Equals($qa.installation, [StringComparison]::OrdinalIgnoreCase)) {
-        Invoke-OwnedProcess (Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')) @('/S') 'cleanup-owned-install' -DeadlineSeconds 600
+        Invoke-OwnedUninstall 'cleanup-owned-install'
         $report.cleanupRequested = $true
       }
     } catch { $report.cleanupUnconfirmed = $true }

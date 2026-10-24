@@ -20,6 +20,17 @@ test("builders explicitly suppress publish and installers have a separate bounde
   assert.match(support, /\$DeadlineSeconds = 240/);
   assert.match(support, /WaitForExit\(\$DeadlineSeconds \* 1000\)/);
   const lifecycle = await readFile(new URL("../lifecycle.ps1", import.meta.url), "utf8");
-  assert.equal((lifecycle.match(/-DeadlineSeconds 600/g) ?? []).length, 4);
+  assert.equal((lifecycle.match(/-DeadlineSeconds 600/g) ?? []).length, 2);
   assert.ok(!/function Run-Native[^\n]*-DeadlineSeconds/.test(lifecycle));
+});
+test("synchronous NSIS uninstall uses an exact outside copy and final owned target argument", async () => {
+  const support = await readFile(new URL("../lifecycle-support.ps1", import.meta.url), "utf8");
+  assert.match(support, /\[IO.File\]::Copy\(\$source, \$copy, \$false\)/);
+  assert.match(support, /Get-FileHash -LiteralPath \$copy/);
+  assert.match(support, /Invoke-OwnedProcess \$copy @\('\/S', \('_\?=' \+ \$qa.installation\)\)/);
+  assert.match(support, /Synchronous NSIS QA target must be space-free/);
+  const lifecycle = await readFile(new URL("../lifecycle.ps1", import.meta.url), "utf8");
+  assert.match(lifecycle, /Invoke-OwnedUninstall 'uninstall'/);
+  assert.match(lifecycle, /Invoke-OwnedUninstall 'cleanup-owned-install'/);
+  assert.match(lifecycle, /throw 'Uninstall retained executable or registration'/);
 });

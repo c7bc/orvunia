@@ -7960,13 +7960,13 @@
     },
     {
       "path": "tests/windows/lifecycle-support.ps1",
-      "bytes": 5338,
-      "sha256": "77f904ebbf9dad0b2f3f1883e0e7a0a573265687fc6c148fe29199197fa9a257"
+      "bytes": 6181,
+      "sha256": "f12e2ab16abd1c3e57b0405876019baecaf0e9f46417967c0c622b2b8caa099f"
     },
     {
       "path": "tests/windows/lifecycle.ps1",
-      "bytes": 4618,
-      "sha256": "6e04baa09181e7225633da3d71e27002b2d696ef17550bbfd3c63b2119bc3688"
+      "bytes": 4435,
+      "sha256": "875dbb259fbf15765330a7d1f303843f8a70e7a4ff91c1ffc851180ce92c5b57"
     },
     {
       "path": "tests/windows/native.mjs",
@@ -7995,8 +7995,8 @@
     },
     {
       "path": "tests/windows/README.md",
-      "bytes": 3580,
-      "sha256": "6ef51759841bcd1e282f91575c40d877b3d185baf215fe0678d41749d44b1321"
+      "bytes": 4074,
+      "sha256": "c4fc551b60aabcbe8fd86659d1257065686021aa644325e531528a98815ff4ab"
     },
     {
       "path": "tests/windows/runtime-audit.mjs",
@@ -8015,8 +8015,8 @@
     },
     {
       "path": "tests/windows/spec/packaging.test.mjs",
-      "bytes": 1510,
-      "sha256": "ce77fd345f656dafa7ae7f81ac03944e42be27dd806e1f8d39ee902c25f06e70"
+      "bytes": 2341,
+      "sha256": "64e184407a3cf9dc4f24081704099c8406ae83c532c480f6f0283d3950f48bd6"
     },
     {
       "path": "tests/windows/worker.mjs",

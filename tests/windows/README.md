@@ -40,6 +40,13 @@ The script only requests cleanup of its exact owned installation. Wrapper deadli
 or orphan processes fail the job; disposal of the runner remains the final boundary.
 No global process-name kill is used.
 
+Silent uninstall runs a SHA256-verified copy outside the owned install directory.
+The documented NSIS `_?=` argument is last, so the process is awaited directly
+instead of its temporary self-copy launcher. The hosted QA target must have no
+spaces; a different target fails rather than introducing quoted NSIS arguments.
+Installer/uninstaller deadlines are600seconds; native-wrapper deadlines stay240.
+See [NSIS command-line usage](https://nsis.sourceforge.io/Docs/Chapter3.html#section3.2.2).
+
 Only allowlisted summaries and synthetic renderer PNGs enter the evidence artifact,
 retained for one day. Profiles, SQLite, cookies, credentials, raw native logs, install
 trees and DevTools output are not uploaded. Workflow console build logs remain
