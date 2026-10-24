@@ -25,19 +25,19 @@ try {
   if ($Suite -eq 'lifecycle') {
     $baseline = Join-Path $qa.baseline $contract.baseline.name
     if ((Get-FileHash -LiteralPath $baseline -Algorithm SHA256).Hash.ToLowerInvariant() -ne $contract.baseline.sha256) { throw 'Baseline checksum differs' }
-    Invoke-OwnedProcess $baseline @('/S', ('/D=' + $qa.installation)) 'install-baseline'
+    Invoke-OwnedProcess $baseline @('/S', ('/D=' + $qa.installation)) 'install-baseline' -DeadlineSeconds 600
     Assert-Registration $contract.baseline.version
     Assert-Archive $contract.baseline.archiveSha256 $contract.baseline.runtimeManifestSha256
     Run-Native 'baseline'; Assert-NoOwnedProcesses; $report.baselineTested = $true
   }
   $setup = Join-Path $qa.distribution ('Orvunia-QA-Setup-' + $contract.desktopVersion + '.exe')
   if ((Get-FileHash -LiteralPath $setup -Algorithm SHA256).Hash.ToLowerInvariant() -ne $final.setupSha256) { throw 'Final installer checksum differs' }
-  Invoke-OwnedProcess $setup @('/S', ('/D=' + $qa.installation)) 'install-final'
+  Invoke-OwnedProcess $setup @('/S', ('/D=' + $qa.installation)) 'install-final' -DeadlineSeconds 600
   Assert-Registration $contract.desktopVersion; Assert-Archive $final.archiveSha256 $final.runtimeManifestSha256
   Assert-FinalFiles; Run-Native 'update'; Assert-NoOwnedProcesses
   $report.upgradeTested = $Suite -eq 'lifecycle'
   Run-Native 'quit'; Assert-NoOwnedProcesses
-  Invoke-OwnedProcess (Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')) @('/S') 'uninstall'
+  Invoke-OwnedProcess (Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')) @('/S') 'uninstall' -DeadlineSeconds 600
   $until = [DateTime]::UtcNow.AddSeconds(45)
   while (((Test-Path -LiteralPath $registration) -or (Test-Path -LiteralPath (Join-Path $qa.installation 'Orvunia QA.exe'))) -and
       [DateTime]::UtcNow -lt $until) { Start-Sleep -Milliseconds 200 }
@@ -52,7 +52,7 @@ finally {
       $entry = Get-ItemProperty -LiteralPath $registration
       if ($entry.DisplayName -eq $contract.productName -and
           (RegistrationDirectory $entry).Equals($qa.installation, [StringComparison]::OrdinalIgnoreCase)) {
-        Invoke-OwnedProcess (Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')) @('/S') 'cleanup-owned-install'
+        Invoke-OwnedProcess (Join-Path $qa.installation ('Uninstall ' + $contract.productName + '.exe')) @('/S') 'cleanup-owned-install' -DeadlineSeconds 600
         $report.cleanupRequested = $true
       }
     } catch { $report.cleanupUnconfirmed = $true }

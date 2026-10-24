@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-function Invoke-OwnedProcess([string]$Executable, [string[]]$Arguments, [string]$Label, [int]$Expected = 0) {
+function Invoke-OwnedProcess([string]$Executable, [string[]]$Arguments, [string]$Label, [int]$Expected = 0, [int]$DeadlineSeconds = 240) {
   $info = [Diagnostics.ProcessStartInfo]::new()
   $info.FileName = $Executable; $info.UseShellExecute = $false; $info.CreateNoWindow = $true
   $info.WindowStyle = [Diagnostics.ProcessWindowStyle]::Hidden; $info.WorkingDirectory = $qa.root
@@ -16,7 +16,7 @@ function Invoke-OwnedProcess([string]$Executable, [string[]]$Arguments, [string]
   $stdout = $null; $stderr = $null
   try {
     [void]$process.Start(); $stdout = $process.StandardOutput.ReadToEndAsync(); $stderr = $process.StandardError.ReadToEndAsync()
-    if (-not $process.WaitForExit(240000)) {
+    if (-not $process.WaitForExit($DeadlineSeconds * 1000)) {
       $process.Kill($true); $process.WaitForExit()
       $report.timeoutCleanup = 'Owned process tree termination requested; runner disposal remains required'
       throw 'Owned QA process exceeded deadline'

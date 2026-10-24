@@ -4,7 +4,7 @@ export function desktopConfiguration(source, runtime, output, electronDirectory)
     extraMetadata: { name: "orvunia-qa", version: desktopVersion, main: "desktop/main.cjs", dependencies: null,
       cadenceDesktop: { format: "cadence-desktop-release/1", runtime: "bun", channel: "integrated" } },
     files: ["!**/*", "./desktop/main.cjs", "./desktop/runtime.cjs", "./desktop/preload.cjs", "./desktop/preload-personal.cjs",
-      "./desktop/preload-auxiliary.cjs", "./desktop/system-audio/**", "./desktop/window-motion.cjs", "./desktop/affinity.ps1",
+      "./desktop/preload-auxiliary.cjs", "./desktop/system-audio/**", "./desktop/affinity.ps1",
       "./assets/icon.ico", "./assets/icon.png", "./package.json", "./LICENSE", "./THIRD_PARTY_NOTICES.txt", "./assets/licenses/**",
       "!node_modules{,/**/*}", "!**/node_modules/**"],
     asar: true, asarUnpack: ["desktop/system-audio/**"], npmRebuild: false, forceCodeSigning: false,

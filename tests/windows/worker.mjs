@@ -11,4 +11,4 @@ assert.equal(config.publish, null); assert.equal(config.forceCodeSigning, false)
 assert.equal(config.win.signExecutable, false); assert.equal(config.nsis.runAfterFinish, false);
 assert.equal(config.nsis.createDesktopShortcut, false); assert.equal(config.nsis.createStartMenuShortcut, false);
 const require = createRequire(import.meta.url), { build, Platform, Arch } = require("electron-builder");
-await build({ projectDir: source, targets: Platform.WINDOWS.createTarget(["nsis"], Arch.x64), config });
+await build({ projectDir: source, targets: Platform.WINDOWS.createTarget(["nsis"], Arch.x64), publish: "never", config });

@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url), builder = createRequire(require.
 export const asar = createRequire(builder.resolve("app-builder-lib"))("@electron/asar");
 export async function auditArchive(source, output) {
   const archive = join(output, "win-unpacked/resources/app.asar");
-  const names = ["main.cjs", "runtime.cjs", "preload.cjs", "preload-personal.cjs", "preload-auxiliary.cjs", "window-motion.cjs", "affinity.ps1"];
+  const names = ["main.cjs", "runtime.cjs", "preload.cjs", "preload-personal.cjs", "preload-auxiliary.cjs", "affinity.ps1"];
   const allowed = new Set(["/desktop", "/desktop/system-audio", "/assets", "/assets/licenses", "/assets/icon.ico", "/assets/icon.png",
     "/package.json", "/LICENSE", "/THIRD_PARTY_NOTICES.txt", ...names.map(file => "/desktop/" + file)]);
   for (const file of await readdir(join(source, "assets/licenses"))) allowed.add("/assets/licenses/" + file);
