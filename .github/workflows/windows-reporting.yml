@@ -37,8 +37,10 @@ jobs:
       - name: Seed only the owned synthetic profile
         run: node tests/windows/reporting/prepare.mjs '${{ steps.qa.outputs.state }}' '${{ github.workspace }}/work/source'
       - name: Run real native clipboard and instrumented reporting
+        timeout-minutes: 5
         run: node tests/windows/reporting/native.mjs '${{ steps.qa.outputs.state }}'
       - name: Check owned process cleanup
+        timeout-minutes: 2
         if: always() && steps.qa.outputs.state != ''
         run: pwsh -NoProfile -File tests/windows/reporting/cleanup.ps1 -State '${{ steps.qa.outputs.state }}'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

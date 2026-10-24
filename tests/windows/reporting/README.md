@@ -24,7 +24,10 @@ test process by a recorder that rejects. Real sender/lifecycle checks and the
 production URL builder remain in use. This covers the native argument boundary
 and fallback UI; it does NOT send an OS launch request, open a real email draft or
 send a message. No mail handler is installed, reassigned or registered to fake a pass.
-The original adapter is restored on cleanup. Permission requests are denied by an
+The original adapter is restored only after the entire interaction completed
+successfully. On any failure or timeout the rejecting stub remains installed until
+the process exits: a timed-out pending click cannot dispatch to the real shell.
+Permission requests are denied by an
 additional test guard; no audio/camera permission or provider behavior is qualified.
 
 The runner gets no provider/auth/billing keys. Child environments are allowlisted.
@@ -38,7 +41,14 @@ is awaited; the separate cleanup step rejects remaining owned runtime executable
 Only our exact expected clipboard values are cleared. The disposable runner is the
 final cleanup boundary; no global process kill or user-profile deletion is used.
 
-Evidence contains sanitized reporting/cleanup/build summaries and one screenshot
+Each operation has a recorded fixed stage and an explicit deadline. The native
+workflow step also has a five-minute ceiling; cleanup has two minutes. A progress
+file survives even if cancellation prevents finally from completing. Failed-stage
+metadata and an own-renderer screenshot are attempted with a separate short bound;
+they never delay quit indefinitely. No exception payload, URL, DOM text or token is
+placed in the progress file. A timeout or missing cleanup remains a failure.
+
+Evidence contains sanitized reporting/cleanup/build summaries and own-renderer screenshots
 of the application's own renderer, not the desktop. No profile, SQLite, cookies,
 identity file, raw native logs, fixture state or DevTools output is uploaded.
 An assertion failure remains a failure. The artifact expires after one day.
